@@ -17,7 +17,7 @@
             <charset>utf-8</charset>
         </encoder>
         <!-- 过滤重设时间，一般是当调试服务器或者调试活动的时候手动改时间需要触发 -->
-        <filter class="db712.server.LogbackResetTimeFilter">
+        <filter class="wxdgaming.mariadb.server.LogbackResetTimeFilter">
             <onMatch>ACCEPT</onMatch>
             <onMismatch>DENY</onMismatch>
         </filter>
@@ -46,7 +46,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <!-- 过滤重设时间，一般是当调试服务器或者调试活动的时候手动改时间需要触发 -->
-        <filter class="db712.server.LogbackResetTimeFilter">
+        <filter class="wxdgaming.mariadb.server.LogbackResetTimeFilter">
             <onMatch>ACCEPT</onMatch>
             <onMismatch>DENY</onMismatch>
         </filter>

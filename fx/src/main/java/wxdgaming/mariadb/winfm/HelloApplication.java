@@ -1,8 +1,8 @@
-package db712.winfm;
+package wxdgaming.mariadb.winfm;
 
 import com.sun.javafx.application.PlatformImpl;
-import db712.server.DBFactory;
-import db712.server.WebService;
+import wxdgaming.mariadb.server.DBFactory;
+import wxdgaming.mariadb.server.WebService;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -31,7 +31,7 @@ import java.util.concurrent.CompletableFuture;
 
 public class HelloApplication extends Application {
 
-    final String title = "712引擎数据库服务";
+    final String title = "wxd-gaming-数据库服务";
     final String iconName = "db-icon.png";
 
     @Override

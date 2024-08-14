@@ -1,10 +1,9 @@
-package db712.winfm;
+package wxdgaming.mariadb.winfm;
 
-import db712.server.*;
 import javafx.application.Application;
+import wxdgaming.mariadb.server.*;
 
 import java.net.URL;
-import java.net.http.HttpClient;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 

@@ -1,4 +1,4 @@
-package db712.server;
+package wxdgaming.mariadb.server;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

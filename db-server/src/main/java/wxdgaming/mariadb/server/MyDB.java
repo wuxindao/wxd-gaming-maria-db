@@ -1,4 +1,4 @@
-package db712.server;
+package wxdgaming.mariadb.server;
 
 import ch.vorburger.exec.ManagedProcess;
 import ch.vorburger.exec.ManagedProcessException;

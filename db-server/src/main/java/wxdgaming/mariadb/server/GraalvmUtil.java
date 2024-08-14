@@ -1,4 +1,4 @@
-package db712.server;
+package wxdgaming.mariadb.server;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package db712.server;
+package wxdgaming.mariadb.server;
 
 import ch.qos.logback.classic.spi.IThrowableProxy;
 import ch.qos.logback.classic.spi.LoggingEvent;

@@ -1,11 +1,8 @@
-package db712.winfm;
+package wxdgaming.mariadb.winfm;
 
-import db712.server.DBFactory;
+import wxdgaming.mariadb.server.DBFactory;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import lombok.extern.slf4j.Slf4j;
 

@@ -1,4 +1,4 @@
-package db712.server;
+package wxdgaming.mariadb.server;
 
 import ch.vorburger.mariadb4j.DBConfigurationBuilder;
 import lombok.Getter;

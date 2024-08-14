@@ -1,4 +1,4 @@
-package db712.server;
+package wxdgaming.mariadb.server;
 
 
 import com.sun.net.httpserver.HttpHandler;

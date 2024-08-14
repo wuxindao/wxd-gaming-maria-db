@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>maria-db-712</groupId>
-        <artifactId>maria-db-712</artifactId>
+        <groupId>wxd-gaming.maria-db</groupId>
+        <artifactId>wxd-gaming.maria-db</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
@@ -13,7 +13,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>maria-db-712</groupId>
+            <groupId>wxd-gaming.maria-db</groupId>
             <artifactId>db-server</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
@@ -88,7 +88,7 @@
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
                             <useUniqueVersions>false</useUniqueVersions>
-                            <mainClass>db712.winfm.ApplicationMain</mainClass>
+                            <mainClass>wxdgaming.mariadb.winfm.ApplicationMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

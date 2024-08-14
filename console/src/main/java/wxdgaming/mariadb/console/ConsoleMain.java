@@ -1,8 +1,8 @@
-package db712.console;
+package wxdgaming.mariadb.console;
 
-import db712.server.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import wxdgaming.mariadb.server.*;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

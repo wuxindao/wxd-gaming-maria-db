@@ -4,7 +4,7 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.StackPane?>
 <StackPane prefHeight="800" prefWidth="1200" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
-           fx:controller="db712.winfm.HelloController">
+           fx:controller="wxdgaming.mariadb.winfm.HelloController">
     <padding>
         <Insets bottom="2.0" left="2.0" right="2.0" top="2.0"/>
     </padding>

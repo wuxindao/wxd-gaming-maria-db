@@ -1,4 +1,4 @@
-package db712.server;
+package wxdgaming.mariadb.server;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
