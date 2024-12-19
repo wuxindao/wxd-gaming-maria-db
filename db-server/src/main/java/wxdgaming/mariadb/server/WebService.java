@@ -57,6 +57,10 @@ public class WebService {
         log.info("http://localhost:{}/api/db/show", this.port);
     }
 
+    public void stop() {
+        httpServer.stop(0);
+    }
+
     public void initShow() {
         httpServer.createContext("/api/db/show", exchange -> {
             httpHandler.handle(exchange);

@@ -1,8 +1,6 @@
 package wxdgaming.mariadb.winfm;
 
 import com.sun.javafx.application.PlatformImpl;
-import wxdgaming.mariadb.server.DBFactory;
-import wxdgaming.mariadb.server.WebService;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -13,19 +11,20 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import wxdgaming.mariadb.server.DBFactory;
+import wxdgaming.mariadb.server.WebService;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Properties;
 import java.util.concurrent.CompletableFuture;
 
@@ -72,24 +71,37 @@ public class HelloApplication extends Application {
         primaryStage.setAlwaysOnTop(false);
         CompletableFuture.runAsync(() -> {
             try {
+                /*必须让界面闪一下，不然程序不稳定，容易崩溃*/
+                Thread.sleep(1000);
+                Platform.runLater(() -> primaryStage.hide());
+            } catch (InterruptedException ignore) {}
+        });
+        startDb(primaryStage, true);
+    }
+
+    public void startDb(Stage primaryStage, boolean checked) {
+        CompletableFuture.runAsync(() -> {
+            try {
                 Thread.sleep(500);
                 Properties properties = new Properties();
                 properties.load(Files.newInputStream(Paths.get("my.ini")));
-                int webPort = Integer.parseInt(properties.getProperty("web-port"));
+                if (checked) {
+                    int webPort = Integer.parseInt(properties.getProperty("web-port"));
 
-                try (HttpClient client = HttpClient.newHttpClient()) {
+                    try (HttpClient client = HttpClient.newHttpClient()) {
 
-                    HttpRequest build = HttpRequest.newBuilder().GET().uri(URI.create("http://localhost:" + webPort + "/api/db/show")).build();
-                    HttpResponse<byte[]> send = client.send(build, HttpResponse.BodyHandlers.ofByteArray());
-                    /*正常访问说明已经打开过，退出当前程序，*/
-                    System.exit(0);
-                    return;
-                } catch (Exception ignore) {
-                    /*如果访问报错说没有启动过；*/
+                        HttpRequest build = HttpRequest.newBuilder().GET().uri(URI.create("http://localhost:" + webPort + "/api/db/show")).build();
+                        HttpResponse<byte[]> send = client.send(build, HttpResponse.BodyHandlers.ofByteArray());
+                        /*正常访问说明已经打开过，退出当前程序，*/
+                        System.exit(0);
+                        return;
+                    } catch (Exception ignore) {
+                        /*如果访问报错说没有启动过；*/
+                    }
+                    System.out.println("可以正常开启");
+
+                    WebService.getIns().setPort(webPort);
                 }
-                System.out.println("可以正常开启");
-
-                WebService.getIns().setPort(webPort);
                 DBFactory.getIns().init(
                         properties.getProperty("database"),
                         Integer.parseInt(properties.getProperty("port")),
@@ -126,32 +138,62 @@ public class HelloApplication extends Application {
             if (SystemTray.isSupported()) {
                 /*TODO 系统托盘图标*/
                 SystemTray tray = SystemTray.getSystemTray();
-                PopupMenu popup = new PopupMenu();
-
-                // MenuItem menuItem = new MenuItem();
-                // menuItem.setLabel("Exit");
-                // menuItem.addActionListener(new ActionListener() {
-                //     public void actionPerformed(ActionEvent e) {
-                //         System.exit(0);
-                //     }
-                // });
-                // popup.add(menuItem);
-
                 BufferedImage bufferedImage = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(iconName));
-                TrayIcon trayIcon = new TrayIcon(bufferedImage, title, popup);
+                TrayIcon trayIcon = new TrayIcon(bufferedImage, title);
                 trayIcon.setImageAutoSize(true);
-                trayIcon.addActionListener(new ActionListener() {
-                    /*TODO 图标双击事件 */
-                    @Override public void actionPerformed(ActionEvent e) {
-                        WebService.getIns().getShowWindow().run();
-                    }
-                });
+                PopupMenu popup = new PopupMenu();
+                {
+                    MenuItem menuItem = new MenuItem("Open");
+                    menuItem.addActionListener(e -> Platform.runLater(WebService.getIns().getShowWindow()));
+                    popup.add(menuItem);
+                }
+                popup.add("-");
+                {
+                    MenuItem menuItem = new MenuItem("ClearDb");
+                    menuItem.addActionListener(event -> {
+                        DBFactory.getIns().stop();
+                        WebService.getIns().stop();
+                        try {
+                            Files.walkFileTree(Paths.get("data-base"), new SimpleFileVisitor<Path>() {
+                                @Override
+                                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+                                        throws IOException {
+                                    Files.delete(file);
+                                    return FileVisitResult.CONTINUE;
+                                }
+
+                                @Override
+                                public FileVisitResult postVisitDirectory(Path dir, IOException exc)
+                                        throws IOException {
+                                    Files.delete(dir);
+                                    return FileVisitResult.CONTINUE;
+                                }
+                            });
+                        } catch (IOException e) {
+                            e.printStackTrace(System.out);
+                        }
+                        startDb(primaryStage, false);
+                    });
+                    popup.add(menuItem);
+                }
+                popup.add("-");
+                {
+                    MenuItem menuItem = new MenuItem();
+                    menuItem.setLabel("Close");
+                    menuItem.addActionListener(event -> System.exit(0));
+                    popup.add(menuItem);
+                }
+
+                /*TODO 图标双击事件 */
+                trayIcon.addActionListener(event -> Platform.runLater(WebService.getIns().getShowWindow()));
+                trayIcon.setPopupMenu(popup);
                 tray.add(trayIcon);
             }
-        } catch (Exception e) {
+        } catch (Throwable e) {
             e.printStackTrace(System.out);
         }
     }
+
 
     public void select(Stage primaryStage) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
