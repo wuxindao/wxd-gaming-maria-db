@@ -5,12 +5,10 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import lombok.extern.slf4j.Slf4j;
 import wxdgaming.mariadb.server.DBFactory;
 import wxdgaming.mariadb.server.WebService;
 
@@ -27,18 +25,22 @@ import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Properties;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.atomic.AtomicBoolean;
 
+@Slf4j
 public class HelloApplication extends Application {
 
-    final String title = "wxd-gaming-数据库服务";
-    final String iconName = "db-icon.png";
+    String __title = "wxd-gaming-数据库服务";
+    final String __iconName = "db-icon.png";
+
+    static AtomicBoolean icon_checked = new AtomicBoolean();
 
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        setIcon(primaryStage);
+        // setIcon(primaryStage);
 
-        Image image_logo = new Image(iconName);
+        Image image_logo = new Image(__iconName);
         /*阻止停止运行*/
         Platform.setImplicitExit(false);
         WebService.getIns().setShowWindow(() -> {
@@ -56,14 +58,14 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(resource);
 
         Scene scene = new Scene(fxmlLoader.load(), Color.BLACK);
-        primaryStage.setTitle(title);
+        primaryStage.setTitle(__title);
         primaryStage.setScene(scene);
 
         primaryStage.getIcons().add(image_logo);
         // primaryStage.initStyle(StageStyle.UNDECORATED);    // 可以隐藏任务栏上的图标
         primaryStage.setOnCloseRequest(windowEvent -> {
             windowEvent.consume();
-            select(primaryStage);
+            closeSelect(primaryStage);
         });
         /*todo 通过调用 http://localhost:19902/api/db/show */
         primaryStage.show();
@@ -73,7 +75,7 @@ public class HelloApplication extends Application {
             try {
                 /*必须让界面闪一下，不然程序不稳定，容易崩溃*/
                 Thread.sleep(1000);
-                Platform.runLater(() -> primaryStage.hide());
+                closeSelect(primaryStage);
             } catch (InterruptedException ignore) {}
         });
         startDb(primaryStage, true);
@@ -101,6 +103,9 @@ public class HelloApplication extends Application {
                     System.out.println("可以正常开启");
 
                     WebService.getIns().setPort(webPort);
+
+                    __title = String.valueOf(properties.getOrDefault("title", __title));
+                    setTitle(primaryStage, __title);
                 }
                 DBFactory.getIns().init(
                         properties.getProperty("database"),
@@ -108,20 +113,22 @@ public class HelloApplication extends Application {
                         properties.getProperty("user"),
                         properties.getProperty("pwd")
                 );
+
+
                 DBFactory.getIns().print();
                 WebService.getIns().start();
                 WebService.getIns().initShow();
 
-                CompletableFuture.runAsync(() -> {
-
-                    try {
-                        Thread.sleep(10_000);
-                        PlatformImpl.runAndWait(() -> {
-                            primaryStage.hide();
-                        });
-                    } catch (Exception ignore) {}
-
-                });
+                // CompletableFuture.runAsync(() -> {
+                //
+                //     try {
+                //         Thread.sleep(10_000);
+                //         PlatformImpl.runAndWait(() -> {
+                //             primaryStage.hide();
+                //         });
+                //     } catch (Exception ignore) {}
+                //
+                // });
             } catch (Throwable e) {
                 e.printStackTrace(System.out);
                 System.out.println("启动异常了！");
@@ -132,24 +139,28 @@ public class HelloApplication extends Application {
         });
     }
 
+    public static void setTitle(Stage primaryStage, String title) {
+        Platform.runLater(() -> primaryStage.setTitle(title));
+    }
+
     /** 开启系统托盘图标 */
     public void setIcon(Stage primaryStage) {
         try {
             if (SystemTray.isSupported()) {
                 /*TODO 系统托盘图标*/
                 SystemTray tray = SystemTray.getSystemTray();
-                BufferedImage bufferedImage = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(iconName));
-                TrayIcon trayIcon = new TrayIcon(bufferedImage, title);
+                BufferedImage bufferedImage = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(__iconName));
+                TrayIcon trayIcon = new TrayIcon(bufferedImage, __title);
                 trayIcon.setImageAutoSize(true);
                 PopupMenu popup = new PopupMenu();
                 {
-                    MenuItem menuItem = new MenuItem("Open");
+                    MenuItem menuItem = new MenuItem("打开|Open");
                     menuItem.addActionListener(e -> Platform.runLater(WebService.getIns().getShowWindow()));
                     popup.add(menuItem);
                 }
                 popup.add("-");
                 {
-                    MenuItem menuItem = new MenuItem("ClearDb");
+                    MenuItem menuItem = new MenuItem("清档|ClearDb");
                     menuItem.addActionListener(event -> {
                         DBFactory.getIns().stop();
                         WebService.getIns().stop();
@@ -172,6 +183,7 @@ public class HelloApplication extends Application {
                         } catch (IOException e) {
                             e.printStackTrace(System.out);
                         }
+                        setTitle(primaryStage, __title + "-已清档");
                         startDb(primaryStage, false);
                     });
                     popup.add(menuItem);
@@ -179,8 +191,12 @@ public class HelloApplication extends Application {
                 popup.add("-");
                 {
                     MenuItem menuItem = new MenuItem();
-                    menuItem.setLabel("Close");
-                    menuItem.addActionListener(event -> System.exit(0));
+                    menuItem.setLabel("退出|Close");
+                    menuItem.addActionListener(event -> {
+                        DBFactory.getIns().stop();
+                        WebService.getIns().stop();
+                        Runtime.getRuntime().halt(0);
+                    });
                     popup.add(menuItem);
                 }
 
@@ -188,30 +204,40 @@ public class HelloApplication extends Application {
                 trayIcon.addActionListener(event -> Platform.runLater(WebService.getIns().getShowWindow()));
                 trayIcon.setPopupMenu(popup);
                 tray.add(trayIcon);
+                icon_checked.set(true);
+                log.warn("创建托盘图标");
+            } else {
+                log.warn("当前系统不允许创建托盘图标");
             }
         } catch (Throwable e) {
-            e.printStackTrace(System.out);
+            log.error("setIcon failed ", e);
         }
     }
 
 
-    public void select(Stage primaryStage) {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("提示");
-        alert.setHeaderText("点击按钮以确认你的选择!");
-        // alert.setContentText("点击按钮以确认你的选择。");
-
-        ButtonType buttonTypeOk = new ButtonType("关闭进程", ButtonBar.ButtonData.YES);
-        ButtonType buttonTypeCancel = new ButtonType("后台运行", ButtonBar.ButtonData.OK_DONE);
-
-        alert.getButtonTypes().setAll(buttonTypeCancel, buttonTypeOk);
-
-        ButtonType result = alert.showAndWait().orElse(buttonTypeCancel);
-
-        if (result == buttonTypeOk) {
-            Runtime.getRuntime().exit(0);
+    public void closeSelect(Stage primaryStage) {
+        if (icon_checked.get()) {
+            Platform.runLater(() -> primaryStage.hide());
         } else {
-            primaryStage.hide();
+            Platform.runLater(() -> primaryStage.setIconified(true));
         }
+
+        // Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        // alert.setTitle("提示");
+        // alert.setHeaderText("点击按钮以确认你的选择!");
+        // // alert.setContentText("点击按钮以确认你的选择。");
+        //
+        // ButtonType buttonTypeOk = new ButtonType("关闭进程", ButtonBar.ButtonData.YES);
+        // ButtonType buttonTypeCancel = new ButtonType("后台运行", ButtonBar.ButtonData.OK_DONE);
+        //
+        // alert.getButtonTypes().setAll(buttonTypeCancel, buttonTypeOk);
+        //
+        // ButtonType result = alert.showAndWait().orElse(buttonTypeCancel);
+        //
+        // if (result == buttonTypeOk) {
+        // Runtime.getRuntime().halt(0);
+        // } else {
+        //     primaryStage.hide();
+        // }
     }
 }
