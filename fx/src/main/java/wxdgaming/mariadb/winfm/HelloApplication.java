@@ -16,11 +16,14 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URI;
 import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.Properties;
@@ -34,11 +37,20 @@ public class HelloApplication extends Application {
     final String __iconName = "db-icon.png";
 
     static AtomicBoolean icon_checked = new AtomicBoolean();
+    static Properties properties = null;
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        // setIcon(primaryStage);
+        properties = new Properties();
+        try (InputStream inputStream = Files.newInputStream(Paths.get("my.ini"));
+             InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {
+            properties.load(inputStreamReader);
+            __title = String.valueOf(properties.getOrDefault("title", __title));
+        }
+
+        setIcon(primaryStage);
 
         Image image_logo = new Image(__iconName);
         /*阻止停止运行*/
@@ -85,8 +97,6 @@ public class HelloApplication extends Application {
         CompletableFuture.runAsync(() -> {
             try {
                 Thread.sleep(500);
-                Properties properties = new Properties();
-                properties.load(Files.newInputStream(Paths.get("my.ini")));
                 if (checked) {
                     int webPort = Integer.parseInt(properties.getProperty("web-port"));
 
@@ -103,9 +113,6 @@ public class HelloApplication extends Application {
                     System.out.println("可以正常开启");
 
                     WebService.getIns().setPort(webPort);
-
-                    __title = String.valueOf(properties.getOrDefault("title", __title));
-                    setTitle(primaryStage, __title);
                 }
                 DBFactory.getIns().init(
                         properties.getProperty("database"),

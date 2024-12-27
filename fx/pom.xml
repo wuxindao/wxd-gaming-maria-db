@@ -124,6 +124,11 @@
                                     </fileset>
                                 </copy>
 
+                                <copy todir="${project.basedir}/../target/winfm/" overwrite="true">
+                                    <fileset dir="${project.basedir}/bat" erroronmissingdir="false">
+                                    </fileset>
+                                </copy>
+
                             </target>
                         </configuration>
                     </execution>
