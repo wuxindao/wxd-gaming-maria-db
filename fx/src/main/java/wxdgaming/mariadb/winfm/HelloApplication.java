@@ -16,39 +16,24 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URI;
 import java.net.URL;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.Properties;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
 public class HelloApplication extends Application {
 
-    String __title = "wxd-gaming-数据库服务";
-    final String __iconName = "db-icon.png";
+    public static String __title = "wxd-gaming-数据库服务";
+    public static String __iconName = "db-icon.png";
 
     static AtomicBoolean icon_checked = new AtomicBoolean();
-    static Properties properties = null;
 
 
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        properties = new Properties();
-        try (InputStream inputStream = Files.newInputStream(Paths.get("my.ini"));
-             InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {
-            properties.load(inputStreamReader);
-            __title = String.valueOf(properties.getOrDefault("title", __title));
-        }
 
         setIcon(primaryStage);
 
@@ -89,60 +74,6 @@ public class HelloApplication extends Application {
                 Thread.sleep(1000);
                 closeSelect(primaryStage);
             } catch (InterruptedException ignore) {}
-        });
-        startDb(primaryStage, true);
-    }
-
-    public void startDb(Stage primaryStage, boolean checked) {
-        CompletableFuture.runAsync(() -> {
-            try {
-                Thread.sleep(500);
-                if (checked) {
-                    int webPort = Integer.parseInt(properties.getProperty("web-port"));
-
-                    try (HttpClient client = HttpClient.newHttpClient()) {
-
-                        HttpRequest build = HttpRequest.newBuilder().GET().uri(URI.create("http://localhost:" + webPort + "/api/db/show")).build();
-                        HttpResponse<byte[]> send = client.send(build, HttpResponse.BodyHandlers.ofByteArray());
-                        /*正常访问说明已经打开过，退出当前程序，*/
-                        System.exit(0);
-                        return;
-                    } catch (Exception ignore) {
-                        /*如果访问报错说没有启动过；*/
-                    }
-                    System.out.println("可以正常开启");
-
-                    WebService.getIns().setPort(webPort);
-                }
-                DBFactory.getIns().init(
-                        properties.getProperty("database"),
-                        Integer.parseInt(properties.getProperty("port")),
-                        properties.getProperty("user"),
-                        properties.getProperty("pwd")
-                );
-
-
-                DBFactory.getIns().print();
-                WebService.getIns().start();
-                WebService.getIns().initShow();
-
-                // CompletableFuture.runAsync(() -> {
-                //
-                //     try {
-                //         Thread.sleep(10_000);
-                //         PlatformImpl.runAndWait(() -> {
-                //             primaryStage.hide();
-                //         });
-                //     } catch (Exception ignore) {}
-                //
-                // });
-            } catch (Throwable e) {
-                e.printStackTrace(System.out);
-                System.out.println("启动异常了！");
-                System.out.println("启动异常了！");
-                System.out.println("启动异常了！");
-                System.out.println("启动异常了！");
-            }
         });
     }
 
@@ -191,7 +122,7 @@ public class HelloApplication extends Application {
                             e.printStackTrace(System.out);
                         }
                         setTitle(primaryStage, __title + "-已清档");
-                        startDb(primaryStage, false);
+                        ApplicationMain.startDb(false);
                     });
                     popup.add(menuItem);
                 }
