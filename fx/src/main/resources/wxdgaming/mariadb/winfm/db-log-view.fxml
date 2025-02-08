@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.StackPane?>
+<StackPane prefHeight="800" prefWidth="1200" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="wxdgaming.mariadb.winfm.DbLogController">
+    <children>
+        <MenuBar prefHeight="28.0" StackPane.alignment="TOP_LEFT">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <MenuItem fx:id="mi_start" disable="true" onAction="#startAction" text="启动" />
+                    <SeparatorMenuItem />
+                    <MenuItem fx:id="mi_stop" onAction="#stopAction" text="停止" />
+                    <SeparatorMenuItem/>
+                    <MenuItem text="清档" onAction="#clearAction"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="退出" onAction="#closeAction"/>
+                </Menu>
+                <Menu mnemonicParsing="false" text="编辑">
+                    <MenuItem text="修改配置" onAction="#openConfig"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="查看日志" onAction="#openLogFile"/>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <MenuItem mnemonicParsing="false" text="About"/>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <TextArea fx:id="text_area" editable="false" StackPane.alignment="TOP_LEFT">
+            <StackPane.margin>
+                <Insets top="28.0" />
+            </StackPane.margin>
+        </TextArea>
+    </children>
+</StackPane>

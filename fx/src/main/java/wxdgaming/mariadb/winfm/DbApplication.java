@@ -4,26 +4,23 @@ import com.sun.javafx.application.PlatformImpl;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
-import wxdgaming.mariadb.server.DBFactory;
 import wxdgaming.mariadb.server.WebService;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.net.URL;
-import java.nio.file.*;
-import java.nio.file.attribute.BasicFileAttributes;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
-public class HelloApplication extends Application {
+public class DbApplication extends Application {
 
     public static String __title = "wxd-gaming-数据库服务";
     public static String __iconName = "db-icon.png";
@@ -50,11 +47,13 @@ public class HelloApplication extends Application {
                 primaryStage.setAlwaysOnTop(false);
             });
         });
-        Class<HelloApplication> helloApplicationClass = HelloApplication.class;
-        URL resource = helloApplicationClass.getResource("hello-view.fxml");
+        Class<DbApplication> helloApplicationClass = DbApplication.class;
+        URL resource = helloApplicationClass.getResource("db-log-view.fxml");
         FXMLLoader fxmlLoader = new FXMLLoader(resource);
-
-        Scene scene = new Scene(fxmlLoader.load(), Color.BLACK);
+        Parent loaded = fxmlLoader.load();
+        DbLogController controller = fxmlLoader.getController();
+        controller.init();
+        Scene scene = new Scene(loaded, Color.BLACK);
         primaryStage.setTitle(__title);
         primaryStage.setScene(scene);
 
@@ -90,57 +89,9 @@ public class HelloApplication extends Application {
                 BufferedImage bufferedImage = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(__iconName));
                 TrayIcon trayIcon = new TrayIcon(bufferedImage, __title);
                 trayIcon.setImageAutoSize(true);
-                PopupMenu popup = new PopupMenu();
-                {
-                    MenuItem menuItem = new MenuItem("打开|Open");
-                    menuItem.addActionListener(e -> Platform.runLater(WebService.getIns().getShowWindow()));
-                    popup.add(menuItem);
-                }
-                popup.add("-");
-                {
-                    MenuItem menuItem = new MenuItem("清档|ClearDb");
-                    menuItem.addActionListener(event -> {
-                        DBFactory.getIns().stop();
-                        WebService.getIns().stop();
-                        try {
-                            Files.walkFileTree(Paths.get("data-base"), new SimpleFileVisitor<Path>() {
-                                @Override
-                                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
-                                        throws IOException {
-                                    Files.delete(file);
-                                    return FileVisitResult.CONTINUE;
-                                }
-
-                                @Override
-                                public FileVisitResult postVisitDirectory(Path dir, IOException exc)
-                                        throws IOException {
-                                    Files.delete(dir);
-                                    return FileVisitResult.CONTINUE;
-                                }
-                            });
-                        } catch (IOException e) {
-                            e.printStackTrace(System.out);
-                        }
-                        setTitle(primaryStage, __title + "-已清档");
-                        ApplicationMain.startDb(false);
-                    });
-                    popup.add(menuItem);
-                }
-                popup.add("-");
-                {
-                    MenuItem menuItem = new MenuItem();
-                    menuItem.setLabel("退出|Close");
-                    menuItem.addActionListener(event -> {
-                        DBFactory.getIns().stop();
-                        WebService.getIns().stop();
-                        Runtime.getRuntime().halt(0);
-                    });
-                    popup.add(menuItem);
-                }
 
                 /*TODO 图标双击事件 */
                 trayIcon.addActionListener(event -> Platform.runLater(WebService.getIns().getShowWindow()));
-                trayIcon.setPopupMenu(popup);
                 tray.add(trayIcon);
                 icon_checked.set(true);
                 log.warn("创建托盘图标");
