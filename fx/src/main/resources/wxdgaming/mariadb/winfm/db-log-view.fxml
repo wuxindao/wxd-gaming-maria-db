@@ -8,28 +8,34 @@
     <children>
         <MenuBar prefHeight="28.0" StackPane.alignment="TOP_LEFT">
             <menus>
-                <Menu mnemonicParsing="false" text="File">
-                    <MenuItem fx:id="mi_start" disable="true" onAction="#startAction" text="启动" />
-                    <SeparatorMenuItem />
-                    <MenuItem fx:id="mi_stop" onAction="#stopAction" text="停止" />
+                <Menu text="File">
+                    <MenuItem fx:id="mi_start" disable="true" onAction="#startAction" text="启动"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem fx:id="mi_stop" onAction="#stopAction" text="停止"/>
                     <SeparatorMenuItem/>
                     <MenuItem text="清档" onAction="#clearAction"/>
                     <SeparatorMenuItem/>
                     <MenuItem text="退出" onAction="#closeAction"/>
                 </Menu>
-                <Menu mnemonicParsing="false" text="编辑">
+                <Menu text="编辑">
                     <MenuItem text="修改配置" onAction="#openConfig"/>
                     <SeparatorMenuItem/>
                     <MenuItem text="查看日志" onAction="#openLogFile"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem onAction="#clearOutAction" text="清屏"/>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                    <MenuItem mnemonicParsing="false" text="About"/>
+                <Menu text="过滤关键词：" disable="true"/>
+                <Menu text="Help">
+                    <MenuItem text="About" onAction="#about"/>
+                    <graphic>
+                        <TextField fx:id="txt_grep" prefWidth="340.0"/>
+                    </graphic>
                 </Menu>
             </menus>
         </MenuBar>
         <TextArea fx:id="text_area" editable="false" StackPane.alignment="TOP_LEFT">
             <StackPane.margin>
-                <Insets top="28.0" />
+                <Insets top="28.0"/>
             </StackPane.margin>
         </TextArea>
     </children>

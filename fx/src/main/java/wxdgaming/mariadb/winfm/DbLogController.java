@@ -4,8 +4,10 @@ import com.sun.javafx.application.PlatformImpl;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import lombok.extern.slf4j.Slf4j;
 import wxdgaming.mariadb.server.DBFactory;
 import wxdgaming.mariadb.server.WebService;
@@ -25,6 +27,7 @@ public class DbLogController {
     public javafx.scene.control.MenuItem mi_start;
     public MenuItem mi_stop;
     public TextArea text_area;
+    public TextField txt_grep;
 
     AtomicInteger textLineNumber = new AtomicInteger(0);
     Thread hook;
@@ -44,10 +47,18 @@ public class DbLogController {
             PrintStream printStream = new PrintStream(System.out) {
                 @Override public void print(String x) {
                     try {
+                        /*委托给ui线程*/
                         Platform.runLater(() -> {
                             String line = x;
-                            /*委托给ui线程*/
                             try {
+                                if (txt_grep.getText() != null && !txt_grep.getText().trim().isEmpty()) {
+                                    String[] split = txt_grep.getText().split(" ");
+                                    for (String grep : split) {
+                                        if (!line.contains(grep)) {
+                                            return;
+                                        }
+                                    }
+                                }
                                 text_area.appendText(line);
                                 text_area.appendText("\n");
                                 textLineNumber.incrementAndGet();
@@ -77,7 +88,7 @@ public class DbLogController {
 
     @FXML
     private void stopAction(ActionEvent event) {
-        clearListView();
+        clearOut();
         PlatformImpl.runAndWait(() -> {
             DBFactory.getIns().stop();
             WebService.getIns().stop();
@@ -91,7 +102,7 @@ public class DbLogController {
     private void clearAction(ActionEvent event) {
         DBFactory.getIns().stop();
         WebService.getIns().stop();
-        clearListView();
+        clearOut();
         PlatformImpl.runAndWait(() -> {
             mi_start.setDisable(false);
             mi_stop.setDisable(true);
@@ -132,11 +143,16 @@ public class DbLogController {
         textLineNumber.decrementAndGet();
     }
 
-    private void clearListView() {
+    private void clearOut() {
         PlatformImpl.runAndWait(() -> {
             text_area.setText("");
             textLineNumber.set(0);
         });
+    }
+
+    @FXML
+    private void clearOutAction(ActionEvent event) {
+        clearOut();
     }
 
     @FXML
@@ -168,4 +184,22 @@ public class DbLogController {
         }
     }
 
+    @FXML
+    private void about(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("关于");
+        String content = """
+                    数据库服务
+                
+                提供游戏数据库服务存储数据，
+                
+                在过滤框可以根据关键字过滤自己想要查看的内容，多个过滤词用空格隔开
+                例如：
+                输入字符串：我是测试字符串
+                过滤词：我 字符
+                """;
+        alert.setHeaderText(content);
+        alert.setContentText("版本：V1.0.1");
+        alert.showAndWait();
+    }
 }
