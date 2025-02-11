@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
@@ -40,6 +41,17 @@ public class DBFactory {
         myDB = new MyDB(configBuilder.build(), dataBase, user, pwd, 60);
         myDB.start();
         write(1);
+    }
+
+    public void sourceSql(String sqlFile) {
+        File file = new File(sqlFile);
+        String data_base = file.getParentFile().getName();
+        try {
+            myDB.source(new FileInputStream(sqlFile), myDB.getUser(), myDB.getPwd(), data_base);
+            log.info("还原 {} {} 完成", data_base, sqlFile);
+        } catch (Exception e) {
+            log.error("还原文件：{} {}", data_base, sqlFile, e);
+        }
     }
 
     public void write(int state) throws IOException {

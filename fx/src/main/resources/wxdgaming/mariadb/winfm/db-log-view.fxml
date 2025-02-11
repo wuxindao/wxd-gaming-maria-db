@@ -21,8 +21,11 @@
                     <MenuItem text="修改配置" onAction="#openConfig"/>
                     <SeparatorMenuItem/>
                     <MenuItem text="查看日志" onAction="#openLogFile"/>
+                </Menu>
+                <Menu mnemonicParsing="false" text="备份/还原">
+                    <MenuItem onAction="#bakAction" text="备份"/>
                     <SeparatorMenuItem/>
-                    <MenuItem onAction="#clearOutAction" text="清屏"/>
+                    <MenuItem onAction="#sourceAction" text="还原"/>
                 </Menu>
                 <Menu text="过滤关键词：" disable="true"/>
                 <Menu text="Help">

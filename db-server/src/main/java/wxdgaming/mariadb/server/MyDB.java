@@ -4,6 +4,7 @@ import ch.vorburger.exec.ManagedProcess;
 import ch.vorburger.exec.ManagedProcessException;
 import ch.vorburger.mariadb4j.DB;
 import ch.vorburger.mariadb4j.DBConfiguration;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
@@ -14,11 +15,12 @@ import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
+@Getter
 public class MyDB extends DB {
 
-    private String data_base;
-    private String user;
-    private String pwd;
+    private final String data_base;
+    private final String user;
+    private final String pwd;
     int bak_Time = 0;
     Timer timer = new Timer();
 

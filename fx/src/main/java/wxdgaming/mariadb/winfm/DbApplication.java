@@ -71,7 +71,7 @@ public class DbApplication extends Application {
             try {
                 /*必须让界面闪一下，不然程序不稳定，容易崩溃*/
                 Thread.sleep(1000);
-                closeSelect(primaryStage);
+                // closeSelect(primaryStage);
             } catch (InterruptedException ignore) {}
         });
     }
