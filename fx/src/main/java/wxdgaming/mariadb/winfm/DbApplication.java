@@ -6,23 +6,24 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.SceneAntialiasing;
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
+import wxdgaming.mariadb.server.RunAsync;
 import wxdgaming.mariadb.server.WebService;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.net.URL;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Slf4j
 public class DbApplication extends Application {
 
-    public static String __title = "wxd-gaming-数据库服务";
+    public static String __title = "数据库服务";
     public static String __iconName = "db-icon.png";
 
     static AtomicBoolean icon_checked = new AtomicBoolean();
@@ -53,7 +54,7 @@ public class DbApplication extends Application {
         Parent loaded = fxmlLoader.load();
         DbLogController controller = fxmlLoader.getController();
         controller.init();
-        Scene scene = new Scene(loaded, Color.BLACK);
+        Scene scene = new Scene(loaded, 1000, 600, false, SceneAntialiasing.BALANCED);
         primaryStage.setTitle(__title);
         primaryStage.setScene(scene);
 
@@ -67,11 +68,11 @@ public class DbApplication extends Application {
         primaryStage.show();
         primaryStage.setAlwaysOnTop(true);
         primaryStage.setAlwaysOnTop(false);
-        CompletableFuture.runAsync(() -> {
+        RunAsync.async(() -> {
             try {
                 /*必须让界面闪一下，不然程序不稳定，容易崩溃*/
                 Thread.sleep(1000);
-                // closeSelect(primaryStage);
+                closeSelect(primaryStage);
             } catch (InterruptedException ignore) {}
         });
     }
@@ -128,5 +129,12 @@ public class DbApplication extends Application {
         // } else {
         //     primaryStage.hide();
         // }
+    }
+
+    public static void alert(String title, String content) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(title);
+        alert.setHeaderText(content);
+        alert.showAndWait();
     }
 }

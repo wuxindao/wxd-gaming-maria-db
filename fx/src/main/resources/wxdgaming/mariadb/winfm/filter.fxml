@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane prefHeight="85.0" prefWidth="400.0"
+            xmlns="http://javafx.com/javafx/22"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="wxdgaming.mariadb.winfm.FilterController">
+    <children>
+        <TextField fx:id="txt_find" layoutX="23.0" layoutY="31.0" prefHeight="23.0" prefWidth="354.0"/>
+    </children>
+</AnchorPane>

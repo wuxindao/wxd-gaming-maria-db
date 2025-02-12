@@ -4,24 +4,27 @@ import com.sun.javafx.application.PlatformImpl;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import lombok.extern.slf4j.Slf4j;
 import wxdgaming.mariadb.server.DBFactory;
+import wxdgaming.mariadb.server.RunAsync;
 import wxdgaming.mariadb.server.WebService;
 
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintStream;
+import java.io.*;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Supplier;
 
 
 @Slf4j
@@ -30,13 +33,15 @@ public class DbLogController {
     public MenuItem mi_start;
     public MenuItem mi_stop;
     public TextArea text_area;
-    public TextField txt_grep;
 
+    AtomicBoolean scrollLocked = new AtomicBoolean(false);
     AtomicBoolean openOutput = new AtomicBoolean(true);
-    AtomicBoolean openFilter = new AtomicBoolean(true);
+    Supplier<String> openFilter = null;
 
     AtomicInteger textLineNumber = new AtomicInteger(0);
     Thread hook;
+
+    AtomicInteger findIndex = new AtomicInteger(0);
 
     public DbLogController() throws Exception {
 
@@ -56,24 +61,41 @@ public class DbLogController {
                         if (!openOutput.get()) return;
                         /*委托给ui线程*/
                         Platform.runLater(() -> {
-                            String line = x;
                             try {
-                                if (openFilter.get()) {
-                                    if (txt_grep.getText() != null && !txt_grep.getText().trim().isEmpty()) {
-                                        String[] split = txt_grep.getText().split(" ");
+                                if (openFilter != null) {
+                                    String string = openFilter.get();
+                                    if (string != null && !string.trim().isEmpty()) {
+                                        String[] split = string.split(" ");
                                         for (String grep : split) {
-                                            if (!line.contains(grep)) {
+                                            if (!x.contains(grep)) {
                                                 return;
                                             }
                                         }
                                     }
                                 }
-                                text_area.appendText(line);
-                                text_area.appendText("\n");
-                                textLineNumber.incrementAndGet();
-                                if (textLineNumber.get() > 1500) {
-                                    removeTopLine();
-                                }
+                                try (StringReader strReader = new StringReader(x);
+                                     BufferedReader bufferedReader = new BufferedReader(strReader);) {
+                                    String line;
+                                    while ((line = bufferedReader.readLine()) != null) {
+                                        if (line.length() > 700)
+                                            line = line.substring(0, 700) + "......";
+                                        double scrollTop = text_area.getScrollTop();
+                                        IndexRange selection = text_area.getSelection();
+                                        int start = selection.getStart();
+                                        int end = selection.getEnd();
+                                        text_area.appendText(line);
+                                        text_area.appendText("\n");
+                                        textLineNumber.incrementAndGet();
+                                        if (textLineNumber.get() > 1500) {
+                                            removeTopLine();
+                                        }
+                                        if (scrollLocked.get()) {
+                                            /*拼命锁定*/
+                                            text_area.selectRange(start, end);
+                                            text_area.setScrollTop(scrollTop);
+                                        }
+                                    }
+                                } catch (Throwable ignore) {}
                             } catch (Throwable ignore) {}
                         });
                     } catch (Throwable ignore) {}
@@ -91,58 +113,52 @@ public class DbLogController {
         {
             copyMenuItem.setDisable(true);
             copyMenuItem.setOnAction(event -> text_area.copy());
-
             contextMenu.getItems().add(copyMenuItem);
-        }
-        {
-            // MenuItem pasteMenuItem = new MenuItem("粘贴");
-            // pasteMenuItem.setOnAction(event -> text_area.paste());
-            // contextMenu.getItems().add(new SeparatorMenuItem());
-            // contextMenu.getItems().add(pasteMenuItem);
-
-        }
-        {
             MenuItem selectAllMenuItem = new MenuItem("全选");
             selectAllMenuItem.setOnAction(event -> text_area.selectAll());
-            contextMenu.getItems().add(new SeparatorMenuItem());
             contextMenu.getItems().add(selectAllMenuItem);
         }
+        contextMenu.getItems().add(new SeparatorMenuItem());
         {
-            MenuItem clearMenuItem = new MenuItem("清屏");
-            clearMenuItem.setOnAction(event -> clearOut());
-            contextMenu.getItems().add(new SeparatorMenuItem());
-            contextMenu.getItems().add(clearMenuItem);
-        }
-
-        {
-            MenuItem openFilterMenuItem = new MenuItem("启用关键词过滤");
-            MenuItem closeFilterMenuItem = new MenuItem("关闭关键词过滤");
-            openFilterMenuItem.setDisable(true);
-            contextMenu.getItems().add(new SeparatorMenuItem());
-            contextMenu.getItems().add(openFilterMenuItem);
-            contextMenu.getItems().add(new SeparatorMenuItem());
-            contextMenu.getItems().add(closeFilterMenuItem);
-
+            MenuItem openFilterMenuItem = new MenuItem("关键词过滤");
             openFilterMenuItem.setOnAction(event -> {
-                openFilter.set(true);
-                openFilterMenuItem.setDisable(true);
-                closeFilterMenuItem.setDisable(false);
+                openFilterWindow();
             });
-            closeFilterMenuItem.setOnAction(event -> {
-                openFilter.set(false);
-                closeFilterMenuItem.setDisable(true);
-                openFilterMenuItem.setDisable(false);
+            contextMenu.getItems().add(openFilterMenuItem);
+            MenuItem findMenuItem = new MenuItem("搜索");
+            findMenuItem.setOnAction(event -> {
+                scrollLocked.set(true);
+                openFindWindow();
             });
-
+            contextMenu.getItems().add(findMenuItem);
         }
-
+        contextMenu.getItems().add(new SeparatorMenuItem());
+        {
+            {
+                MenuItem clearMenuItem = new MenuItem("锁屏");
+                clearMenuItem.setOnAction(event -> scrollLocked.set(true));
+                contextMenu.getItems().add(clearMenuItem);
+            }
+            {
+                MenuItem clearMenuItem = new MenuItem("滚屏");
+                clearMenuItem.setOnAction(event -> scrollLocked.set(false));
+                contextMenu.getItems().add(clearMenuItem);
+            }
+            {
+                MenuItem clearMenuItem = new MenuItem("清屏");
+                clearMenuItem.setOnAction(event -> {
+                    scrollLocked.set(false);
+                    clearOut();
+                });
+                contextMenu.getItems().add(clearMenuItem);
+            }
+        }
+        contextMenu.getItems().add(new SeparatorMenuItem());
         {
             MenuItem pauseMenuItem = new MenuItem("暂停输出");
             MenuItem recoverMenuItem = new MenuItem("恢复输出");
             recoverMenuItem.setDisable(true);
-            contextMenu.getItems().add(new SeparatorMenuItem());
             contextMenu.getItems().add(pauseMenuItem);
-            contextMenu.getItems().add(new SeparatorMenuItem());
             contextMenu.getItems().add(recoverMenuItem);
 
             pauseMenuItem.setOnAction(event -> {
@@ -171,8 +187,100 @@ public class DbLogController {
                 }
             });
         }
+
+        // RunAsync.async(() -> {
+        //     for (; ; ) {
+        //         try {
+        //             Thread.sleep(300);
+        //         } catch (InterruptedException e) {
+        //             e.printStackTrace();
+        //         }
+        //         System.out.println(randomString());
+        //     }
+        // });
+
     }
 
+    public void openFilterWindow() {
+        try {
+            // 加载新的FXML文件
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/wxdgaming/mariadb/winfm/filter.fxml"));
+            Parent root = loader.load();
+            FilterController controller = loader.getController();
+            // 创建新的Stage
+            Stage newStage = new Stage();
+            newStage.setTitle("过滤");
+            // 设置舞台样式为无装饰，去掉系统默认的标题栏和按钮
+            newStage.initStyle(StageStyle.UTILITY);
+            newStage.setScene(new Scene(root));
+            newStage.setResizable(false);
+            // 显示新的Stage
+            newStage.show();
+            newStage.setAlwaysOnTop(true);
+
+            newStage.setOnCloseRequest(windowEvent -> {
+                openFilter = null;
+            });
+
+            openFilter = () -> controller.txt_find.getText();
+
+        } catch (IOException e) {
+            e.printStackTrace(System.out);
+        }
+    }
+
+    public void openFindWindow() {
+        try {
+            // 加载新的FXML文件
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/wxdgaming/mariadb/winfm/find.fxml"));
+            Parent root = loader.load();
+            FindController controller = loader.getController();
+            /*注册事件*/
+            controller.init(this::find);
+            // 创建新的Stage
+            Stage newStage = new Stage();
+            // 设置舞台样式为无装饰，去掉系统默认的标题栏和按钮
+            newStage.initStyle(StageStyle.UTILITY);
+            newStage.setTitle("查找");
+            newStage.setScene(new Scene(root));
+            newStage.setResizable(false);
+            // 显示新的Stage
+            newStage.show();
+            newStage.setAlwaysOnTop(true);
+
+            newStage.setOnCloseRequest(windowEvent -> {
+                scrollLocked.set(false);
+            });
+
+        } catch (IOException e) {
+            e.printStackTrace(System.out);
+        }
+    }
+
+    public String find(String text) {
+        scrollLocked.set(true);
+        int indexOf = text_area.getText().indexOf(text, findIndex.get());
+        if (indexOf > 0) {
+            text_area.selectRange(indexOf, indexOf + text.length());
+            findIndex.set(indexOf + text.length());
+            return "位置：" + indexOf;
+        } else {
+            findIndex.set(0);
+            return "未找到";
+        }
+    }
+
+    public String randomString() {
+        int len = (int) (Math.random() * 1000);
+
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < len; i++) {
+            int randomIndex = (int) (Math.random() * 62);
+            char randomChar = (char) (randomIndex < 10 ? '0' + randomIndex : (randomIndex < 36 ? 'a' + randomIndex - 10 : 'A' + randomIndex - 36));
+            sb.append(randomChar);
+        }
+        return sb.toString();
+    }
 
     @FXML
     private void startAction(ActionEvent event) {
@@ -235,7 +343,7 @@ public class DbLogController {
     }
 
     public void clearFile(String path) {
-        CompletableFuture.runAsync(() -> {
+        RunAsync.async(() -> {
             try {
                 Path start = Paths.get(path);
                 if (Files.exists(start)) {
@@ -331,4 +439,5 @@ public class DbLogController {
         alert.setContentText("版本：V1.0.1");
         alert.showAndWait();
     }
+
 }

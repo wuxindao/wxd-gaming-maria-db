@@ -11,4 +11,4 @@ echo %PATH%
 :: 打印Java版本信息，确认配置成功
 java -version
 
-D:\\apache-maven-3.3.9\\bin\\mvn clean package
+C:\\java\\apache-maven-3.6.3\\bin\\mvn clean package

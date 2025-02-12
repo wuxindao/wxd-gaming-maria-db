@@ -2,14 +2,13 @@ package wxdgaming.mariadb.server;
 
 import ch.vorburger.mariadb4j.DBConfigurationBuilder;
 import lombok.Getter;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardOpenOption;
 
@@ -30,8 +29,10 @@ public class DBFactory {
 
     private DBConfigurationBuilder configBuilder;
     private MyDB myDB;
+    private boolean started = false;
 
-    public void init(String dataBase, int port, String user, String pwd) throws Exception {
+    public boolean init(String dataBase, int port, String user, String pwd) throws Exception {
+        if (started) return false;
         configBuilder = DBConfigurationBuilder.newBuilder();
         configBuilder.setPort(port); // OR, default: setPort(0); => autom. detect free port
         configBuilder.setBaseDir("data-base/"); // just an example
@@ -40,10 +41,16 @@ public class DBFactory {
 
         myDB = new MyDB(configBuilder.build(), dataBase, user, pwd, 60);
         myDB.start();
-        write(1);
+        write(2, "成功");
+        started = true;
+        return true;
     }
 
     public void sourceSql(String sqlFile) {
+        if (!started) {
+            log.error("数据库未启动");
+            return;
+        }
         File file = new File(sqlFile);
         String data_base = file.getParentFile().getName();
         try {
@@ -54,11 +61,11 @@ public class DBFactory {
         }
     }
 
-    public void write(int state) throws IOException {
-        String json = "{\"PID\":" + fetchProcessId() + ", \"states\":" + state + ", \"web-port\":" + WebService.getIns().getPort() + "}";
-        Files.write(
+    @SneakyThrows public static void write(int state, String msg) {
+        String json = "{\"PID\":" + fetchProcessId() + ", \"states\":" + state + ", \"web-port\":" + WebService.getIns().getPort() + ", \"msg\":" + "\"" + msg + "\"" + "}";
+        Files.writeString(
                 ok.toPath(),
-                json.getBytes(StandardCharsets.UTF_8),
+                json,
                 StandardOpenOption.CREATE,
                 StandardOpenOption.TRUNCATE_EXISTING
         );
@@ -78,7 +85,7 @@ public class DBFactory {
 
     public void stop() {
         try {
-            write(0);
+            write(0, "停止");
         } catch (Exception ignore) {}
         try {
             if (getMyDB() != null) {

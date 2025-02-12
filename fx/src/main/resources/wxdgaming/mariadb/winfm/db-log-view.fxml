@@ -27,12 +27,8 @@
                     <SeparatorMenuItem/>
                     <MenuItem onAction="#sourceAction" text="还原"/>
                 </Menu>
-                <Menu text="过滤关键词：" disable="true"/>
                 <Menu text="Help">
                     <MenuItem text="About" onAction="#about"/>
-                    <graphic>
-                        <TextField fx:id="txt_grep" prefWidth="340.0"/>
-                    </graphic>
                 </Menu>
             </menus>
         </MenuBar>
