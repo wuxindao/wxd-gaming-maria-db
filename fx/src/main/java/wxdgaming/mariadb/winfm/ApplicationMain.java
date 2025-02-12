@@ -112,9 +112,9 @@ public class ApplicationMain {
 
                 if (!initResult) return;
 
-                DBFactory.getIns().print();
                 WebService.getIns().start();
                 WebService.getIns().initShow();
+                DBFactory.getIns().print();
 
             } catch (Throwable e) {
                 log.error("start failed ", e);

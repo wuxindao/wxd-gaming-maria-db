@@ -75,6 +75,8 @@ public class DBFactory {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("====================================================").append("\n");
         stringBuilder.append("").append("\n");
+        stringBuilder.append("               启动完成").append("\n");
+        stringBuilder.append("").append("\n");
         stringBuilder.append(" db service  - " + "127.0.0.1:" + myDB.getConfiguration().getPort()).append("\n");
         stringBuilder.append("web service  - " + "127.0.0.1:" + WebService.getIns().getPort()).append("\n");
         stringBuilder.append("").append("\n");
