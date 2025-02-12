@@ -438,6 +438,9 @@
   "name":"javafx.scene.image.Image"
 },
 {
+  "name":"javafx.scene.image.ImageView"
+},
+{
   "name":"javafx.scene.input.Clipboard"
 },
 {
@@ -714,9 +717,17 @@
   "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"about","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"bakAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"clearAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"clearFile","parameterTypes":["java.lang.String"] }, {"name":"clearOut","parameterTypes":[] }, {"name":"closeAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"find","parameterTypes":["java.lang.String"] }, {"name":"init","parameterTypes":[] }, {"name":"lambda$clearAction$16","parameterTypes":[] }, {"name":"lambda$clearFile$17","parameterTypes":["java.lang.String"] }, {"name":"lambda$clearOut$18","parameterTypes":[] }, {"name":"lambda$init$1","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"lambda$init$2","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"lambda$init$3","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"lambda$init$4","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"lambda$init$5","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"lambda$init$6","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"lambda$init$7","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"lambda$init$8","parameterTypes":["javafx.scene.control.MenuItem","javafx.scene.control.MenuItem","javafx.event.ActionEvent"] }, {"name":"lambda$init$9","parameterTypes":["javafx.scene.control.MenuItem","javafx.scene.control.MenuItem","javafx.event.ActionEvent"] }, {"name":"lambda$openFilterWindow$11","parameterTypes":["javafx.stage.WindowEvent"] }, {"name":"lambda$openFindWindow$13","parameterTypes":["javafx.stage.WindowEvent"] }, {"name":"lambda$startAction$14","parameterTypes":[] }, {"name":"lambda$stopAction$15","parameterTypes":[] }, {"name":"openConfig","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"openFilterWindow","parameterTypes":[] }, {"name":"openFindWindow","parameterTypes":[] }, {"name":"openLogFile","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"randomString","parameterTypes":[] }, {"name":"removeTopLine","parameterTypes":[] }, {"name":"sourceAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"startAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"stopAction","parameterTypes":["javafx.event.ActionEvent"] }]
 },
 {
+  "name":"wxdgaming.mariadb.winfm.FilterController",
+  "allDeclaredFields":true,
+  "queryAllDeclaredMethods":true,
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"wxdgaming.mariadb.winfm.FindController",
   "allDeclaredFields":true,
   "queryAllDeclaredMethods":true,
-  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"btn_find","parameterTypes":["javafx.event.ActionEvent"] }]
+  "queryAllDeclaredConstructors":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"btn_find","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"init","parameterTypes":["java.util.function.Function"] }]
 }
 ]

@@ -78,7 +78,7 @@ public class DbApplication extends Application {
     }
 
     public static void setTitle(Stage primaryStage, String title) {
-        Platform.runLater(() -> primaryStage.setTitle(title));
+        PlatformImpl.runLater(() -> primaryStage.setTitle(title));
     }
 
     /** 开启系统托盘图标 */
@@ -92,7 +92,9 @@ public class DbApplication extends Application {
                 trayIcon.setImageAutoSize(true);
 
                 /*TODO 图标双击事件 */
-                trayIcon.addActionListener(event -> Platform.runLater(WebService.getIns().getShowWindow()));
+                trayIcon.addActionListener(event -> {
+                    WebService.getIns().getShowWindow().run();
+                });
                 tray.add(trayIcon);
                 icon_checked.set(true);
                 log.warn("创建托盘图标");
@@ -107,9 +109,9 @@ public class DbApplication extends Application {
 
     public void closeSelect(Stage primaryStage) {
         if (icon_checked.get()) {
-            Platform.runLater(() -> primaryStage.hide());
+            PlatformImpl.runLater(() -> primaryStage.hide());
         } else {
-            Platform.runLater(() -> primaryStage.setIconified(true));
+            PlatformImpl.runLater(() -> primaryStage.setIconified(true));
         }
 
         // Alert alert = new Alert(Alert.AlertType.CONFIRMATION);

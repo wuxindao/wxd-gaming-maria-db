@@ -65,7 +65,7 @@ public class ApplicationMain {
                 List<String> strings = GraalvmUtil.jarResources();
                 for (String string : strings) {
                     URL resource = contextClassLoader.getResource(string);
-                    System.out.println(string + " - " + resource);
+                    log.info("{} - {}", string, resource);
                 }
 
                 ReflectAction reflectAction = ReflectAction.of();
@@ -73,6 +73,8 @@ public class ApplicationMain {
                 reflectAction.action(DBFactory.class, false);
                 reflectAction.action(DbApplication.class, false);
                 reflectAction.action(DbLogController.class, false);
+                reflectAction.action(FindController.class, false);
+                reflectAction.action(FilterController.class, false);
             }
         } catch (Throwable e) {
             e.printStackTrace(System.out);

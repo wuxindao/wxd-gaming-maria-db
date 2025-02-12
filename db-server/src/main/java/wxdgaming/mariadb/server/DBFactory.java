@@ -97,6 +97,7 @@ public class DBFactory {
             log.info("db service close {}", e.toString());
         }
         log.info("db service close");
+        started= false;
     }
 
     public static String fetchProcessId() {

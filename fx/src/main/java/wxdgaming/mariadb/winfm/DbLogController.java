@@ -1,7 +1,6 @@
 package wxdgaming.mariadb.winfm;
 
 import com.sun.javafx.application.PlatformImpl;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +23,7 @@ import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 
 
@@ -36,7 +36,7 @@ public class DbLogController {
 
     AtomicBoolean scrollLocked = new AtomicBoolean(false);
     AtomicBoolean openOutput = new AtomicBoolean(true);
-    Supplier<String> openFilter = null;
+    AtomicReference<Supplier<String>> openFilter = new AtomicReference<>();
 
     AtomicInteger textLineNumber = new AtomicInteger(0);
     Thread hook;
@@ -56,49 +56,52 @@ public class DbLogController {
         try {
             /*TODO 必须要等他初始化完成*/
             PrintStream printStream = new PrintStream(System.out) {
+
+                @Override public void print(Object obj) {
+                    print(String.valueOf(obj));
+                }
+
                 @Override public void print(String x) {
-                    try {
-                        if (!openOutput.get()) return;
-                        /*委托给ui线程*/
-                        Platform.runLater(() -> {
-                            try {
-                                if (openFilter != null) {
-                                    String string = openFilter.get();
-                                    if (string != null && !string.trim().isEmpty()) {
-                                        String[] split = string.split(" ");
-                                        for (String grep : split) {
-                                            if (!x.contains(grep)) {
-                                                return;
-                                            }
+                    /*委托给ui线程*/
+                    RunAsync.runUI(() -> {
+                        try {
+                            if (!openOutput.get()) return;
+                            if (openFilter.get() != null) {
+                                String string = openFilter.get().get();
+                                if (string != null && !string.trim().isEmpty()) {
+                                    String[] split = string.split(" ");
+                                    for (String grep : split) {
+                                        if (!x.contains(grep)) {
+                                            return;
                                         }
                                     }
                                 }
-                                try (StringReader strReader = new StringReader(x);
-                                     BufferedReader bufferedReader = new BufferedReader(strReader);) {
-                                    String line;
-                                    while ((line = bufferedReader.readLine()) != null) {
-                                        if (line.length() > 700)
-                                            line = line.substring(0, 700) + "......";
-                                        double scrollTop = text_area.getScrollTop();
-                                        IndexRange selection = text_area.getSelection();
-                                        int start = selection.getStart();
-                                        int end = selection.getEnd();
-                                        text_area.appendText(line);
-                                        text_area.appendText("\n");
-                                        textLineNumber.incrementAndGet();
-                                        if (textLineNumber.get() > 1500) {
-                                            removeTopLine();
-                                        }
-                                        if (scrollLocked.get()) {
-                                            /*拼命锁定*/
-                                            text_area.selectRange(start, end);
-                                            text_area.setScrollTop(scrollTop);
-                                        }
+                            }
+                            try (StringReader strReader = new StringReader(x);
+                                 BufferedReader bufferedReader = new BufferedReader(strReader);) {
+                                String line;
+                                while ((line = bufferedReader.readLine()) != null) {
+                                    if (line.length() > 700)
+                                        line = line.substring(0, 700) + "......";
+                                    double scrollTop = text_area.getScrollTop();
+                                    IndexRange selection = text_area.getSelection();
+                                    int start = selection.getStart();
+                                    int end = selection.getEnd();
+                                    text_area.appendText(line);
+                                    text_area.appendText("\n");
+                                    textLineNumber.incrementAndGet();
+                                    if (textLineNumber.get() > 1500) {
+                                        removeTopLine();
                                     }
-                                } catch (Throwable ignore) {}
+                                    if (scrollLocked.get()) {
+                                        /*拼命锁定*/
+                                        text_area.selectRange(start, end);
+                                        text_area.setScrollTop(scrollTop);
+                                    }
+                                }
                             } catch (Throwable ignore) {}
-                        });
-                    } catch (Throwable ignore) {}
+                        } catch (Throwable ignore) {}
+                    });
                 }
             };
             System.setOut(printStream);
@@ -202,59 +205,63 @@ public class DbLogController {
     }
 
     public void openFilterWindow() {
-        try {
-            // 加载新的FXML文件
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/wxdgaming/mariadb/winfm/filter.fxml"));
-            Parent root = loader.load();
-            FilterController controller = loader.getController();
-            // 创建新的Stage
-            Stage newStage = new Stage();
-            newStage.setTitle("过滤");
-            // 设置舞台样式为无装饰，去掉系统默认的标题栏和按钮
-            newStage.initStyle(StageStyle.UTILITY);
-            newStage.setScene(new Scene(root));
-            newStage.setResizable(false);
-            // 显示新的Stage
-            newStage.show();
-            newStage.setAlwaysOnTop(true);
+        PlatformImpl.runLater(() -> {
+            try {
+                // 加载新的FXML文件
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/wxdgaming/mariadb/winfm/filter.fxml"));
+                Parent root = loader.load();
+                FilterController controller = loader.getController();
+                // 创建新的Stage
+                Stage newStage = new Stage();
+                newStage.setTitle("过滤");
+                // 设置舞台样式为无装饰，去掉系统默认的标题栏和按钮
+                newStage.initStyle(StageStyle.UTILITY);
+                newStage.setScene(new Scene(root));
+                newStage.setResizable(false);
+                // 显示新的Stage
+                newStage.show();
+                newStage.setAlwaysOnTop(true);
 
-            newStage.setOnCloseRequest(windowEvent -> {
-                openFilter = null;
-            });
+                newStage.setOnCloseRequest(windowEvent -> {
+                    openFilter.set(null);
+                });
 
-            openFilter = () -> controller.txt_find.getText();
+                openFilter.set(() -> controller.txt_find.getText());
 
-        } catch (IOException e) {
-            e.printStackTrace(System.out);
-        }
+            } catch (IOException e) {
+                e.printStackTrace(System.out);
+            }
+        });
     }
 
     public void openFindWindow() {
-        try {
-            // 加载新的FXML文件
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/wxdgaming/mariadb/winfm/find.fxml"));
-            Parent root = loader.load();
-            FindController controller = loader.getController();
-            /*注册事件*/
-            controller.init(this::find);
-            // 创建新的Stage
-            Stage newStage = new Stage();
-            // 设置舞台样式为无装饰，去掉系统默认的标题栏和按钮
-            newStage.initStyle(StageStyle.UTILITY);
-            newStage.setTitle("查找");
-            newStage.setScene(new Scene(root));
-            newStage.setResizable(false);
-            // 显示新的Stage
-            newStage.show();
-            newStage.setAlwaysOnTop(true);
+        PlatformImpl.runLater(() -> {
+            try {
+                // 加载新的FXML文件
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/wxdgaming/mariadb/winfm/find.fxml"));
+                Parent root = loader.load();
+                FindController controller = loader.getController();
+                /*注册事件*/
+                controller.init(this::find);
+                // 创建新的Stage
+                Stage newStage = new Stage();
+                // 设置舞台样式为无装饰，去掉系统默认的标题栏和按钮
+                newStage.initStyle(StageStyle.UTILITY);
+                newStage.setTitle("查找");
+                newStage.setScene(new Scene(root));
+                newStage.setResizable(false);
+                // 显示新的Stage
+                newStage.show();
+                newStage.setAlwaysOnTop(true);
 
-            newStage.setOnCloseRequest(windowEvent -> {
-                scrollLocked.set(false);
-            });
+                newStage.setOnCloseRequest(windowEvent -> {
+                    scrollLocked.set(false);
+                });
 
-        } catch (IOException e) {
-            e.printStackTrace(System.out);
-        }
+            } catch (IOException e) {
+                e.printStackTrace(System.out);
+            }
+        });
     }
 
     public String find(String text) {
@@ -293,7 +300,6 @@ public class DbLogController {
 
     @FXML
     private void stopAction(ActionEvent event) {
-        clearOut();
         PlatformImpl.runAndWait(() -> {
             DBFactory.getIns().stop();
             WebService.getIns().stop();
@@ -305,11 +311,19 @@ public class DbLogController {
 
     @FXML
     private void bakAction(ActionEvent event) {
+        if (!DBFactory.getIns().isStarted()) {
+            DbApplication.alert("提示", "请先启动数据库服务");
+            return;
+        }
         DBFactory.getIns().getMyDB().bakSql();
     }
 
     @FXML
     private void sourceAction(ActionEvent event) {
+        if (!DBFactory.getIns().isStarted()) {
+            DbApplication.alert("提示", "请先启动数据库服务");
+            return;
+        }
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("选择 SQL 文件");
         File directory = new File("data-base/bak");
@@ -377,12 +391,10 @@ public class DbLogController {
         String text = text_area.getText();
         int firstNewLineIndex = text.indexOf('\n');
         if (firstNewLineIndex != -1) {
-            String newText = text.substring(firstNewLineIndex + 1);
-            text_area.setText(newText);
-        } else {
-            text_area.clear(); // 如果没有换行符，清空整个 TextArea
+            text_area.deleteText(0, firstNewLineIndex);
         }
         textLineNumber.decrementAndGet();
+        text_area.appendText("");
     }
 
     private void clearOut() {

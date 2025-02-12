@@ -3,6 +3,9 @@
   "name":"[Lcom.sun.glass.ui.Screen;"
 },
 {
+  "name":"[Ljava.lang.String;"
+},
+{
   "name":"[Lsun.java2d.loops.GraphicsPrimitive;"
 },
 {
@@ -13,6 +16,14 @@
   "name":"com.sun.glass.ui.Clipboard",
   "fields":[{"name":"name"}],
   "methods":[{"name":"actionPerformed","parameterTypes":["int"] }, {"name":"contentChanged","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.glass.ui.CommonDialogs",
+  "methods":[{"name":"createFileChooserResult","parameterTypes":["java.lang.String[]","com.sun.glass.ui.CommonDialogs$ExtensionFilter[]","int"] }]
+},
+{
+  "name":"com.sun.glass.ui.CommonDialogs$ExtensionFilter",
+  "methods":[{"name":"extensionsToArray","parameterTypes":[] }, {"name":"getDescription","parameterTypes":[] }]
 },
 {
   "name":"com.sun.glass.ui.Cursor",
@@ -279,7 +290,7 @@
 },
 {
   "name":"java.lang.String",
-  "methods":[{"name":"toLowerCase","parameterTypes":["java.util.Locale"] }]
+  "methods":[{"name":"concat","parameterTypes":["java.lang.String"] }, {"name":"toLowerCase","parameterTypes":["java.util.Locale"] }]
 },
 {
   "name":"java.lang.Thread",

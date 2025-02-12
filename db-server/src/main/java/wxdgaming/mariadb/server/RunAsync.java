@@ -1,5 +1,9 @@
 package wxdgaming.mariadb.server;
 
+import com.sun.javafx.application.PlatformImpl;
+
+import java.util.concurrent.LinkedBlockingQueue;
+
 /**
  * 异步执行
  *
@@ -8,7 +12,33 @@ package wxdgaming.mariadb.server;
  **/
 public class RunAsync {
 
-    public static void async(Runnable runnable) {
+    private static final LinkedBlockingQueue<PlatformRunnable> uiRunnableQueue = new LinkedBlockingQueue<>();
+
+    static {
+        Thread thread = new Thread(() -> {
+            while (!Thread.interrupted()) {
+                try {
+                    PlatformRunnable take = uiRunnableQueue.take();
+                    PlatformImpl.runAndWait(() -> {
+                        try {
+                            take.run();
+                        } catch (Exception e) {
+                            e.printStackTrace(System.out);
+                        }
+                    });
+                } catch (Throwable ignored) {}
+            }
+        });
+        thread.setDaemon(true);
+        thread.start();
+    }
+
+    /** 执行ui更新事件 */
+    public static void runUI(PlatformRunnable runnable) {
+        uiRunnableQueue.add(runnable);
+    }
+
+    public static void async(PlatformRunnable runnable) {
         new Thread(() -> {
             try {
                 runnable.run();
