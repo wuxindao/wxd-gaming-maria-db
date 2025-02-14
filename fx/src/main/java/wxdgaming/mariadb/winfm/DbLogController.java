@@ -27,7 +27,6 @@ import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.Supplier;
 
 
@@ -46,9 +45,7 @@ public class DbLogController {
 
     AtomicReference<String> oldFind = new AtomicReference<>("");
     AtomicInteger findIndex = new AtomicInteger(0);
-
-    ReentrantLock lock = new ReentrantLock();
-    StringBuilder stringBuilder = new StringBuilder();
+    TextAreaUpdate textAreaUpdate;
 
     public DbLogController() throws Exception {
 
@@ -61,6 +58,9 @@ public class DbLogController {
 
     public void init() {
         try {
+
+            textAreaUpdate = new TextAreaUpdate(text_area, 1500, 100);
+
             /*TODO 必须要等他初始化完成*/
             PrintStream printStream = new PrintStream(System.out) {
 
@@ -70,66 +70,33 @@ public class DbLogController {
 
                 @Override public void print(String x) {
                     if (!openOutput.get()) return;
-                    lock.lock();
-                    try {
-                        String[] greps = null;
-                        if (openFilter.get() != null) {
-                            String string = openFilter.get().get();
-                            if (string != null && !string.trim().isEmpty()) {
-                                greps = string.split(" ");
-                            }
+                    String[] greps = null;
+                    if (openFilter.get() != null) {
+                        String string = openFilter.get().get();
+                        if (string != null && !string.trim().isEmpty()) {
+                            greps = string.split(" ");
                         }
-                        try (StringReader strReader = new StringReader(x);
-                             BufferedReader bufferedReader = new BufferedReader(strReader);) {
-                            String line;
-                            while ((line = bufferedReader.readLine()) != null) {
-                                if (StringUtils.isNotBlank(line)) {
-                                    if (greps != null) {
-                                        if (!Arrays.stream(greps).allMatch(line::contains)) {
-                                            continue;
-                                        }
+                    }
+                    try (StringReader strReader = new StringReader(x);
+                         BufferedReader bufferedReader = new BufferedReader(strReader);) {
+                        String line;
+                        while ((line = bufferedReader.readLine()) != null) {
+                            if (StringUtils.isNotBlank(line)) {
+                                if (greps != null) {
+                                    if (!Arrays.stream(greps).allMatch(line::contains)) {
+                                        continue;
                                     }
                                 }
-                                if (!stringBuilder.isEmpty()) stringBuilder.append("\n");
-                                stringBuilder.append(line);
                             }
-                        } catch (Throwable ignore) {}
-                    } finally {
-                        lock.unlock();
-                    }
+                            textAreaUpdate.addText(line);
+                        }
+                    } catch (Throwable ignore) {}
                 }
             };
             System.setOut(printStream);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-        RunAsync.async(() -> {
-            while (!Thread.interrupted()) {
-                try {
-                    Thread.sleep(10);
-                    final String x;
-                    lock.lock();
-                    try {
-                        if (!stringBuilder.isEmpty()) {
-                            x = stringBuilder.toString();
-                            stringBuilder = new StringBuilder();
-                        } else {
-                            continue;
-                        }
-                    } finally {
-                        lock.unlock();
-                    }
-                    PlatformImpl.runAndWait(() -> {
-                        /*一次性追加文本，这样可以减少卡顿*/
-                        if (text_area.getLength() > 0)
-                            text_area.appendText("\n");
-                        text_area.appendText(x);
-                        removeTopLine();
-                    });
-                } catch (Exception ignored) {}
-            }
-        });
 
         // 创建自定义的上下文菜单
         ContextMenu contextMenu = new ContextMenu();
@@ -294,11 +261,11 @@ public class DbLogController {
             findIndex.set(0);
         }
         int indexOf = textAreaText.indexOf(findStr, findIndex.get());
-        int allCounted = countCharacter(textAreaText, findStr, -1);
+        int allCounted = TextAreaUpdate.countCharacter(textAreaText, findStr, -1);
         if (indexOf > 0) {
             text_area.selectRange(indexOf, indexOf + findStr.length());
             findIndex.set(indexOf + findStr.length());
-            int findCounted = countCharacter(textAreaText, findStr, indexOf + findStr.length());
+            int findCounted = TextAreaUpdate.countCharacter(textAreaText, findStr, indexOf + findStr.length());
             return "总共：" + allCounted + ", 第：" + findCounted + ", 位置：" + indexOf;
         } else {
             findIndex.set(0);
@@ -413,37 +380,6 @@ public class DbLogController {
             }
             System.out.println("清档完成，需要手动启动");
         });
-    }
-
-    /** 查找指定字符串数量 */
-    public static int countCharacter(String str, String target, int endIndex) {
-        int count = 0;
-        int index = -1;
-        for (; ; ) {
-            if ((index = str.indexOf(target, index + 1)) >= 0 && (endIndex < 0 || index < endIndex)) {
-                count++;
-            } else {
-                break;
-            }
-        }
-        return count;
-    }
-
-    private void removeTopLine() {
-        /*一次性删除多余的字符，界面只更新一次，减少卡顿*/
-        String text = text_area.getText();
-        int delLine = countCharacter(text, "\n", -1) - 800;
-        if (delLine < 1) {
-            return;
-        }
-        int firstNewLineIndex = 0;
-        for (int i = 0; i < delLine; i++) {
-            firstNewLineIndex = text.indexOf('\n', firstNewLineIndex + 1);
-        }
-        if (firstNewLineIndex != -1) {
-            text_area.deleteText(0, firstNewLineIndex + 1);
-        }
-        text_area.appendText(" ");
     }
 
     private void clearOut() {
