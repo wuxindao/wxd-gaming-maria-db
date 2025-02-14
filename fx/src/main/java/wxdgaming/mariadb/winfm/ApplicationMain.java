@@ -75,6 +75,7 @@ public class ApplicationMain {
                 reflectAction.action(DbLogController.class, false);
                 reflectAction.action(FindController.class, false);
                 reflectAction.action(FilterController.class, false);
+                reflectAction.action(TextAreaUpdate.class, false);
             }
         } catch (Throwable e) {
             e.printStackTrace(System.out);

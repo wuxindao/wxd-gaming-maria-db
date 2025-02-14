@@ -37,6 +37,7 @@ public class TextAreaUpdate extends Thread {
         this.textArea = textArea;
         this.showMaxLine = showMaxLine;
         this.actionLine = actionLine;
+        this.setPriority(Thread.MAX_PRIORITY);
         this.setDaemon(true);
         this.start();
     }

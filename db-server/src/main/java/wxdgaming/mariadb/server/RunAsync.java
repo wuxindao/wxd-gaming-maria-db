@@ -29,6 +29,7 @@ public class RunAsync {
                 } catch (Throwable ignored) {}
             }
         });
+        thread.setPriority(Thread.MAX_PRIORITY);
         thread.setDaemon(true);
         thread.start();
     }
