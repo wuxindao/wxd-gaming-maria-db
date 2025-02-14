@@ -32,7 +32,7 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <TextArea fx:id="text_area" editable="false" StackPane.alignment="TOP_LEFT">
+        <TextArea fx:id="text_area" editable="false" wrapText="true" StackPane.alignment="TOP_LEFT">
             <StackPane.margin>
                 <Insets top="28.0"/>
             </StackPane.margin>

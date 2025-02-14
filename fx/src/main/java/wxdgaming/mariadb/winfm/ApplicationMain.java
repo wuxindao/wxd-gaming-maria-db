@@ -60,7 +60,7 @@ public class ApplicationMain {
     public static void initGraalvm() {
         try {
             LogbackResetTimeFilter.out = true;
-            if (javaClassPath() != null && javaClassPath().contains(".jar")) {
+            if (System.getProperty("build.graalvm") != null) {
                 ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
                 List<String> strings = GraalvmUtil.jarResources();
                 for (String string : strings) {

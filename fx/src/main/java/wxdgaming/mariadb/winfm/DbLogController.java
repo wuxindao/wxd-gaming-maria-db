@@ -13,6 +13,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import wxdgaming.mariadb.server.DBFactory;
 import wxdgaming.mariadb.server.RunAsync;
 import wxdgaming.mariadb.server.WebService;
@@ -21,9 +22,12 @@ import java.awt.*;
 import java.io.*;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.function.Supplier;
 
 
@@ -38,10 +42,13 @@ public class DbLogController {
     AtomicBoolean openOutput = new AtomicBoolean(true);
     AtomicReference<Supplier<String>> openFilter = new AtomicReference<>();
 
-    AtomicInteger textLineNumber = new AtomicInteger(0);
     Thread hook;
 
+    AtomicReference<String> oldFind = new AtomicReference<>("");
     AtomicInteger findIndex = new AtomicInteger(0);
+
+    ReentrantLock lock = new ReentrantLock();
+    StringBuilder stringBuilder = new StringBuilder();
 
     public DbLogController() throws Exception {
 
@@ -62,52 +69,67 @@ public class DbLogController {
                 }
 
                 @Override public void print(String x) {
-                    /*委托给ui线程*/
-                    RunAsync.runUI(() -> {
-                        try {
-                            if (!openOutput.get()) return;
-                            if (openFilter.get() != null) {
-                                String string = openFilter.get().get();
-                                if (string != null && !string.trim().isEmpty()) {
-                                    String[] split = string.split(" ");
-                                    for (String grep : split) {
-                                        if (!x.contains(grep)) {
-                                            return;
+                    if (!openOutput.get()) return;
+                    lock.lock();
+                    try {
+                        String[] greps = null;
+                        if (openFilter.get() != null) {
+                            String string = openFilter.get().get();
+                            if (string != null && !string.trim().isEmpty()) {
+                                greps = string.split(" ");
+                            }
+                        }
+                        try (StringReader strReader = new StringReader(x);
+                             BufferedReader bufferedReader = new BufferedReader(strReader);) {
+                            String line;
+                            while ((line = bufferedReader.readLine()) != null) {
+                                if (StringUtils.isNotBlank(line)) {
+                                    if (greps != null) {
+                                        if (!Arrays.stream(greps).allMatch(line::contains)) {
+                                            continue;
                                         }
                                     }
                                 }
+                                if (!stringBuilder.isEmpty()) stringBuilder.append("\n");
+                                stringBuilder.append(line);
                             }
-                            try (StringReader strReader = new StringReader(x);
-                                 BufferedReader bufferedReader = new BufferedReader(strReader);) {
-                                String line;
-                                while ((line = bufferedReader.readLine()) != null) {
-                                    if (line.length() > 700)
-                                        line = line.substring(0, 700) + "......";
-                                    double scrollTop = text_area.getScrollTop();
-                                    IndexRange selection = text_area.getSelection();
-                                    int start = selection.getStart();
-                                    int end = selection.getEnd();
-                                    text_area.appendText(line);
-                                    text_area.appendText("\n");
-                                    textLineNumber.incrementAndGet();
-                                    if (textLineNumber.get() > 1500) {
-                                        removeTopLine();
-                                    }
-                                    if (scrollLocked.get()) {
-                                        /*拼命锁定*/
-                                        text_area.selectRange(start, end);
-                                        text_area.setScrollTop(scrollTop);
-                                    }
-                                }
-                            } catch (Throwable ignore) {}
                         } catch (Throwable ignore) {}
-                    });
+                    } finally {
+                        lock.unlock();
+                    }
                 }
             };
             System.setOut(printStream);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
+        RunAsync.async(() -> {
+            while (!Thread.interrupted()) {
+                try {
+                    Thread.sleep(10);
+                    final String x;
+                    lock.lock();
+                    try {
+                        if (!stringBuilder.isEmpty()) {
+                            x = stringBuilder.toString();
+                            stringBuilder = new StringBuilder();
+                        } else {
+                            continue;
+                        }
+                    } finally {
+                        lock.unlock();
+                    }
+                    PlatformImpl.runAndWait(() -> {
+                        /*一次性追加文本，这样可以减少卡顿*/
+                        if (text_area.getLength() > 0)
+                            text_area.appendText("\n");
+                        text_area.appendText(x);
+                        removeTopLine();
+                    });
+                } catch (Exception ignored) {}
+            }
+        });
 
         // 创建自定义的上下文菜单
         ContextMenu contextMenu = new ContextMenu();
@@ -264,16 +286,23 @@ public class DbLogController {
         });
     }
 
-    public String find(String text) {
+    public String find(String findStr) {
         scrollLocked.set(true);
-        int indexOf = text_area.getText().indexOf(text, findIndex.get());
+        String textAreaText = text_area.getText();
+        if (Objects.equals(oldFind.get(), findStr)) {
+            /*重新开始*/
+            findIndex.set(0);
+        }
+        int indexOf = textAreaText.indexOf(findStr, findIndex.get());
+        int allCounted = countCharacter(textAreaText, findStr, -1);
         if (indexOf > 0) {
-            text_area.selectRange(indexOf, indexOf + text.length());
-            findIndex.set(indexOf + text.length());
-            return "位置：" + indexOf;
+            text_area.selectRange(indexOf, indexOf + findStr.length());
+            findIndex.set(indexOf + findStr.length());
+            int findCounted = countCharacter(textAreaText, findStr, indexOf + findStr.length());
+            return "总共：" + allCounted + ", 第：" + findCounted + ", 位置：" + indexOf;
         } else {
             findIndex.set(0);
-            return "未找到";
+            return "总共：" + allCounted + ", 第：" + allCounted + " 结尾";
         }
     }
 
@@ -386,21 +415,40 @@ public class DbLogController {
         });
     }
 
+    /** 查找指定字符串数量 */
+    public static int countCharacter(String str, String target, int endIndex) {
+        int count = 0;
+        int index = -1;
+        for (; ; ) {
+            if ((index = str.indexOf(target, index + 1)) >= 0 && (endIndex < 0 || index < endIndex)) {
+                count++;
+            } else {
+                break;
+            }
+        }
+        return count;
+    }
 
     private void removeTopLine() {
+        /*一次性删除多余的字符，界面只更新一次，减少卡顿*/
         String text = text_area.getText();
-        int firstNewLineIndex = text.indexOf('\n');
-        if (firstNewLineIndex != -1) {
-            text_area.deleteText(0, firstNewLineIndex);
+        int delLine = countCharacter(text, "\n", -1) - 800;
+        if (delLine < 1) {
+            return;
         }
-        textLineNumber.decrementAndGet();
-        text_area.appendText("");
+        int firstNewLineIndex = 0;
+        for (int i = 0; i < delLine; i++) {
+            firstNewLineIndex = text.indexOf('\n', firstNewLineIndex + 1);
+        }
+        if (firstNewLineIndex != -1) {
+            text_area.deleteText(0, firstNewLineIndex + 1);
+        }
+        text_area.appendText(" ");
     }
 
     private void clearOut() {
         PlatformImpl.runAndWait(() -> {
             text_area.setText("");
-            textLineNumber.set(0);
         });
     }
 

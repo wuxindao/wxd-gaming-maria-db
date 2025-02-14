@@ -28103,6 +28103,8 @@
   }, {
     "pattern":"\\Qwxdgaming/mariadb/server/MyDB.class\\E"
   }, {
+    "pattern":"\\Qwxdgaming/mariadb/server/PlatformRunnable.class\\E"
+  }, {
     "pattern":"\\Qwxdgaming/mariadb/server/ReflectAction.class\\E"
   }, {
     "pattern":"\\Qwxdgaming/mariadb/server/RunAsync.class\\E"

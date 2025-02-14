@@ -39,13 +39,15 @@ public class RunAsync {
     }
 
     public static void async(PlatformRunnable runnable) {
-        new Thread(() -> {
+        Thread thread = new Thread(() -> {
             try {
                 runnable.run();
             } catch (Throwable e) {
                 e.printStackTrace(System.out);
             }
-        }).start();
+        });
+        thread.setDaemon(true);
+        thread.start();
     }
 
 }
