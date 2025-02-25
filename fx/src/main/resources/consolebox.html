@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>console</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script charset="utf-8" type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        html, body, div, ul, li, span, label {box-sizing: border-box;padding: 0;margin: 0; /*color: white;background-color: rgba(28, 28, 28, 0.92);*/}
+
+        html, body {overflow: hidden;width: 100%;height: 100%;font-size: 13px;font-family: 微软雅黑;}
+
+        input {height: 16px;line-height: 16px;}
+
+        button {border: #A8A8A8 1px solid; color: black; border-radius: 2px;font-size: 12px;height: 21px;line-height: 21px;}
+
+        /* 自定义右键菜单样式 */
+        #custom-menu {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            font-size: 12px;
+        }
+
+        #custom-menu li { padding: 4px /*上下*/ 16px /*左右*/; cursor: pointer;
+        }
+
+        #custom-menu li:hover { background-color: #f0f0f0; }
+
+        /* 分隔符样式 */
+        #custom-menu .separator { border-top: 1px solid #ccc; margin: 4px 0; padding: 0; cursor: default; }
+
+        #div_box {
+            position: absolute;top: 8px;right: 15px;z-index: 9;
+            width: 240px;height: auto;
+        }
+
+        #div_find {
+            display: none;
+            margin-top: 5px;height: 50px;width: 100%;
+            padding-left: 8px;padding-top: 5px;
+            background-color: beige;border-radius: 4px;border: darkgrey 1px solid;
+        }
+
+        #div_filter {
+            display: none;
+            margin-top: 5px;height: 34px;
+            padding-left: 8px;padding-top: 5px;
+            background-color: beige;border-radius: 4px;border: darkgrey 1px solid;
+        }
+
+        #div_console { overflow-y: auto;width: 100%;height: 100%;padding-left: 5px; padding-top: 10px; padding-bottom: 10px;}
+
+        span {text-wrap: wrap;white-space: pre-wrap;word-break: break-all;display: block;}
+
+        /* 滚动条宽度 */
+        ::-webkit-scrollbar { width: 8px;height: 8px; background-color: transparent; }
+
+        /* 滚动条颜色 */
+        ::-webkit-scrollbar-thumb { background-color: #A8A8A8; }
+
+        /* 定义高亮样式 */
+        .highlight { background-color: #f1f60c;font-weight: bold; }
+
+
+    </style>
+    <script>
+
+        /** 显示的最大行 */
+        let showMaxLine = 1000;
+        let fontSize = 13;
+        let lockConsoleScrollState = false;
+        let outPutState = true;
+
+        /** 字体放大 */
+        function znm() {
+            fontSize += 3;
+            $('#div_console').css('font-size', fontSize + 'px');
+        }
+
+        /** 字体缩小 */
+        function reset() {
+            fontSize = 13;
+            $('#div_console').css('font-size', fontSize + 'px');
+        }
+
+        /** 字体缩小 */
+        function inm() {
+            fontSize -= 3;
+            $('#div_console').css('font-size', fontSize + 'px');
+        }
+
+        function consoleAlert(msg) {
+            alert(msg);
+        }
+
+        let appendCount = 0;
+
+        function append(msg) {
+            if (!outPutState) return;
+            let val = $("#txt_filter").val();
+            if (!(val === null || val === undefined || val.trim() === "")) {
+                let words = val.split(" ");
+                // 使用 for...of 循环遍历
+                let filtered = false;/*设置成要显示的*/
+                for (let word of words) {
+                    if (msg.indexOf(word) < 0) {
+                        filtered = true;/*某一个关键字没有那就不显示*/
+                        break;
+                    }
+                }
+                if (filtered) {
+                    return;
+                }
+            }
+
+            $("#div_console").append(`<span>${msg}</span>`);
+            appendCount += 1;
+            if (appendCount > showMaxLine) {
+                removeTop();
+            }
+            if (!lockConsoleScrollState) {
+                scrollToBottom();
+            }
+        }
+
+        function removeTop() {
+            // 查找 div 内的第一个子节点
+            $('#div_console').contents().first().remove();
+            appendCount--;
+        }
+
+        /*设置滚动条*/
+        function scrollToBottom() {
+            $('#div_console').scrollTop($('#div_console')[0].scrollHeight);
+        }
+
+        /*清空内容*/
+        function clearConsole() {
+            $("#div_console").html("");
+            appendCount = 0;
+        }
+
+        let findIndex = 0;
+        let oldFind = "";
+
+        function find(str) {
+
+            if (oldFind !== str) {
+                findIndex = 0;
+            }
+
+            // 定义正则表达式，用于匹配搜索字符串，忽略大小写
+            var regex = new RegExp(str, 'gi');
+
+            // 查找包含目标内容的元素
+            let targetElement = null;
+            let tmpFindIndex = 0;
+            $('#div_console span').each(function () {
+                if ($(this).text().indexOf(str) !== -1) {
+                    tmpFindIndex++;
+                    if (tmpFindIndex > findIndex) {
+                        if (!targetElement) {
+                            findIndex = tmpFindIndex;
+                            targetElement = $(this);
+                        }
+                    }
+                }
+            });
+
+            let result = "总共: " + tmpFindIndex + " 行, 当前：" + findIndex + " 行";
+            if (targetElement) {
+
+                // 移除之前的高亮效果
+                clearHighlight();
+
+                let targetElementHtml = $(targetElement).html();
+                let match = targetElementHtml.match(regex);
+                if (match) {
+                    let html = targetElementHtml.replace(regex, '<label class="highlight">$&</label>');
+                    $(targetElement).html(html);
+                }
+
+                // 滚动到目标元素的位置
+                let $console = $('#div_console');
+                let offsetTop = targetElement.offset().top - $console.offset().top + $console.scrollTop();
+                $console.scrollTop(offsetTop);
+            } else {
+                findIndex = 0;
+                if (tmpFindIndex < 1) {
+                    //如果找不到 移除之前的高亮效果
+                    clearHighlight();
+                    result = "未找到";
+                } else {
+                    result += " 结尾";
+                }
+            }
+            oldFind = str;
+            $("#lab_find_result").text(result);
+        }
+
+        function clearHighlight() {
+
+            $('.highlight').each(function () {
+                $(this).replaceWith($(this).text());
+            });
+        }
+
+        function showOrCloseFind() {
+            if ($('#div_find').css('display') === 'block') {
+                $('#div_find').css('display', 'none');
+                setLockScrollState(false)
+            } else {
+                setLockScrollState(true);
+                $('#div_find').css('display', 'block');
+            }
+        }
+
+        function showOrCloseFilter() {
+            if ($('#div_filter').css('display') === 'block') {
+                $('#div_filter').css('display', 'none');
+                $('#txt_filter').val("");
+            } else {
+                $('#div_filter').css('display', 'block');
+            }
+        }
+
+        $(() => {
+            // 获取自定义菜单元素
+            let customMenu = document.getElementById('custom-menu');
+            // 监听菜单项的点击事件
+            let menuItems = customMenu.querySelectorAll('li:not(.separator)');
+            // 监听页面的右键点击事件
+            document.addEventListener('contextmenu', function (event) {
+                // 阻止默认的右键菜单弹出
+                event.preventDefault();
+
+                // 获取鼠标点击的位置
+                const x = event.clientX;
+                const y = event.clientY;
+
+                // 设置自定义菜单的位置
+                customMenu.style.left = x + 'px';
+                customMenu.style.top = y + 'px';
+
+                // 显示自定义菜单
+                customMenu.style.display = 'block';
+            });
+
+            // 监听页面的点击事件，点击其他地方隐藏菜单
+            document.addEventListener('click', function (event) {
+                if (!customMenu.contains(event.target)) {
+                    customMenu.style.display = 'none';
+                }
+            });
+
+
+            menuItems.forEach(function (item) {
+                item.addEventListener('click', function () {
+                    // 点击菜单项后隐藏菜单
+                    customMenu.style.display = 'none';
+                });
+            });
+        });
+
+        function setLockScrollState(state) {
+            if (state) {
+                lockConsoleScrollState = true;
+                $("#li_lockScroll").text("锁屏✓");
+                $("#li_Scroll").text("滚屏");
+            } else {
+                $("#li_lockScroll").text("锁屏");
+                $("#li_Scroll").text("滚屏✓");
+                lockConsoleScrollState = false;
+            }
+        }
+
+        function setOutput(state) {
+            outPutState = state;
+            if (outPutState) {
+                $("#li_close_output").text("暂停输出");
+                $("#li_output").text("继续输出✓");
+            } else {
+                $("#li_close_output").text("暂停输出✓");
+                $("#li_output").text("继续输出");
+            }
+        }
+
+        async function copySelectedText() {
+            // 获取当前选中的文本
+            const selection = window.getSelection();
+            if (!selection || selection.toString().length === 0) {
+                console.log("没有选中任何文本");
+                return;
+            }
+
+            const selectedText = selection.toString();
+            console.log("selectedText: " + selectedText);
+            // 将选中的文本复制到剪贴板
+            await navigator.clipboard.writeText(selectedText);
+
+            //
+            // // 创建一个临时的 textarea 元素
+            // const textarea = document.createElement('textarea');
+            // textarea.value = selectedText;
+            // document.body.appendChild(textarea);
+            // textarea.select();
+            //
+            // // 使用 execCommand 复制选中的文本
+            // try {
+            //     document.execCommand('copy');
+            // } catch (err) {
+            // } finally {
+            //     document.body.removeChild(textarea);
+            // }
+        }
+
+
+    </script>
+</head>
+<body>
+<!-- 自定义右键菜单 -->
+<ul id="custom-menu">
+    <li onclick="copySelectedText();" style="color: #A8A8A8">复制</li>
+    <!-- 分隔符 -->
+    <li class="separator"></li>
+    <li onclick="znm();">放大</li>
+    <li onclick="reset();">正常</li>
+    <li onclick="inm();">缩小</li>
+    <!-- 分隔符 -->
+    <li class="separator"></li>
+    <li onclick="showOrCloseFind();">查找</li>
+    <li onclick="showOrCloseFilter();">过滤</li>
+    <!-- 分隔符 -->
+    <li class="separator"></li>
+    <li id="li_lockScroll" onclick="setLockScrollState(true)">锁屏</li>
+    <li id="li_Scroll" onclick="setLockScrollState(false)">滚屏✓</li>
+    <!-- 分隔符 -->
+    <li class="separator"></li>
+    <li id="li_close_output" onclick="setOutput(false);">暂停输出</li>
+    <li id="li_output" onclick="setOutput(true)">继续输出✓</li>
+    <!-- 分隔符 -->
+    <li class="separator"></li>
+    <li onclick="clearConsole();">清空</li>
+</ul>
+<div id="div_box">
+    <div id="div_filter" style="">
+        <input id="txt_filter" style="width: calc(100% - 20px);" type="text" placeholder="过滤，多个关键字用“,”"/>
+    </div>
+    <div id="div_find" style="">
+        <input id="txt_find" type="text" placeholder="请输入查找内容" onkeydown="if(event.keyCode===13){find($('#txt_find').val());}"/>
+        <button onclick="find($('#txt_find').val());">查找</button>
+        <label id="lab_find_result"></label>
+    </div>
+</div>
+<div id="div_console">
+    <span>hello world!</span>
+</div>
+</body>
+</html>

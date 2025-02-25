@@ -18,6 +18,7 @@ public class TextAreaUpdate extends Thread {
     private final TextArea textArea;
     /** textarea 文本框展示的最大行数 */
     private final int showMaxLine;
+    private final long duration;
     /** 单次处理的行数 */
     private final int actionLine;
 
@@ -33,9 +34,10 @@ public class TextAreaUpdate extends Thread {
      * @param showMaxLine 展示的最大行数
      * @param actionLine  单次处理的行数
      */
-    public TextAreaUpdate(TextArea textArea, int showMaxLine, int actionLine) {
+    public TextAreaUpdate(TextArea textArea, int showMaxLine, long duration, int actionLine) {
         this.textArea = textArea;
         this.showMaxLine = showMaxLine;
+        this.duration = duration;
         this.actionLine = actionLine;
         this.setPriority(Thread.MAX_PRIORITY);
         this.setDaemon(true);
@@ -45,7 +47,7 @@ public class TextAreaUpdate extends Thread {
     public void addText(String text) {
         lock.lock();
         try {
-            if (stringBuilder.length() > 0) stringBuilder.append("\n");
+            if (!stringBuilder.isEmpty()) stringBuilder.append("\n");
             stringBuilder.append(text);
             totalLine.incrementAndGet();
 
@@ -66,10 +68,10 @@ public class TextAreaUpdate extends Thread {
     @Override public void run() {
         while (!this.isInterrupted()) {
             try {
-                Thread.sleep(33);
+                Thread.sleep(duration);
                 lock.lock();
                 try {
-                    if (strings.isEmpty() && stringBuilder.length() > 0) {
+                    if (strings.isEmpty() && !stringBuilder.isEmpty()) {
                         reset();
                     }
                 } finally {

@@ -59,7 +59,7 @@ public class DbLogController {
     public void init() {
         try {
 
-            textAreaUpdate = new TextAreaUpdate(text_area, 1500, 100);
+            textAreaUpdate = new TextAreaUpdate(text_area, 1000, 50, 50);
 
             /*TODO 必须要等他初始化完成*/
             PrintStream printStream = new PrintStream(System.out) {
@@ -273,8 +273,8 @@ public class DbLogController {
         }
     }
 
-    public String randomString() {
-        int len = (int) (Math.random() * 1000);
+    public static String randomString() {
+        int len = (int) (Math.random() * 200);
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < len; i++) {
@@ -415,6 +415,32 @@ public class DbLogController {
         } catch (IOException ex) {
             log.error("文件：{}", path, ex);
         }
+    }
+
+    public void openWebView(ActionEvent event) {
+        PlatformImpl.runLater(() -> {
+            try {
+                // 加载新的FXML文件
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/wxdgaming/mariadb/winfm/htmlview.fxml"));
+                Parent root = loader.load();
+                Htmlview controller = loader.getController();
+
+                // 创建新的Stage
+                Stage newStage = new Stage();
+                // 设置舞台样式为无装饰，去掉系统默认的标题栏和按钮
+                // newStage.initStyle(StageStyle.UTILITY);
+                newStage.setTitle("console");
+                newStage.setScene(new Scene(root));
+                // newStage.setResizable(false);
+                // 显示新的Stage
+                newStage.show();
+                newStage.setAlwaysOnTop(true);
+                /*注册事件*/
+                controller.init();
+            } catch (IOException e) {
+                e.printStackTrace(System.out);
+            }
+        });
     }
 
     @FXML

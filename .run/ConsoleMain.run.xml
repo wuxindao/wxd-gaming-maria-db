@@ -5,7 +5,7 @@
     <option name="VM_PARAMETERS" value="-Dlogback.configurationFile=logback-utf8.xml" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="wxdgaming.mariadb.server.*" />
+        <option name="PATTERN" value="wxdgaming.mariadb.winfm.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

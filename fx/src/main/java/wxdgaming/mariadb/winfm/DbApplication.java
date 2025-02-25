@@ -11,6 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import wxdgaming.mariadb.server.RunAsync;
 import wxdgaming.mariadb.server.WebService;
 
@@ -72,7 +73,10 @@ public class DbApplication extends Application {
             try {
                 /*必须让界面闪一下，不然程序不稳定，容易崩溃*/
                 Thread.sleep(1000);
-                closeSelect(primaryStage);
+
+                if (StringUtils.isBlank(ApplicationMain.javaClassPath())) {
+                    closeSelect(primaryStage);
+                }
             } catch (InterruptedException ignore) {}
         });
     }

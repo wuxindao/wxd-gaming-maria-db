@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.web.WebView?>
 <StackPane prefHeight="800" prefWidth="1200" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
            fx:controller="wxdgaming.mariadb.winfm.DbLogController">
     <children>
@@ -18,6 +19,8 @@
                     <MenuItem text="退出" onAction="#closeAction"/>
                 </Menu>
                 <Menu text="编辑">
+                    <MenuItem text="web" onAction="#openWebView"/>
+                    <SeparatorMenuItem/>
                     <MenuItem text="修改配置" onAction="#openConfig"/>
                     <SeparatorMenuItem/>
                     <MenuItem text="查看日志" onAction="#openLogFile"/>
@@ -32,10 +35,10 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <TextArea fx:id="text_area" editable="false" wrapText="true" StackPane.alignment="TOP_LEFT">
+        <WebView fx:id="webview" StackPane.alignment="TOP_LEFT">
             <StackPane.margin>
                 <Insets top="28.0"/>
             </StackPane.margin>
-        </TextArea>
+        </WebView>
     </children>
 </StackPane>
