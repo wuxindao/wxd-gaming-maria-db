@@ -44,4 +44,4 @@ set option=%option% -H:NativeLinkerOption=/ENTRY:mainCRTStartup
 
 echo %option%
 
-C:\\java\\graalvm-jdk-21.0.3+7.1\\bin\\native-image.cmd %option% -H:ConfigurationFileDirectories=target/console/config -cp "target/console/mysql-server.jar;target/console/lib/*" -jar target/console/mysql-server.jar target/console/mysql-service
+C:\\java\\graalvm-jdk-21.0.6+8.1\\bin\\native-image.cmd %option% -H:ConfigurationFileDirectories=target/console/config -cp "target/console/mysql-server.jar;target/console/lib/*" -jar target/console/mysql-server.jar target/console/mysql-service

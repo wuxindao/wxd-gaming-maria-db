@@ -29769,7 +29769,7 @@
     "locales":["", "de", "en", "es", "fr", "it", "ja", "ko", "pt-BR", "sv", "und", "zh-CN", "zh-TW"]
   }, {
     "name":"com/sun/javafx/scene/control/skin/resources/controls",
-    "locales":["", "und", "zh-CN"]
+    "locales":["und", "zh-CN"]
   }, {
     "name":"sun.awt.resources.awt",
     "classNames":["sun.awt.resources.awt", "sun.awt.resources.awt_zh_CN"]
