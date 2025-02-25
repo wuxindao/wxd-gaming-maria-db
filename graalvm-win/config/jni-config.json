@@ -3,27 +3,16 @@
   "name":"[Lcom.sun.glass.ui.Screen;"
 },
 {
-  "name":"[Ljava.lang.String;"
-},
-{
   "name":"[Lsun.java2d.loops.GraphicsPrimitive;"
 },
 {
   "name":"com.sun.glass.ui.Application",
-  "methods":[{"name":"notifyPreferencesChanged","parameterTypes":["java.util.Map"] }, {"name":"notifyThemeChanged","parameterTypes":["java.lang.String"] }, {"name":"reportException","parameterTypes":["java.lang.Throwable"] }]
+  "methods":[{"name":"notifyThemeChanged","parameterTypes":["java.lang.String"] }, {"name":"reportException","parameterTypes":["java.lang.Throwable"] }]
 },
 {
   "name":"com.sun.glass.ui.Clipboard",
   "fields":[{"name":"name"}],
   "methods":[{"name":"actionPerformed","parameterTypes":["int"] }, {"name":"contentChanged","parameterTypes":[] }]
-},
-{
-  "name":"com.sun.glass.ui.CommonDialogs",
-  "methods":[{"name":"createFileChooserResult","parameterTypes":["java.lang.String[]","com.sun.glass.ui.CommonDialogs$ExtensionFilter[]","int"] }]
-},
-{
-  "name":"com.sun.glass.ui.CommonDialogs$ExtensionFilter",
-  "methods":[{"name":"extensionsToArray","parameterTypes":[] }, {"name":"getDescription","parameterTypes":[] }]
 },
 {
   "name":"com.sun.glass.ui.Cursor",
@@ -150,20 +139,15 @@
 },
 {
   "name":"com.sun.webkit.WebPage",
-  "methods":[{"name":"fwkAddMessageToConsole","parameterTypes":["java.lang.String","int","java.lang.String"] }, {"name":"fwkAlert","parameterTypes":["java.lang.String"] }, {"name":"fwkCanRunBeforeUnloadConfirmPanel","parameterTypes":[] }, {"name":"fwkChooseFile","parameterTypes":["java.lang.String","boolean","java.lang.String"] }, {"name":"fwkCloseWindow","parameterTypes":[] }, {"name":"fwkConfirm","parameterTypes":["java.lang.String"] }, {"name":"fwkCreateWindow","parameterTypes":["boolean","boolean","boolean","boolean"] }, {"name":"fwkDidClearWindowObject","parameterTypes":["long","long"] }, {"name":"fwkFireLoadEvent","parameterTypes":["long","int","java.lang.String","java.lang.String","double","int"] }, {"name":"fwkFireResourceLoadEvent","parameterTypes":["long","int","int","java.lang.String","double","int"] }, {"name":"fwkFrameCreated","parameterTypes":["long"] }, {"name":"fwkFrameDestroyed","parameterTypes":["long"] }, {"name":"fwkGetPageBounds","parameterTypes":[] }, {"name":"fwkGetWindowBounds","parameterTypes":[] }, {"name":"fwkPermitAcceptResourceAction","parameterTypes":["long","java.lang.String"] }, {"name":"fwkPermitEnableScriptsAction","parameterTypes":["long","java.lang.String"] }, {"name":"fwkPermitNavigateAction","parameterTypes":["long","java.lang.String"] }, {"name":"fwkPermitNewWindowAction","parameterTypes":["long","java.lang.String"] }, {"name":"fwkPermitRedirectAction","parameterTypes":["long","java.lang.String"] }, {"name":"fwkPermitSubmitDataAction","parameterTypes":["long","java.lang.String","java.lang.String","boolean"] }, {"name":"fwkPrompt","parameterTypes":["java.lang.String","java.lang.String"] }, {"name":"fwkRemoveRequestURL","parameterTypes":["long","int"] }, {"name":"fwkRepaint","parameterTypes":["int","int","int","int"] }, {"name":"fwkRunBeforeUnloadConfirmPanel","parameterTypes":["java.lang.String"] }, {"name":"fwkScreenToWindow","parameterTypes":["com.sun.webkit.graphics.WCPoint"] }, {"name":"fwkSetCursor","parameterTypes":["long"] }, {"name":"fwkSetFocus","parameterTypes":["boolean"] }, {"name":"fwkSetRequestURL","parameterTypes":["long","int","java.lang.String"] }, {"name":"fwkSetScrollbarsVisible","parameterTypes":["boolean"] }, {"name":"fwkSetStatusbarText","parameterTypes":["java.lang.String"] }, {"name":"fwkSetTooltip","parameterTypes":["java.lang.String"] }, {"name":"fwkSetWindowBounds","parameterTypes":["int","int","int","int"] }, {"name":"fwkShowWindow","parameterTypes":[] }, {"name":"fwkTransferFocus","parameterTypes":["boolean"] }, {"name":"fwkWindowToScreen","parameterTypes":["com.sun.webkit.graphics.WCPoint"] }, {"name":"getHostWindow","parameterTypes":[] }, {"name":"getPage","parameterTypes":[] }, {"name":"getRenderTheme","parameterTypes":[] }, {"name":"setInputMethodState","parameterTypes":["boolean"] }]
+  "methods":[{"name":"fwkAddMessageToConsole","parameterTypes":["java.lang.String","int","java.lang.String"] }, {"name":"fwkAlert","parameterTypes":["java.lang.String"] }, {"name":"fwkCanRunBeforeUnloadConfirmPanel","parameterTypes":[] }, {"name":"fwkChooseFile","parameterTypes":["java.lang.String","boolean","java.lang.String"] }, {"name":"fwkCloseWindow","parameterTypes":[] }, {"name":"fwkConfirm","parameterTypes":["java.lang.String"] }, {"name":"fwkCreateWindow","parameterTypes":["boolean","boolean","boolean","boolean"] }, {"name":"fwkDidClearWindowObject","parameterTypes":["long","long"] }, {"name":"fwkFireLoadEvent","parameterTypes":["long","int","java.lang.String","java.lang.String","double","int"] }, {"name":"fwkFireResourceLoadEvent","parameterTypes":["long","int","int","java.lang.String","double","int"] }, {"name":"fwkFrameCreated","parameterTypes":["long"] }, {"name":"fwkFrameDestroyed","parameterTypes":["long"] }, {"name":"fwkGetPageBounds","parameterTypes":[] }, {"name":"fwkGetWindowBounds","parameterTypes":[] }, {"name":"fwkPermitAcceptResourceAction","parameterTypes":["long","java.lang.String"] }, {"name":"fwkPermitEnableScriptsAction","parameterTypes":["long","java.lang.String"] }, {"name":"fwkPermitNavigateAction","parameterTypes":["long","java.lang.String"] }, {"name":"fwkPermitNewWindowAction","parameterTypes":["long","java.lang.String"] }, {"name":"fwkPermitRedirectAction","parameterTypes":["long","java.lang.String"] }, {"name":"fwkPermitSubmitDataAction","parameterTypes":["long","java.lang.String","java.lang.String","boolean"] }, {"name":"fwkPrompt","parameterTypes":["java.lang.String","java.lang.String"] }, {"name":"fwkRemoveRequestURL","parameterTypes":["long","int"] }, {"name":"fwkRepaint","parameterTypes":["int","int","int","int"] }, {"name":"fwkRunBeforeUnloadConfirmPanel","parameterTypes":["java.lang.String"] }, {"name":"fwkScreenToWindow","parameterTypes":["com.sun.webkit.graphics.WCPoint"] }, {"name":"fwkSetCursor","parameterTypes":["long"] }, {"name":"fwkSetFocus","parameterTypes":["boolean"] }, {"name":"fwkSetRequestURL","parameterTypes":["long","int","java.lang.String"] }, {"name":"fwkSetScrollbarsVisible","parameterTypes":["boolean"] }, {"name":"fwkSetStatusbarText","parameterTypes":["java.lang.String"] }, {"name":"fwkSetTooltip","parameterTypes":["java.lang.String"] }, {"name":"fwkSetWindowBounds","parameterTypes":["int","int","int","int"] }, {"name":"fwkShowWindow","parameterTypes":[] }, {"name":"fwkTransferFocus","parameterTypes":["boolean"] }, {"name":"fwkWindowToScreen","parameterTypes":["com.sun.webkit.graphics.WCPoint"] }, {"name":"getHostWindow","parameterTypes":[] }, {"name":"getPage","parameterTypes":[] }, {"name":"getRenderTheme","parameterTypes":[] }]
 },
 {
   "name":"com.sun.webkit.dom.JSObject",
-  "fields":[{"name":"UNDEFINED"}],
-  "methods":[{"name":"<init>","parameterTypes":["long","int"] }, {"name":"fwkMakeException","parameterTypes":["java.lang.Object"] }]
+  "fields":[{"name":"UNDEFINED"}]
 },
 {
   "name":"com.sun.webkit.graphics.Ref",
-  "methods":[{"name":"deref","parameterTypes":[] }, {"name":"getID","parameterTypes":[] }, {"name":"ref","parameterTypes":[] }]
-},
-{
-  "name":"com.sun.webkit.graphics.RenderTheme",
-  "methods":[{"name":"createWidget","parameterTypes":["long","int","int","int","int","int","java.nio.ByteBuffer"] }]
+  "methods":[{"name":"getID","parameterTypes":[] }, {"name":"ref","parameterTypes":[] }]
 },
 {
   "name":"com.sun.webkit.graphics.ScrollBarTheme",
@@ -175,11 +159,7 @@
 },
 {
   "name":"com.sun.webkit.graphics.WCGraphicsManager",
-  "methods":[{"name":"createWCPath","parameterTypes":[] }, {"name":"createWCPath","parameterTypes":["com.sun.webkit.graphics.WCPath"] }, {"name":"getGraphicsManager","parameterTypes":[] }, {"name":"getWCFont","parameterTypes":["java.lang.String","boolean","boolean","float"] }]
-},
-{
-  "name":"com.sun.webkit.graphics.WCPath",
-  "methods":[{"name":"addBezierCurveTo","parameterTypes":["double","double","double","double","double","double"] }, {"name":"addLineTo","parameterTypes":["double","double"] }, {"name":"closeSubpath","parameterTypes":[] }, {"name":"getBounds","parameterTypes":[] }, {"name":"isEmpty","parameterTypes":[] }, {"name":"moveTo","parameterTypes":["double","double"] }]
+  "methods":[{"name":"createWCPath","parameterTypes":[] }, {"name":"getGraphicsManager","parameterTypes":[] }, {"name":"getWCFont","parameterTypes":["java.lang.String","boolean","boolean","float"] }]
 },
 {
   "name":"com.sun.webkit.graphics.WCPoint",
@@ -274,10 +254,6 @@
   "fields":[{"name":"CONSOLE"}, {"name":"LOCK"}, {"name":"REMOTE"}, {"name":"UNSPECIFIED"}]
 },
 {
-  "name":"java.awt.event.ActionEvent",
-  "methods":[{"name":"<init>","parameterTypes":["java.lang.Object","int","java.lang.String","long","int"] }]
-},
-{
   "name":"java.awt.event.ComponentEvent",
   "methods":[{"name":"<init>","parameterTypes":["java.awt.Component","int"] }]
 },
@@ -285,11 +261,6 @@
   "name":"java.awt.event.InputEvent",
   "fields":[{"name":"modifiers"}],
   "methods":[{"name":"getButtonDownMasks","parameterTypes":[] }]
-},
-{
-  "name":"java.awt.event.MouseEvent",
-  "fields":[{"name":"button"}, {"name":"causedByTouchEvent"}, {"name":"x"}, {"name":"y"}],
-  "methods":[{"name":"<init>","parameterTypes":["java.awt.Component","int","long","int","int","int","int","int","int","boolean","int"] }]
 },
 {
   "name":"java.awt.geom.AffineTransform",
@@ -350,7 +321,6 @@
 },
 {
   "name":"java.lang.Boolean",
-  "fields":[{"name":"FALSE"}, {"name":"TRUE"}],
   "methods":[{"name":"getBoolean","parameterTypes":["java.lang.String"] }]
 },
 {
@@ -362,16 +332,12 @@
   "methods":[{"name":"name","parameterTypes":[] }]
 },
 {
-  "name":"java.lang.Object",
-  "methods":[{"name":"equals","parameterTypes":["java.lang.Object"] }]
-},
-{
   "name":"java.lang.Runnable",
   "methods":[{"name":"run","parameterTypes":[] }]
 },
 {
   "name":"java.lang.String",
-  "methods":[{"name":"concat","parameterTypes":["java.lang.String"] }, {"name":"toLowerCase","parameterTypes":["java.util.Locale"] }]
+  "methods":[{"name":"toLowerCase","parameterTypes":["java.util.Locale"] }]
 },
 {
   "name":"java.lang.Thread",
@@ -382,20 +348,8 @@
   "methods":[{"name":"<init>","parameterTypes":["int"] }, {"name":"add","parameterTypes":["java.lang.Object"] }]
 },
 {
-  "name":"java.util.Collections",
-  "methods":[{"name":"unmodifiableMap","parameterTypes":["java.util.Map"] }]
-},
-{
   "name":"java.util.HashMap",
-  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"containsKey","parameterTypes":["java.lang.Object"] }, {"name":"put","parameterTypes":["java.lang.Object","java.lang.Object"] }]
-},
-{
-  "name":"java.util.Map",
-  "methods":[{"name":"put","parameterTypes":["java.lang.Object","java.lang.Object"] }]
-},
-{
-  "name":"javafx.scene.paint.Color",
-  "methods":[{"name":"rgb","parameterTypes":["int","int","int","double"] }]
+  "methods":[{"name":"containsKey","parameterTypes":["java.lang.Object"] }, {"name":"put","parameterTypes":["java.lang.Object","java.lang.Object"] }]
 },
 {
   "name":"sun.awt.AWTAutoShutdown",
@@ -496,7 +450,7 @@
 },
 {
   "name":"sun.awt.windows.WTrayIconPeer",
-  "methods":[{"name":"postEvent","parameterTypes":["java.awt.AWTEvent"] }, {"name":"updateImage","parameterTypes":[] }]
+  "methods":[{"name":"updateImage","parameterTypes":[] }]
 },
 {
   "name":"sun.awt.windows.WWindowPeer",
