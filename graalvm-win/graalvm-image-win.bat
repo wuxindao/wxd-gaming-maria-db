@@ -50,4 +50,4 @@ call "D:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build
 @REM call "d:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsamd64_x86.bat"
 
 echo %option%
-C:\\java\\graalvm-jdk-21.0.6+8.1\\bin\\native-image.cmd %option% -H:ConfigurationFileDirectories=graalvm-win/config -cp "target/mysql-server.jar;target/lib/*" -jar target/mysql-server.jar target/winfm/mysql-server
+C:\\java\\graalvm-community-openjdk-23.0.2+7.1\\bin\\native-image.cmd %option% -H:ConfigurationFileDirectories=graalvm-win/config -cp "target/mysql-server.jar;target/lib/*" -jar target/mysql-server.jar target/winfm/mysql-server

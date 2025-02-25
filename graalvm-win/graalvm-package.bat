@@ -1,7 +1,7 @@
 @echo off
 
 :: 设置Java环境变量
-set JAVA_HOME=C:\java\graalvm-jdk-21.0.6+8.1
+set JAVA_HOME=C:\java\jdk-21
 set PATH=%JAVA_HOME%\bin;%PATH%
 
 :: 检查JAVA_HOME是否配置成功

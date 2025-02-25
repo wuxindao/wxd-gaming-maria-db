@@ -1,6 +1,7 @@
 package wxdgaming.mariadb.winfm;
 
 import javafx.application.Application;
+import javafx.scene.transform.Rotate;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import wxdgaming.mariadb.server.*;
@@ -83,6 +84,7 @@ public class ApplicationMain {
                 }
 
                 ReflectAction reflectAction = ReflectAction.of();
+                reflectAction.action(Rotate.class, false);
                 reflectAction.action(MyDB.class, false);
                 reflectAction.action(DBFactory.class, false);
                 reflectAction.action(DbApplication.class, false);
