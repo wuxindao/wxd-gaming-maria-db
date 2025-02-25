@@ -5875,6 +5875,16 @@
   }, {
     "pattern":"\\Qcom/sun/glass/utils/\\E"
   }, {
+    "pattern":"\\Qcom/sun/java/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/java/scene/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/java/scene/web/WebViewHelper$WebViewAccessor.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/java/scene/web/WebViewHelper.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/java/scene/web/\\E"
+  }, {
     "pattern":"\\Qcom/sun/javafx/FXPermissions.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/PlatformUtil.class\\E"
@@ -5882,6 +5892,14 @@
     "pattern":"\\Qcom/sun/javafx/UnmodifiableArrayList.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/animation/AnimationTimerHelper$Accessor.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/animation/AnimationTimerHelper.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/animation/InterpolatorHelper$Accessor.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/animation/InterpolatorHelper.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/animation/KeyValueHelper$KeyValueAccessor.class\\E"
   }, {
@@ -5915,7 +5933,21 @@
   }, {
     "pattern":"\\Qcom/sun/javafx/application/PlatformImpl.class\\E"
   }, {
+    "pattern":"\\Qcom/sun/javafx/application/WindowsHighContrastScheme.class\\E"
+  }, {
     "pattern":"\\Qcom/sun/javafx/application/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/application/preferences/ChangedValue.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/application/preferences/PlatformPreferences.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/application/preferences/PreferenceProperties$ColorProperty.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/application/preferences/PreferenceProperties$ColorSchemeProperty.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/application/preferences/PreferenceProperties.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/application/preferences/\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/beans/IDProperty.class\\E"
   }, {
@@ -6247,11 +6279,41 @@
   }, {
     "pattern":"\\Qcom/sun/javafx/css/Combinator.class\\E"
   }, {
+    "pattern":"\\Qcom/sun/javafx/css/CssUtil.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/FixedCapacitySet$Duo$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/FixedCapacitySet$Duo.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/FixedCapacitySet$Hashless$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/FixedCapacitySet$Hashless.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/FixedCapacitySet$OpenAddressed$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/FixedCapacitySet$OpenAddressed.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/FixedCapacitySet$Single$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/FixedCapacitySet$Single.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/FixedCapacitySet.class\\E"
+  }, {
     "pattern":"\\Qcom/sun/javafx/css/FontFaceImpl$FontFaceSrc.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/css/FontFaceImpl$FontFaceSrcType.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/css/FontFaceImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/ImmutablePseudoClassSetsCache.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/InterpolatorConverter$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/InterpolatorConverter$Holder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/InterpolatorConverter$SequenceConverter.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/InterpolatorConverter.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/css/ParsedValueImpl.class\\E"
   }, {
@@ -6298,6 +6360,30 @@
     "pattern":"\\Qcom/sun/javafx/css/StyleMap.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/css/SubCssMetaData.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/TransitionDefinition.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/TransitionDefinitionConverter$Holder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/TransitionDefinitionConverter$SequenceConverter.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/TransitionDefinitionConverter.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/TransitionDefinitionCssMetaData$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/TransitionDefinitionCssMetaData$2.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/TransitionDefinitionCssMetaData$3.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/TransitionDefinitionCssMetaData$4.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/TransitionDefinitionCssMetaData$Holder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/TransitionDefinitionCssMetaData.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/TransitionMediator.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/css/TransitionTimer.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/css/\\E"
   }, {
@@ -6687,6 +6773,18 @@
   }, {
     "pattern":"\\Qcom/sun/javafx/fxml/builder/\\E"
   }, {
+    "pattern":"\\Qcom/sun/javafx/fxml/builder/web/JavaFXWebViewBuilder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/fxml/builder/web/NodeBuilder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/fxml/builder/web/ParentBuilder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/fxml/builder/web/WebEngineBuilder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/fxml/builder/web/WebViewBuilder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/fxml/builder/web/\\E"
+  }, {
     "pattern":"\\Qcom/sun/javafx/fxml/expression/BinaryExpression.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/fxml/expression/Expression$1.class\\E"
@@ -6770,6 +6868,8 @@
     "pattern":"\\Qcom/sun/javafx/geom/Curve.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/geom/CurveLink.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/geom/Dimension.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/geom/Dimension2D.class\\E"
   }, {
@@ -7195,6 +7295,16 @@
   }, {
     "pattern":"\\Qcom/sun/javafx/logging/jfr/\\E"
   }, {
+    "pattern":"\\Qcom/sun/javafx/media/PrismMediaFrameHandler$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/media/PrismMediaFrameHandler$PrismFrameBuffer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/media/PrismMediaFrameHandler$TextureMapEntry.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/media/PrismMediaFrameHandler.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/media/\\E"
+  }, {
     "pattern":"\\Qcom/sun/javafx/menu/CheckMenuItemBase.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/menu/CustomMenuItemBase.class\\E"
@@ -7512,6 +7622,10 @@
     "pattern":"\\Qcom/sun/javafx/scene/control/InputField.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/scene/control/IntegerField.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/scene/control/LabeledHelper$Accessor.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/scene/control/LabeledHelper.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/scene/control/LabeledImpl$Shuttler.class\\E"
   }, {
@@ -8449,6 +8563,12 @@
   }, {
     "pattern":"\\Qcom/sun/javafx/scene/layout/region/\\E"
   }, {
+    "pattern":"\\Qcom/sun/javafx/scene/media/MediaViewHelper$MediaViewAccessor.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/scene/media/MediaViewHelper.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/scene/media/\\E"
+  }, {
     "pattern":"\\Qcom/sun/javafx/scene/paint/GradientUtils$Parser$Delimiter.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/scene/paint/GradientUtils$Parser.class\\E"
@@ -8655,6 +8775,24 @@
   }, {
     "pattern":"\\Qcom/sun/javafx/scene/traversal/\\E"
   }, {
+    "pattern":"\\Qcom/sun/javafx/scene/web/Debugger.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/scene/web/Printable$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/scene/web/Printable$Peer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/scene/web/Printable.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/scene/web/PrintableHelper$PrintableAccessor.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/scene/web/PrintableHelper.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/scene/web/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/scene/web/behavior/HTMLEditorBehavior.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/scene/web/behavior/\\E"
+  }, {
     "pattern":"\\Qcom/sun/javafx/sg/\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/sg/prism/CacheFilter$ScrollCacheState.class\\E"
@@ -8796,6 +8934,10 @@
     "pattern":"\\Qcom/sun/javafx/sg/prism/ShapeEvaluator.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/sg/prism/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/sg/prism/web/NGWebView.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/sg/prism/web/\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/stage/EmbeddedWindow$1.class\\E"
   }, {
@@ -9121,6 +9263,8 @@
   }, {
     "pattern":"\\Qcom/sun/javafx/tk/quantum/\\E"
   }, {
+    "pattern":"\\Qcom/sun/javafx/util/DataURI$1ExpectedCharacter.class\\E"
+  }, {
     "pattern":"\\Qcom/sun/javafx/util/DataURI.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/util/Logging.class\\E"
@@ -9140,6 +9284,254 @@
     "pattern":"\\Qcom/sun/javafx/util/WeakReferenceQueue.class\\E"
   }, {
     "pattern":"\\Qcom/sun/javafx/util/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/Accessor$PageAccessor.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/Accessor.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/CursorManagerImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/EventLoopImpl$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/EventLoopImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/InputMethodClientImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/KeyCodeMap$Entry.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/KeyCodeMap.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/PasteboardImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/ThemeClientImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/UIClientImpl$FileExtensionInfo.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/UIClientImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/UtilitiesImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/WCMessageDigestImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/WebConsoleListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/WebPageClientImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/PrismGraphicsManager$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/PrismGraphicsManager.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/PrismImage$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/PrismImage.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/PrismInvoker.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/RTImage$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/RTImage.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/TextUtilities$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/TextUtilities.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCBufferedContext.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCFontCustomPlatformDataImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCFontImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$10.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$11.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$12.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$13.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$14.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$15.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$16.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$17.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$18.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$2.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$3.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$4.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$5.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$6.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$7.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$8.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$9.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$ClipLayer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$Composite.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$ContextState.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$Layer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$PassThrough.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$TransparencyLayer$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$TransparencyLayer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext$Type.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCGraphicsPrismContext.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCImageDecoderImpl$1$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCImageDecoderImpl$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCImageDecoderImpl$2.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCImageDecoderImpl$3.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCImageDecoderImpl$Frame.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCImageDecoderImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCImageImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCLinearGradient.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCMediaPlayerImpl$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCMediaPlayerImpl$CreateThread.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCMediaPlayerImpl$MediaFrameListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCMediaPlayerImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCPageBackBufferImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCPathImpl$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCPathImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCRadialGradient.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCRenderQueueImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCStrokeImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/WCTextRunImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/resources/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/resources/mediaMute.png\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/resources/mediaMuteDisabled.png\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/resources/mediaPause.png\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/resources/mediaPlay.png\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/resources/mediaPlayDisabled.png\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/resources/mediaTimeThumb.png\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/resources/mediaUnmute.png\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/resources/mediaVolumeThumb.png\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/resources/missingImage.png\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/resources/panIcon.png\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/theme/PrismRenderer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/prism/theme/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/ContextMenuImpl$CheckMenuItemImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/ContextMenuImpl$MenuImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/ContextMenuImpl$MenuItemImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/ContextMenuImpl$MenuItemPeer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/ContextMenuImpl$SeparatorImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/ContextMenuImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/PopupMenuImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$FormButton.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$FormCheckBox.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$FormControl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$FormControlRef.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$FormMenuList.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$FormMenuListButton$Skin.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$FormMenuListButton.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$FormProgressBar.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$FormRadioButton.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$FormSlider.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$FormTextField.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$Pool$Notifier.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$Pool.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$ViewListener$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$ViewListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$Widget.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl$WidgetType.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/RenderThemeImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/Renderer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/ScrollBarThemeImpl$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/ScrollBarThemeImpl$ScrollBarRef.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/ScrollBarThemeImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/ScrollBarWidget$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/ScrollBarWidget.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/ScrollBarWidgetHelper$ScrollBarWidgetAccessor.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/ScrollBarWidgetHelper.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/javafx/webkit/theme/\\E"
   }, {
     "pattern":"\\Qcom/sun/jna/AltCallingConvention.class\\E"
   }, {
@@ -12275,6 +12667,250 @@
   }, {
     "pattern":"\\Qcom/sun/marlin/stats/\\E"
   }, {
+    "pattern":"\\Qcom/sun/media/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/AudioClip.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/Media.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaError.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaErrors.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaErrors_de.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaErrors_es.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaErrors_fr.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaErrors_it.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaErrors_ja.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaErrors_ko.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaErrors_pt_BR.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaErrors_sv.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaErrors_zh_CN.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaErrors_zh_TW.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaException.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaManager.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MediaPlayer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/MetadataParser.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/control/MediaPlayerOverlay.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/control/VideoDataBuffer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/control/VideoFormat$FormatTypes.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/control/VideoFormat.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/control/VideoRenderControl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/control/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/effects/AudioEqualizer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/effects/AudioSpectrum.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/effects/EqualizerBand.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/effects/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/AudioSpectrumEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/AudioSpectrumListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/BufferListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/BufferProgressEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/MarkerEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/MarkerListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/MediaErrorListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/MetadataListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/NewFrameEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/PlayerEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/PlayerStateEvent$PlayerState.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/PlayerStateEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/PlayerStateListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/PlayerTimeListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/VideoFrameRateListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/VideoRendererListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/VideoTrackSizeListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/events/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/ConnectionHolder$FileConnectionHolder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/ConnectionHolder$MemoryConnectionHolder$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/ConnectionHolder$MemoryConnectionHolder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/ConnectionHolder$URIConnectionHolder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/ConnectionHolder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/HLSConnectionHolder$AudioExtMedia.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/HLSConnectionHolder$ExtStreamInf.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/HLSConnectionHolder$Playlist.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/HLSConnectionHolder$PlaylistLoader.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/HLSConnectionHolder$PlaylistParser.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/HLSConnectionHolder$PlaylistThread.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/HLSConnectionHolder$VariantPlaylist.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/HLSConnectionHolder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/Locator$LocatorConnection.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/Locator.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/LocatorCache$CacheDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/LocatorCache$CacheInitializer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/LocatorCache$CacheReference.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/LocatorCache.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/locator/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/logging/Logger.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/logging/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/track/AudioTrack.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/track/SubtitleTrack.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/track/Track$Encoding.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/track/Track.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/track/VideoResolution.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/track/VideoTrack.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmedia/track/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/AudioClipProvider.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/MarkerStateListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/MediaDisposer$Disposable.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/MediaDisposer$ResourceDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/MediaDisposer$ResourceDisposerRecord.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/MediaDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/MediaPulseTask.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/MediaUtils.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/MetadataParserImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeAudioClip$NativeAudioClipDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeAudioClip.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeAudioEqualizer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeAudioSpectrum.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeEqualizerBand.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMedia.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaAudioClip.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaAudioClipPlayer$Enthreaderator.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaAudioClipPlayer$SchedulerEntry.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaAudioClipPlayer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaManager$NativeMediaManagerInitializer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaManager$NativeMediaPlayerDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaManager.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaPlayer$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaPlayer$EventQueueThread.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaPlayer$FrameSizeChangedEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaPlayer$MediaErrorEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaPlayer$PlayerTimeEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaPlayer$TrackEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaPlayer$VideoRenderer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaPlayer$WarningEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeMediaPlayer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeVideoBuffer$VideoBufferDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/NativeVideoBuffer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/platform/Platform.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/platform/PlatformManager$PlatformManagerInitializer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/platform/PlatformManager.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/platform/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/platform/gstreamer/GSTMedia.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/platform/gstreamer/GSTMediaPlayer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/platform/gstreamer/GSTPlatform.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/platform/gstreamer/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/platform/java/ID3MetadataParser.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/platform/java/JavaPlatform.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/media/jfxmediaimpl/platform/java/\\E"
+  }, {
     "pattern":"\\Qcom/sun/openpisces/AlphaConsumer.class\\E"
   }, {
     "pattern":"\\Qcom/sun/openpisces/\\E"
@@ -13665,6 +14301,10 @@
   }, {
     "pattern":"\\Qcom/sun/scenario/animation/SplineInterpolator.class\\E"
   }, {
+    "pattern":"\\Qcom/sun/scenario/animation/StepInterpolator$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/scenario/animation/StepInterpolator.class\\E"
+  }, {
     "pattern":"\\Qcom/sun/scenario/animation/\\E"
   }, {
     "pattern":"\\Qcom/sun/scenario/animation/shared/AnimationAccessor.class\\E"
@@ -14277,6 +14917,596 @@
   }, {
     "pattern":"\\Qcom/sun/util/reentrant/\\E"
   }, {
+    "pattern":"\\Qcom/sun/webkit/BackForwardList$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/BackForwardList$Entry.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/BackForwardList.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/ColorChooser.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/ContextMenu$ShowContext.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/ContextMenu.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/ContextMenuItem.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/CursorManager.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/Disposer$DisposerRunnable.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/Disposer$WeakDisposerRecord.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/Disposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/DisposerRecord.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/EventLoop.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/FileSystem.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/InputMethodClient.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/InspectorClient.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/Invoker.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/LoadListenerClient.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/LocalizedStrings.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/LocalizedStrings.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/LocalizedStrings_de.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/LocalizedStrings_es.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/LocalizedStrings_fr.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/LocalizedStrings_it.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/LocalizedStrings_ja.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/LocalizedStrings_ko.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/LocalizedStrings_pt_BR.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/LocalizedStrings_sv.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/LocalizedStrings_zh_CN.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/LocalizedStrings_zh_TW.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/MainThread.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/MethodHelper.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/PageCache.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/Pasteboard.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/PolicyClient.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/PopupMenu.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/SeparateThreadTimer$FireRunner.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/SeparateThreadTimer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/SharedBuffer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/SimpleSharedBufferInputStream.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/ThemeClient.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/Timer$Mode.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/Timer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/UIClient.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/Utilities.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/WCFrameView.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/WCPasteboard.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/WCPluginWidget.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/WCWidget.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/WebPage$RenderFrame.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/WebPage.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/WebPageClient.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/AttrImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CDATASectionImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSCharsetRuleImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSFontFaceRuleImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSImportRuleImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSMediaRuleImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSPageRuleImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSPrimitiveValueImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSRuleImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSRuleImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSRuleListImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSRuleListImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSStyleDeclarationImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSStyleDeclarationImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSStyleRuleImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSStyleSheetImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSUnknownRuleImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSValueImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSValueImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CSSValueListImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CharacterDataImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CommentImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CounterImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/CounterImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/DOMImplementationImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/DOMImplementationImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/DOMSelectionImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/DOMSelectionImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/DOMStringListImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/DOMStringListImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/DOMWindowImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/DOMWindowImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/DocumentFragmentImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/DocumentImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/DocumentTypeImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/ElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/EntityImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/EntityReferenceImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/EventImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/EventImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/EventListenerImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/EventListenerImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/EventTargetImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/EventTargetImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLAnchorElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLAppletElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLAreaElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLBRElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLBaseElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLBaseFontElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLBodyElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLButtonElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLCollectionImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLCollectionImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLDListElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLDirectoryElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLDivElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLDocumentImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLFieldSetElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLFontElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLFormElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLFrameElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLFrameSetElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLHRElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLHeadElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLHeadingElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLHtmlElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLIFrameElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLImageElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLInputElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLLIElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLLabelElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLLegendElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLLinkElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLMapElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLMenuElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLMetaElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLModElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLOListElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLObjectElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLOptGroupElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLOptionElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLOptionsCollectionImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLParagraphElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLParamElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLPreElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLQuoteElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLScriptElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLSelectElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLStyleElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLTableCaptionElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLTableCellElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLTableColElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLTableElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLTableRowElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLTableSectionElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLTextAreaElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLTitleElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/HTMLUListElementImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/JSObject$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/JSObject.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/KeyboardEventImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/MediaListImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/MediaListImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/MouseEventImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/MutationEventImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/NamedNodeMapImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/NamedNodeMapImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/NodeFilterImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/NodeFilterImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/NodeImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/NodeImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/NodeIteratorImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/NodeIteratorImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/NodeListImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/NodeListImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/ProcessingInstructionImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/RGBColorImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/RGBColorImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/RangeImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/RangeImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/RectImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/RectImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/StyleSheetImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/StyleSheetImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/StyleSheetListImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/StyleSheetListImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/TextImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/TreeWalkerImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/TreeWalkerImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/UIEventImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/WheelEventImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/XPathExpressionImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/XPathExpressionImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/XPathNSResolverImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/XPathNSResolverImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/XPathResultImpl$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/XPathResultImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/dom/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/event/WCChangeEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/event/WCChangeListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/event/WCFocusEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/event/WCInputMethodEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/event/WCKeyEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/event/WCMouseEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/event/WCMouseWheelEvent.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/event/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/BufferData.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/GraphicsDecoder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/Images.properties\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/Ref.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/RenderMediaControls.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/RenderTheme.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/ScrollBarTheme.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCCamera.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCFont.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCFontCustomPlatformData.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCGradient.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCGraphicsContext.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCGraphicsManager.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCIcon.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCImage.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCImageDecoder.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCImageFrame.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCMediaPlayer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCPageBackBuffer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCPath.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCPathIterator.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCPoint.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCRectangle.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCRenderQueue.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCSize.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCStroke.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCTextRun.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/WCTransform.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/graphics/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/ByteBufferAllocator.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/ByteBufferPool$ByteBufferAllocatorImpl.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/ByteBufferPool.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/Cookie.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/CookieJar.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/CookieManager.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/CookieStore$GetComparator.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/CookieStore$RemovalComparator.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/CookieStore.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/DateParser$Time.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/DateParser.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/DirectoryURLConnection$DirectoryInputStream.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/DirectoryURLConnection.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/ExtendedTime.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/FormDataElement$ByteArrayElement.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/FormDataElement$FileElement.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/FormDataElement.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/HTTP2Loader$1$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/HTTP2Loader$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/HTTP2Loader$2.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/HTTP2Loader$3.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/HTTP2Loader.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/NetworkContext$URLLoaderThreadFactory.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/NetworkContext.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/PublicSuffixes$Rule.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/PublicSuffixes$Rules.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/PublicSuffixes.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/SocketStreamHandle$CustomThreadFactory.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/SocketStreamHandle$State.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/SocketStreamHandle.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/URLLoader$InvalidResponseException.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/URLLoader.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/URLLoaderBase.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/URLs.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/Util.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/about/AboutURLConnection$AboutRecord.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/about/AboutURLConnection.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/about/Handler.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/about/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/data/DataURLConnection.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/data/Handler.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/network/data/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/perf/PerfLogger$1.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/perf/PerfLogger$ProbeStat.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/perf/PerfLogger.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/perf/WCFontPerfLogger.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/perf/WCGraphicsPerfLogger.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/perf/WCMessageDigestPerfLogger.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/perf/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/plugin/DefaultPlugin.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/plugin/Plugin.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/plugin/PluginHandler.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/plugin/PluginListener.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/plugin/PluginManager.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/plugin/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/security/WCMessageDigest.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/security/\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/text/StringCase.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/text/TextBreakIterator$CacheKey.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/text/TextBreakIterator.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/text/TextCodec.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/text/TextNormalizer.class\\E"
+  }, {
+    "pattern":"\\Qcom/sun/webkit/text/\\E"
+  }, {
+    "pattern":"\\Qconsolebox.html\\E"
+  }, {
     "pattern":"\\Qdb-icon.png\\E"
   }, {
     "pattern":"\\Qdecora_sse.dll\\E"
@@ -14285,7 +15515,13 @@
   }, {
     "pattern":"\\Qdriver.properties\\E"
   }, {
+    "pattern":"\\Qfxplugins.dll\\E"
+  }, {
     "pattern":"\\Qglass.dll\\E"
+  }, {
+    "pattern":"\\Qglib-lite.dll\\E"
+  }, {
+    "pattern":"\\Qgstreamer-lite.dll\\E"
   }, {
     "pattern":"\\Qicon.jpg\\E"
   }, {
@@ -14363,6 +15599,8 @@
   }, {
     "pattern":"\\Qjavafx/animation/AnimationAccessorImpl.class\\E"
   }, {
+    "pattern":"\\Qjavafx/animation/AnimationTimer$1.class\\E"
+  }, {
     "pattern":"\\Qjavafx/animation/AnimationTimer$AnimationTimerReceiver.class\\E"
   }, {
     "pattern":"\\Qjavafx/animation/AnimationTimer.class\\E"
@@ -14386,6 +15624,10 @@
     "pattern":"\\Qjavafx/animation/Interpolator$4.class\\E"
   }, {
     "pattern":"\\Qjavafx/animation/Interpolator$5.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/animation/Interpolator$6.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/animation/Interpolator$StepPosition.class\\E"
   }, {
     "pattern":"\\Qjavafx/animation/Interpolator.class\\E"
   }, {
@@ -14451,11 +15693,15 @@
   }, {
     "pattern":"\\Qjavafx/application/Application.class\\E"
   }, {
+    "pattern":"\\Qjavafx/application/ColorScheme.class\\E"
+  }, {
     "pattern":"\\Qjavafx/application/ConditionalFeature.class\\E"
   }, {
     "pattern":"\\Qjavafx/application/HostServices.class\\E"
   }, {
     "pattern":"\\Qjavafx/application/Platform$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/application/Platform$Preferences.class\\E"
   }, {
     "pattern":"\\Qjavafx/application/Platform.class\\E"
   }, {
@@ -15505,15 +16751,27 @@
   }, {
     "pattern":"\\Qjavafx/css/Styleable.class\\E"
   }, {
+    "pattern":"\\Qjavafx/css/StyleableBooleanProperty$TransitionMediatorImpl.class\\E"
+  }, {
     "pattern":"\\Qjavafx/css/StyleableBooleanProperty.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/css/StyleableDoubleProperty$TransitionMediatorImpl.class\\E"
   }, {
     "pattern":"\\Qjavafx/css/StyleableDoubleProperty.class\\E"
   }, {
+    "pattern":"\\Qjavafx/css/StyleableFloatProperty$TransitionMediatorImpl.class\\E"
+  }, {
     "pattern":"\\Qjavafx/css/StyleableFloatProperty.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/css/StyleableIntegerProperty$TransitionMediatorImpl.class\\E"
   }, {
     "pattern":"\\Qjavafx/css/StyleableIntegerProperty.class\\E"
   }, {
+    "pattern":"\\Qjavafx/css/StyleableLongProperty$TransitionMediatorImpl.class\\E"
+  }, {
     "pattern":"\\Qjavafx/css/StyleableLongProperty.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/css/StyleableObjectProperty$TransitionMediatorImpl.class\\E"
   }, {
     "pattern":"\\Qjavafx/css/StyleableObjectProperty.class\\E"
   }, {
@@ -15528,6 +16786,8 @@
     "pattern":"\\Qjavafx/css/Stylesheet$1.class\\E"
   }, {
     "pattern":"\\Qjavafx/css/Stylesheet.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/css/TransitionEvent.class\\E"
   }, {
     "pattern":"\\Qjavafx/css/\\E"
   }, {
@@ -15554,6 +16814,8 @@
     "pattern":"\\Qjavafx/css/converter/DurationConverter$1.class\\E"
   }, {
     "pattern":"\\Qjavafx/css/converter/DurationConverter$Holder.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/css/converter/DurationConverter$SequenceConverter.class\\E"
   }, {
     "pattern":"\\Qjavafx/css/converter/DurationConverter.class\\E"
   }, {
@@ -16047,6 +17309,8 @@
   }, {
     "pattern":"\\Qjavafx/scene/Node$StyleableProperties.class\\E"
   }, {
+    "pattern":"\\Qjavafx/scene/Node$TransitionDefinitionCollection.class\\E"
+  }, {
     "pattern":"\\Qjavafx/scene/Node$TreeVisibleProperty.class\\E"
   }, {
     "pattern":"\\Qjavafx/scene/Node.class\\E"
@@ -16356,6 +17620,10 @@
     "pattern":"\\Qjavafx/scene/chart/CategoryAxis$3.class\\E"
   }, {
     "pattern":"\\Qjavafx/scene/chart/CategoryAxis$4.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/chart/CategoryAxis$5.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/chart/CategoryAxis$6.class\\E"
   }, {
     "pattern":"\\Qjavafx/scene/chart/CategoryAxis$StyleableProperties$1.class\\E"
   }, {
@@ -16822,6 +18090,8 @@
     "pattern":"\\Qjavafx/scene/control/Labeled$13.class\\E"
   }, {
     "pattern":"\\Qjavafx/scene/control/Labeled$14.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/control/Labeled$15.class\\E"
   }, {
     "pattern":"\\Qjavafx/scene/control/Labeled$2.class\\E"
   }, {
@@ -18595,6 +19865,14 @@
   }, {
     "pattern":"\\Qjavafx/scene/image/ImageView$StyleableProperties$1.class\\E"
   }, {
+    "pattern":"\\Qjavafx/scene/image/ImageView$StyleableProperties$2.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/image/ImageView$StyleableProperties$3.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/image/ImageView$StyleableProperties$4.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/image/ImageView$StyleableProperties$5.class\\E"
+  }, {
     "pattern":"\\Qjavafx/scene/image/ImageView$StyleableProperties.class\\E"
   }, {
     "pattern":"\\Qjavafx/scene/image/ImageView.class\\E"
@@ -19022,6 +20300,150 @@
     "pattern":"\\Qjavafx/scene/layout/VBox.class\\E"
   }, {
     "pattern":"\\Qjavafx/scene/layout/\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/AudioClip$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/AudioClip$2.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/AudioClip$3.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/AudioClip$4.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/AudioClip$5.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/AudioClip$6.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/AudioClip.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/AudioEqualizer$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/AudioEqualizer$Bands.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/AudioEqualizer.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/AudioSpectrumListener.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/AudioTrack.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/EqualizerBand$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/EqualizerBand$2.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/EqualizerBand$3.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/EqualizerBand.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/Media$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/Media$2.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/Media$InitLocator.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/Media$_MetadataListener.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/Media.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaErrorEvent.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaException$Type.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaException.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaMarkerEvent.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$10.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$11.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$12.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$13.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$14.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$15.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$2.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$3.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$4.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$5.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$6.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$7.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$8.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$9.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$InitMediaPlayer.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$MarkerMapChangeListener.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$RendererListener.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$Status.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$_BufferListener.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$_MarkerListener.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$_MediaErrorListener.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$_PlayerStateListener.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$_PlayerTimeListener.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$_SpectrumListener.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer$_VideoTrackSizeListener.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayer.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaPlayerShutdownHook.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaTimerTask.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaView$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaView$10.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaView$2.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaView$3.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaView$4.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaView$5.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaView$6.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaView$7.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaView$8.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaView$9.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaView$MediaErrorInvalidationListener.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaView$MediaViewFrameTracker.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/MediaView.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/NGMediaView.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/SubtitleTrack.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/Track.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/VideoTrack.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/media/\\E"
   }, {
     "pattern":"\\Qjavafx/scene/paint/Color$NamedColors.class\\E"
   }, {
@@ -19651,6 +21073,194 @@
   }, {
     "pattern":"\\Qjavafx/scene/transform/\\E"
   }, {
+    "pattern":"\\Qjavafx/scene/web/AlignCenter_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/AlignJustified_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/AlignLeft_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/AlignRight_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/Bold_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/Copy_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/Cut_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/DecreaseIndent_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/DirectoryLock$Descriptor.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/DirectoryLock$DirectoryAlreadyInUseException.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/DirectoryLock.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/DrawHorizontalLine_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/FontBackgroundColor_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/FontColor_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditor.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin$2.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin$3.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin$4.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin$5$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin$5.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin$6$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin$6.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin$7.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin$Command.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin.properties\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin_de.properties\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin_es.properties\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin_fr.properties\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin_it.properties\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin_ja.properties\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin_ko.properties\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin_pt_BR.properties\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin_sv.properties\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin_zh_CN.properties\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/HTMLEditorSkin_zh_TW.properties\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/IncreaseIndent_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/Italic_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/OrderedListNumbers_16x16_JFX-rtl.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/OrderedListNumbers_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/Paste_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/PopupFeatures.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/PromptData.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/Redo_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/Strikethrough_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/Underline_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/Undo_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/UnorderedListBullets_16x16_JFX.png\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEngine$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEngine$2.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEngine$3.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEngine$4.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEngine$AccessorImpl.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEngine$DebuggerImpl.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEngine$DocumentProperty.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEngine$InspectorClientImpl.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEngine$LoadWorker.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEngine$PageLoadListener.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEngine$PulseTimer$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEngine$PulseTimer.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEngine$SelfDisposer.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEngine.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebErrorEvent.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebEvent.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebHistory$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebHistory$Entry.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebHistory.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$10.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$11.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$12.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$2.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$3.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$4.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$5.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$6.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$7.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$8.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$9.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$StyleableProperties$1.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$StyleableProperties$10.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$StyleableProperties$11.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$StyleableProperties$2.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$StyleableProperties$3.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$StyleableProperties$4.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$StyleableProperties$5.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$StyleableProperties$6.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$StyleableProperties$7.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$StyleableProperties$8.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$StyleableProperties$9.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView$StyleableProperties.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/WebView.class\\E"
+  }, {
+    "pattern":"\\Qjavafx/scene/web/\\E"
+  }, {
     "pattern":"\\Qjavafx/stage/DirectoryChooser.class\\E"
   }, {
     "pattern":"\\Qjavafx/stage/FileChooser$ExtensionFilter.class\\E"
@@ -19806,6 +21416,10 @@
     "pattern":"\\Qjavafx_font.dll\\E"
   }, {
     "pattern":"\\Qjavafx_iio.dll\\E"
+  }, {
+    "pattern":"\\Qjfxmedia.dll\\E"
+  }, {
+    "pattern":"\\Qjfxwebkit.dll\\E"
   }, {
     "pattern":"\\Qjunit/\\E"
   }, {
@@ -28127,6 +29741,8 @@
   }, {
     "pattern":"\\Qwxdgaming/mariadb/winfm/FindController.class\\E"
   }, {
+    "pattern":"\\Qwxdgaming/mariadb/winfm/TextAreaUpdate.class\\E"
+  }, {
     "pattern":"\\Qwxdgaming/mariadb/winfm/\\E"
   }, {
     "pattern":"\\Qwxdgaming/mariadb/winfm/db-log-view.fxml\\E"
@@ -28135,7 +29751,13 @@
   }, {
     "pattern":"\\Qwxdgaming/mariadb/winfm/find.fxml\\E"
   }, {
+    "pattern":"java.base:\\Qjdk/internal/icu/impl/data/icudt72b/nfkc.nrm\\E"
+  }, {
     "pattern":"java.base:\\Qjdk/internal/icu/impl/data/icudt72b/ubidi.icu\\E"
+  }, {
+    "pattern":"java.base:\\Qjdk/internal/icu/impl/data/icudt72b/uprops.icu\\E"
+  }, {
+    "pattern":"java.base:\\Qsun/net/idn/uidna.spp\\E"
   }, {
     "pattern":"java.base:\\Qsun/text/resources/LineBreakIteratorData\\E"
   }]},
@@ -28144,7 +29766,7 @@
     "locales":["", "und", "zh-CN"]
   }, {
     "name":"com/sun/glass/ui/win/themes",
-    "locales":["", "und", "zh-CN"]
+    "locales":["", "de", "en", "es", "fr", "it", "ja", "ko", "pt-BR", "sv", "und", "zh-CN", "zh-TW"]
   }, {
     "name":"com/sun/javafx/scene/control/skin/resources/controls",
     "locales":["", "und", "zh-CN"]

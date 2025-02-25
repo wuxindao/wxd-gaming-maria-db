@@ -3,17 +3,11 @@ package wxdgaming.mariadb.winfm;
 import com.sun.javafx.application.PlatformImpl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.*;
+import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import wxdgaming.mariadb.server.DBFactory;
 import wxdgaming.mariadb.server.RunAsync;
 import wxdgaming.mariadb.server.WebService;
@@ -22,12 +16,6 @@ import java.awt.*;
 import java.io.*;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Supplier;
 
 
 @Slf4j
@@ -35,16 +23,10 @@ public class DbLogController {
 
     public MenuItem mi_start;
     public MenuItem mi_stop;
-    public TextArea text_area;
-
-    AtomicBoolean scrollLocked = new AtomicBoolean(false);
-    AtomicBoolean openOutput = new AtomicBoolean(true);
-    AtomicReference<Supplier<String>> openFilter = new AtomicReference<>();
+    public WebView webview;
 
     Thread hook;
 
-    AtomicReference<String> oldFind = new AtomicReference<>("");
-    AtomicInteger findIndex = new AtomicInteger(0);
     TextAreaUpdate textAreaUpdate;
 
     public DbLogController() throws Exception {
@@ -58,8 +40,8 @@ public class DbLogController {
 
     public void init() {
         try {
-
-            textAreaUpdate = new TextAreaUpdate(text_area, 1000, 50, 50);
+            webview.getEngine().loadContent(ApplicationMain.readHtml());
+            textAreaUpdate = new TextAreaUpdate(webview, 1500, 50, 150);
 
             /*TODO 必须要等他初始化完成*/
             PrintStream printStream = new PrintStream(System.out) {
@@ -69,25 +51,10 @@ public class DbLogController {
                 }
 
                 @Override public void print(String x) {
-                    if (!openOutput.get()) return;
-                    String[] greps = null;
-                    if (openFilter.get() != null) {
-                        String string = openFilter.get().get();
-                        if (string != null && !string.trim().isEmpty()) {
-                            greps = string.split(" ");
-                        }
-                    }
                     try (StringReader strReader = new StringReader(x);
                          BufferedReader bufferedReader = new BufferedReader(strReader);) {
                         String line;
                         while ((line = bufferedReader.readLine()) != null) {
-                            if (StringUtils.isNotBlank(line)) {
-                                if (greps != null) {
-                                    if (!Arrays.stream(greps).allMatch(line::contains)) {
-                                        continue;
-                                    }
-                                }
-                            }
                             textAreaUpdate.addText(line);
                         }
                     } catch (Throwable ignore) {}
@@ -97,181 +64,18 @@ public class DbLogController {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-        // 创建自定义的上下文菜单
-        ContextMenu contextMenu = new ContextMenu();
-        // 创建菜单项
-        MenuItem copyMenuItem = new MenuItem("复制");
-        {
-            copyMenuItem.setDisable(true);
-            copyMenuItem.setOnAction(event -> text_area.copy());
-            contextMenu.getItems().add(copyMenuItem);
-            MenuItem selectAllMenuItem = new MenuItem("全选");
-            selectAllMenuItem.setOnAction(event -> text_area.selectAll());
-            contextMenu.getItems().add(selectAllMenuItem);
-        }
-        contextMenu.getItems().add(new SeparatorMenuItem());
-        {
-            MenuItem openFilterMenuItem = new MenuItem("关键词过滤");
-            openFilterMenuItem.setOnAction(event -> {
-                openFilterWindow();
-            });
-            contextMenu.getItems().add(openFilterMenuItem);
-            MenuItem findMenuItem = new MenuItem("搜索");
-            findMenuItem.setOnAction(event -> {
-                scrollLocked.set(true);
-                openFindWindow();
-            });
-            contextMenu.getItems().add(findMenuItem);
-        }
-        contextMenu.getItems().add(new SeparatorMenuItem());
-        {
-            {
-                MenuItem clearMenuItem = new MenuItem("锁屏");
-                clearMenuItem.setOnAction(event -> scrollLocked.set(true));
-                contextMenu.getItems().add(clearMenuItem);
-            }
-            {
-                MenuItem clearMenuItem = new MenuItem("滚屏");
-                clearMenuItem.setOnAction(event -> scrollLocked.set(false));
-                contextMenu.getItems().add(clearMenuItem);
-            }
-            {
-                MenuItem clearMenuItem = new MenuItem("清屏");
-                clearMenuItem.setOnAction(event -> {
-                    scrollLocked.set(false);
-                    clearOut();
-                });
-                contextMenu.getItems().add(clearMenuItem);
-            }
-        }
-        contextMenu.getItems().add(new SeparatorMenuItem());
-        {
-            MenuItem pauseMenuItem = new MenuItem("暂停输出");
-            MenuItem recoverMenuItem = new MenuItem("恢复输出");
-            recoverMenuItem.setDisable(true);
-            contextMenu.getItems().add(pauseMenuItem);
-            contextMenu.getItems().add(recoverMenuItem);
-
-            pauseMenuItem.setOnAction(event -> {
-                openOutput.set(false);
-                pauseMenuItem.setDisable(true);
-                recoverMenuItem.setDisable(false);
-            });
-            recoverMenuItem.setOnAction(event -> {
-                openOutput.set(true);
-                recoverMenuItem.setDisable(true);
-                pauseMenuItem.setDisable(false);
-            });
-
-        }
-
-        // 禁用默认的上下文菜单
-        text_area.setContextMenu(contextMenu);
-
-        {
-            // 为 selectedTextProperty 添加监听器
-            text_area.selectedTextProperty().addListener((observable, oldValue, newValue) -> {
-                if (newValue == null || newValue.isBlank()) {
-                    copyMenuItem.setDisable(true);
-                } else {
-                    copyMenuItem.setDisable(false);
-                }
-            });
-        }
-
         // RunAsync.async(() -> {
         //     for (; ; ) {
         //         try {
-        //             Thread.sleep(300);
+        //             Thread.sleep(30);
         //         } catch (InterruptedException e) {
         //             e.printStackTrace();
         //         }
         //         System.out.println(randomString());
         //     }
         // });
-
     }
 
-    public void openFilterWindow() {
-        PlatformImpl.runLater(() -> {
-            try {
-                // 加载新的FXML文件
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/wxdgaming/mariadb/winfm/filter.fxml"));
-                Parent root = loader.load();
-                FilterController controller = loader.getController();
-                // 创建新的Stage
-                Stage newStage = new Stage();
-                newStage.setTitle("过滤");
-                // 设置舞台样式为无装饰，去掉系统默认的标题栏和按钮
-                newStage.initStyle(StageStyle.UTILITY);
-                newStage.setScene(new Scene(root));
-                newStage.setResizable(false);
-                // 显示新的Stage
-                newStage.show();
-                newStage.setAlwaysOnTop(true);
-
-                newStage.setOnCloseRequest(windowEvent -> {
-                    openFilter.set(null);
-                });
-
-                openFilter.set(() -> controller.txt_find.getText());
-
-            } catch (IOException e) {
-                e.printStackTrace(System.out);
-            }
-        });
-    }
-
-    public void openFindWindow() {
-        PlatformImpl.runLater(() -> {
-            try {
-                // 加载新的FXML文件
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/wxdgaming/mariadb/winfm/find.fxml"));
-                Parent root = loader.load();
-                FindController controller = loader.getController();
-                /*注册事件*/
-                controller.init(this::find);
-                // 创建新的Stage
-                Stage newStage = new Stage();
-                // 设置舞台样式为无装饰，去掉系统默认的标题栏和按钮
-                newStage.initStyle(StageStyle.UTILITY);
-                newStage.setTitle("查找");
-                newStage.setScene(new Scene(root));
-                newStage.setResizable(false);
-                // 显示新的Stage
-                newStage.show();
-                newStage.setAlwaysOnTop(true);
-
-                newStage.setOnCloseRequest(windowEvent -> {
-                    scrollLocked.set(false);
-                });
-
-            } catch (IOException e) {
-                e.printStackTrace(System.out);
-            }
-        });
-    }
-
-    public String find(String findStr) {
-        scrollLocked.set(true);
-        String textAreaText = text_area.getText();
-        if (Objects.equals(oldFind.get(), findStr)) {
-            /*重新开始*/
-            findIndex.set(0);
-        }
-        int indexOf = textAreaText.indexOf(findStr, findIndex.get());
-        int allCounted = TextAreaUpdate.countCharacter(textAreaText, findStr, -1);
-        if (indexOf > 0) {
-            text_area.selectRange(indexOf, indexOf + findStr.length());
-            findIndex.set(indexOf + findStr.length());
-            int findCounted = TextAreaUpdate.countCharacter(textAreaText, findStr, indexOf + findStr.length());
-            return "总共：" + allCounted + ", 第：" + findCounted + ", 位置：" + indexOf;
-        } else {
-            findIndex.set(0);
-            return "总共：" + allCounted + ", 第：" + allCounted + " 结尾";
-        }
-    }
 
     public static String randomString() {
         int len = (int) (Math.random() * 200);
@@ -332,7 +136,7 @@ public class DbLogController {
                 new FileChooser.ExtensionFilter("SQL Files", "*.sql"),
                 new FileChooser.ExtensionFilter("All Files", "*.*")
         );
-        File selectedFile = fileChooser.showOpenDialog(text_area.getScene().getWindow());
+        File selectedFile = fileChooser.showOpenDialog(webview.getScene().getWindow());
         if (selectedFile != null) {
             System.out.println("选择的文件路径: " + selectedFile.getAbsolutePath());
             // 你可以在这里添加代码来处理选择的文件
@@ -344,7 +148,7 @@ public class DbLogController {
     private void clearAction(ActionEvent event) {
         DBFactory.getIns().stop();
         WebService.getIns().stop();
-        clearOut();
+        webview.getEngine().executeScript("clearConsole();");
         PlatformImpl.runAndWait(() -> {
             mi_start.setDisable(false);
             mi_stop.setDisable(true);
@@ -382,11 +186,6 @@ public class DbLogController {
         });
     }
 
-    private void clearOut() {
-        PlatformImpl.runAndWait(() -> {
-            text_area.setText("");
-        });
-    }
 
     @FXML
     private void closeAction(ActionEvent event) {
@@ -415,32 +214,6 @@ public class DbLogController {
         } catch (IOException ex) {
             log.error("文件：{}", path, ex);
         }
-    }
-
-    public void openWebView(ActionEvent event) {
-        PlatformImpl.runLater(() -> {
-            try {
-                // 加载新的FXML文件
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/wxdgaming/mariadb/winfm/htmlview.fxml"));
-                Parent root = loader.load();
-                Htmlview controller = loader.getController();
-
-                // 创建新的Stage
-                Stage newStage = new Stage();
-                // 设置舞台样式为无装饰，去掉系统默认的标题栏和按钮
-                // newStage.initStyle(StageStyle.UTILITY);
-                newStage.setTitle("console");
-                newStage.setScene(new Scene(root));
-                // newStage.setResizable(false);
-                // 显示新的Stage
-                newStage.show();
-                newStage.setAlwaysOnTop(true);
-                /*注册事件*/
-                controller.init();
-            } catch (IOException e) {
-                e.printStackTrace(System.out);
-            }
-        });
     }
 
     @FXML

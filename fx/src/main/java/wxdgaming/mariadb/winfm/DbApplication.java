@@ -74,6 +74,7 @@ public class DbApplication extends Application {
                 /*必须让界面闪一下，不然程序不稳定，容易崩溃*/
                 Thread.sleep(1000);
 
+                ApplicationMain.guiCountDownLatch.countDown();
                 if (StringUtils.isBlank(ApplicationMain.javaClassPath())) {
                     closeSelect(primaryStage);
                 }

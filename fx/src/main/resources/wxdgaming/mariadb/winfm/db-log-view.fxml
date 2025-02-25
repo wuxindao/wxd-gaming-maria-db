@@ -19,8 +19,6 @@
                     <MenuItem text="退出" onAction="#closeAction"/>
                 </Menu>
                 <Menu text="编辑">
-                    <MenuItem text="web" onAction="#openWebView"/>
-                    <SeparatorMenuItem/>
                     <MenuItem text="修改配置" onAction="#openConfig"/>
                     <SeparatorMenuItem/>
                     <MenuItem text="查看日志" onAction="#openLogFile"/>

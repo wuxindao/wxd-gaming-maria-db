@@ -1,10 +1,12 @@
 package wxdgaming.mariadb.winfm;
 
 import com.sun.javafx.application.PlatformImpl;
-import javafx.scene.control.TextArea;
+import javafx.scene.web.WebView;
+import org.apache.commons.lang3.StringEscapeUtils;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
@@ -15,7 +17,7 @@ import java.util.concurrent.locks.ReentrantLock;
  **/
 public class TextAreaUpdate extends Thread {
 
-    private final TextArea textArea;
+    private final WebView webView;
     /** textarea 文本框展示的最大行数 */
     private final int showMaxLine;
     private final long duration;
@@ -23,35 +25,33 @@ public class TextAreaUpdate extends Thread {
     private final int actionLine;
 
     private final ReentrantLock lock = new ReentrantLock();
-    private final AtomicInteger totalLine = new AtomicInteger();
-    private final LinkedBlockingQueue<String> strings = new LinkedBlockingQueue<>();
-    private StringBuilder stringBuilder = new StringBuilder();
+    private final LinkedBlockingQueue<List<String>> strings = new LinkedBlockingQueue<>();
+    private List<String> stringBuilder;
 
     /**
      * 构建 textarea 更新器
      *
-     * @param textArea    文本框对象
+     * @param webView     文本框对象
      * @param showMaxLine 展示的最大行数
      * @param actionLine  单次处理的行数
      */
-    public TextAreaUpdate(TextArea textArea, int showMaxLine, long duration, int actionLine) {
-        this.textArea = textArea;
+    public TextAreaUpdate(WebView webView, int showMaxLine, long duration, int actionLine) {
+        this.webView = webView;
         this.showMaxLine = showMaxLine;
         this.duration = duration;
         this.actionLine = actionLine;
         this.setPriority(Thread.MAX_PRIORITY);
         this.setDaemon(true);
         this.start();
+        stringBuilder = new ArrayList<>(actionLine);
     }
 
     public void addText(String text) {
         lock.lock();
         try {
-            if (!stringBuilder.isEmpty()) stringBuilder.append("\n");
-            stringBuilder.append(text);
-            totalLine.incrementAndGet();
+            stringBuilder.add(text);
 
-            if (totalLine.get() > actionLine) {
+            if (stringBuilder.size() >= actionLine) {
                 reset();
             }
         } finally {
@@ -60,9 +60,8 @@ public class TextAreaUpdate extends Thread {
     }
 
     private void reset() {
-        strings.add(stringBuilder.toString());
-        stringBuilder = new StringBuilder();
-        totalLine.set(0);
+        strings.add(stringBuilder);
+        stringBuilder = new ArrayList<>(actionLine);
     }
 
     @Override public void run() {
@@ -80,46 +79,20 @@ public class TextAreaUpdate extends Thread {
 
                 if (strings.isEmpty()) continue;
 
-                String poll = strings.poll();
-
-                PlatformImpl.runAndWait(() -> {
-                    if (textArea.getLength() > 0)
-                        textArea.appendText("\n");
-                    textArea.appendText(poll);
-                    removeTopLine();
-                });
+                List<String> poll = strings.poll();
+                for (String line : poll) {
+                    PlatformImpl.runAndWait(() -> {
+                        try {
+                            String escapedLine = StringEscapeUtils.escapeEcmaScript(line);
+                            webView.getEngine().executeScript("append(\"" + escapedLine + "\");");
+                        } catch (Exception e) {
+                            System.err.println(line);
+                            e.printStackTrace(System.err);
+                        }
+                    });
+                }
             } catch (Throwable ignored) {}
         }
-    }
-
-    private void removeTopLine() {
-        String text = textArea.getText();
-        int delLine = countCharacter(text, "\n", -1) - showMaxLine;
-        if (delLine < 1) {
-            return;
-        }
-        int firstNewLineIndex = 0;
-        for (int i = 0; i < delLine; i++) {
-            firstNewLineIndex = text.indexOf('\n', firstNewLineIndex + 1);
-        }
-        if (firstNewLineIndex != -1) {
-            textArea.deleteText(0, firstNewLineIndex + 1);
-        }
-        textArea.appendText(" ");
-    }
-
-    /** 查找指定字符串数量 */
-    public static int countCharacter(String str, String target, int endIndex) {
-        int count = 0;
-        int index = -1;
-        for (; ; ) {
-            if ((index = str.indexOf(target, index + 1)) >= 0 && (endIndex < 0 || index < endIndex)) {
-                count++;
-            } else {
-                break;
-            }
-        }
-        return count;
     }
 
 }

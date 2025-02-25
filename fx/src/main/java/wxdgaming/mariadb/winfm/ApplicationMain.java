@@ -2,6 +2,7 @@ package wxdgaming.mariadb.winfm;
 
 import javafx.application.Application;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.IOUtils;
 import wxdgaming.mariadb.server.*;
 
 import java.io.InputStream;
@@ -16,21 +17,32 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.CountDownLatch;
 
 @Slf4j
 public class ApplicationMain {
 
     public static Properties properties = null;
+    public static CountDownLatch guiCountDownLatch = new CountDownLatch(1);
 
     public static String javaClassPath() {
         return System.getProperty("java.class.path");
     }
 
+    public static String readHtml() {
+        try (InputStream resourceAsStream = ApplicationMain.class.getResourceAsStream("/consolebox.html")) {
+            return IOUtils.toString(resourceAsStream, StandardCharsets.UTF_8);
+        } catch (Exception e) {
+            throw new RuntimeException("加载文件失败");
+        }
+    }
+
     public static void main(String[] args) throws Exception {
         initGraalvm();
         loadProperties();
-        Thread.ofPlatform().start(ApplicationMain::initGui);
 
+        Thread.ofPlatform().start(() -> ApplicationMain.initGui(guiCountDownLatch));
+        guiCountDownLatch.await();
         startDb(true);
 
         Thread.sleep(2000);
@@ -45,15 +57,17 @@ public class ApplicationMain {
                 DbApplication.__title = String.valueOf(properties.getOrDefault("title", DbApplication.__title));
             }
         } catch (Throwable throwable) {
-            throwable.printStackTrace(System.out);
+            throwable.printStackTrace(System.err);
         }
     }
 
-    public static void initGui() {
+    public static void initGui(CountDownLatch countDownLatch) {
         try {
             Application.launch(DbApplication.class);
         } catch (Throwable throwable) {
-            throwable.printStackTrace(System.out);
+            throwable.printStackTrace(System.err);
+        } finally {
+            countDownLatch.countDown();
         }
     }
 
@@ -73,8 +87,6 @@ public class ApplicationMain {
                 reflectAction.action(DBFactory.class, false);
                 reflectAction.action(DbApplication.class, false);
                 reflectAction.action(DbLogController.class, false);
-                reflectAction.action(FindController.class, false);
-                reflectAction.action(FilterController.class, false);
                 reflectAction.action(TextAreaUpdate.class, false);
             }
         } catch (Throwable e) {
