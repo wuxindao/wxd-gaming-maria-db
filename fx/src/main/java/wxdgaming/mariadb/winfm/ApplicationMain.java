@@ -1,7 +1,6 @@
 package wxdgaming.mariadb.winfm;
 
 import javafx.application.Application;
-import javafx.scene.transform.Rotate;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.reflections.Reflections;
@@ -27,6 +26,10 @@ public class ApplicationMain {
 
     public static Properties properties = null;
     public static CountDownLatch guiCountDownLatch = new CountDownLatch(1);
+
+    public static String serverName() {
+        return String.valueOf(properties.getOrDefault("title", "数据库服务"));
+    }
 
     public static String javaClassPath() {
         return System.getProperty("java.class.path");
@@ -57,7 +60,6 @@ public class ApplicationMain {
             try (InputStream inputStream = Files.newInputStream(Paths.get("my.ini"));
                  InputStreamReader inputStreamReader = new InputStreamReader(inputStream, StandardCharsets.UTF_8)) {
                 properties.load(inputStreamReader);
-                DbApplication.__title = String.valueOf(properties.getOrDefault("title", DbApplication.__title));
             }
         } catch (Throwable throwable) {
             throwable.printStackTrace(System.err);
@@ -84,19 +86,25 @@ public class ApplicationMain {
                     URL resource = contextClassLoader.getResource(string);
                     log.info("{} - {}", string, resource);
                 }
-
-                Reflections reflections = new Reflections("javafx.reflections");
-                Set<Class<?>> allClasses = reflections.getSubTypesOf(Object.class);
-                for (Class<?> clazz : allClasses) {
-                    System.out.println(clazz.getName());
-                }
                 ReflectAction reflectAction = ReflectAction.of();
-                reflectAction.action(Rotate.class, false);
-                reflectAction.action(MyDB.class, false);
-                reflectAction.action(DBFactory.class, false);
-                reflectAction.action(DbApplication.class, false);
-                reflectAction.action(DbLogController.class, false);
-                reflectAction.action(TextAreaUpdate.class, false);
+                {
+                    Reflections reflections = new Reflections("javafx.reflections");
+                    Set<Class<?>> allClasses = reflections.getSubTypesOf(Object.class);
+                    for (Class<?> clazz : allClasses) {
+                        try {
+                            reflectAction.action(clazz, false);
+                        } catch (Exception ignored) {}
+                    }
+                }
+                {
+                    Reflections reflections = new Reflections("wxdgaming");
+                    Set<Class<?>> allClasses = reflections.getSubTypesOf(Object.class);
+                    for (Class<?> clazz : allClasses) {
+                        try {
+                            reflectAction.action(clazz, false);
+                        } catch (Exception ignored) {}
+                    }
+                }
             }
         } catch (Throwable e) {
             e.printStackTrace(System.out);

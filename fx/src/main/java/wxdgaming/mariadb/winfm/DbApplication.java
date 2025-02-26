@@ -24,7 +24,6 @@ import java.util.concurrent.atomic.AtomicBoolean;
 @Slf4j
 public class DbApplication extends Application {
 
-    public static String __title = "数据库服务";
     public static String __iconName = "db-icon.png";
 
     static AtomicBoolean icon_checked = new AtomicBoolean();
@@ -56,7 +55,7 @@ public class DbApplication extends Application {
         DbLogController controller = fxmlLoader.getController();
         controller.init();
         Scene scene = new Scene(loaded, 1000, 600, false, SceneAntialiasing.BALANCED);
-        primaryStage.setTitle(__title);
+        primaryStage.setTitle(ApplicationMain.serverName());
         primaryStage.setScene(scene);
 
         primaryStage.getIcons().add(image_logo);
@@ -82,10 +81,6 @@ public class DbApplication extends Application {
         });
     }
 
-    public static void setTitle(Stage primaryStage, String title) {
-        PlatformImpl.runLater(() -> primaryStage.setTitle(title));
-    }
-
     /** 开启系统托盘图标 */
     public void setIcon(Stage primaryStage) {
         try {
@@ -93,7 +88,7 @@ public class DbApplication extends Application {
                 /*TODO 系统托盘图标*/
                 SystemTray tray = SystemTray.getSystemTray();
                 BufferedImage bufferedImage = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(__iconName));
-                TrayIcon trayIcon = new TrayIcon(bufferedImage, __title);
+                TrayIcon trayIcon = new TrayIcon(bufferedImage, ApplicationMain.serverName());
                 trayIcon.setImageAutoSize(true);
 
                 /*TODO 图标双击事件 */
