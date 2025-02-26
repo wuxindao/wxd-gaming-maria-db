@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.scene.transform.Rotate;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
+import org.reflections.Reflections;
 import wxdgaming.mariadb.server.*;
 
 import java.io.InputStream;
@@ -18,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 
 @Slf4j
@@ -83,6 +85,11 @@ public class ApplicationMain {
                     log.info("{} - {}", string, resource);
                 }
 
+                Reflections reflections = new Reflections("javafx.reflections");
+                Set<Class<?>> allClasses = reflections.getSubTypesOf(Object.class);
+                for (Class<?> clazz : allClasses) {
+                    System.out.println(clazz.getName());
+                }
                 ReflectAction reflectAction = ReflectAction.of();
                 reflectAction.action(Rotate.class, false);
                 reflectAction.action(MyDB.class, false);
