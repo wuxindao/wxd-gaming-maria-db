@@ -199,6 +199,14 @@
   }, {
     "pattern":"\\QMETA-INF/maven/org.slf4j/slf4j-api/pom.xml\\E"
   }, {
+    "pattern":"\\QMETA-INF/maven/org.yaml/\\E"
+  }, {
+    "pattern":"\\QMETA-INF/maven/org.yaml/snakeyaml/\\E"
+  }, {
+    "pattern":"\\QMETA-INF/maven/org.yaml/snakeyaml/pom.properties\\E"
+  }, {
+    "pattern":"\\QMETA-INF/maven/org.yaml/snakeyaml/pom.xml\\E"
+  }, {
     "pattern":"\\QMETA-INF/maven/wxd-gaming.mariadb/\\E"
   }, {
     "pattern":"\\QMETA-INF/maven/wxd-gaming.mariadb/db-server/\\E"
@@ -212,6 +220,12 @@
     "pattern":"\\QMETA-INF/maven/wxd-gaming.mariadb/fx/pom.properties\\E"
   }, {
     "pattern":"\\QMETA-INF/maven/wxd-gaming.mariadb/fx/pom.xml\\E"
+  }, {
+    "pattern":"\\QMETA-INF/maven/wxd-gaming.mariadb/wxdgaming.mariadb/\\E"
+  }, {
+    "pattern":"\\QMETA-INF/maven/wxd-gaming.mariadb/wxdgaming.mariadb/pom.properties\\E"
+  }, {
+    "pattern":"\\QMETA-INF/maven/wxd-gaming.mariadb/wxdgaming.mariadb/pom.xml\\E"
   }, {
     "pattern":"\\QMETA-INF/native-image/\\E"
   }, {
@@ -404,6 +418,18 @@
     "pattern":"\\QMETA-INF/versions/9/com/google/errorprone/annotations/concurrent/\\E"
   }, {
     "pattern":"\\QMETA-INF/versions/9/module-info.class\\E"
+  }, {
+    "pattern":"\\QMETA-INF/versions/9/org/\\E"
+  }, {
+    "pattern":"\\QMETA-INF/versions/9/org/yaml/\\E"
+  }, {
+    "pattern":"\\QMETA-INF/versions/9/org/yaml/snakeyaml/\\E"
+  }, {
+    "pattern":"\\QMETA-INF/versions/9/org/yaml/snakeyaml/internal/Logger$Level.class\\E"
+  }, {
+    "pattern":"\\QMETA-INF/versions/9/org/yaml/snakeyaml/internal/Logger.class\\E"
+  }, {
+    "pattern":"\\QMETA-INF/versions/9/org/yaml/snakeyaml/internal/\\E"
   }, {
     "pattern":"\\QMETA-INF/versions/\\E"
   }, {
@@ -30777,6 +30803,534 @@
   }, {
     "pattern":"\\Qorg/springframework/util/xml/package-info.class\\E"
   }, {
+    "pattern":"\\Qorg/yaml/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/DumperOptions$FlowStyle.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/DumperOptions$LineBreak.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/DumperOptions$NonPrintableStyle.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/DumperOptions$ScalarStyle.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/DumperOptions$Version.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/DumperOptions.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/LoaderOptions.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/TypeDescription.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/Yaml$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/Yaml$2.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/Yaml$3.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/Yaml$EventIterable.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/Yaml$NodeIterable.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/Yaml$SilentEmitter.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/Yaml$YamlIterable.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/Yaml.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/comments/CommentEventsCollector$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/comments/CommentEventsCollector.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/comments/CommentLine.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/comments/CommentType.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/comments/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/composer/Composer$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/composer/Composer.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/composer/ComposerException.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/composer/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/AbstractConstruct.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/BaseConstructor.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/Construct.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/Constructor$ConstructMapping.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/Constructor$ConstructScalar.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/Constructor$ConstructSequence.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/Constructor$ConstructYamlObject.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/Constructor.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/ConstructorException.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/CustomClassLoaderConstructor.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/DuplicateKeyException.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor$ConstructUndefined.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor$ConstructYamlBinary.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor$ConstructYamlBool.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor$ConstructYamlFloat.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor$ConstructYamlInt.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor$ConstructYamlMap.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor$ConstructYamlNull.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor$ConstructYamlOmap.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor$ConstructYamlPairs.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor$ConstructYamlSeq.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor$ConstructYamlSet.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor$ConstructYamlStr.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor$ConstructYamlTimestamp.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/SafeConstructor.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/constructor/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitable.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectBlockMappingKey.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectBlockMappingSimpleValue.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectBlockMappingValue.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectBlockSequenceItem.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectDocumentEnd.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectDocumentRoot.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectDocumentStart.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectFirstBlockMappingKey.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectFirstBlockSequenceItem.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectFirstDocumentStart.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectFirstFlowMappingKey.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectFirstFlowSequenceItem.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectFlowMappingKey.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectFlowMappingSimpleValue.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectFlowMappingValue.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectFlowSequenceItem.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectNothing.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter$ExpectStreamStart.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/Emitter.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/EmitterException.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/EmitterState.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/ScalarAnalysis.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/emitter/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/env/EnvScalarConstructor$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/env/EnvScalarConstructor$ConstructEnv.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/env/EnvScalarConstructor.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/env/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/error/Mark.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/error/MarkedYAMLException.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/error/MissingEnvironmentVariableException.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/error/YAMLException.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/error/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/AliasEvent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/CollectionEndEvent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/CollectionStartEvent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/CommentEvent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/DocumentEndEvent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/DocumentStartEvent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/Event$ID.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/Event.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/ImplicitTuple.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/MappingEndEvent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/MappingStartEvent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/NodeEvent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/ScalarEvent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/SequenceEndEvent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/SequenceStartEvent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/StreamEndEvent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/StreamStartEvent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/events/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/extensions/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/extensions/compactnotation/CompactConstructor$ConstructCompactObject.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/extensions/compactnotation/CompactConstructor.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/extensions/compactnotation/CompactData.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/extensions/compactnotation/PackageCompactConstructor.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/extensions/compactnotation/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/external/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/external/com/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/external/com/google/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/external/com/google/gdata/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/external/com/google/gdata/util/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/external/com/google/gdata/util/common/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/external/com/google/gdata/util/common/base/Escaper.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/external/com/google/gdata/util/common/base/PercentEscaper.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/external/com/google/gdata/util/common/base/UnicodeEscaper$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/external/com/google/gdata/util/common/base/UnicodeEscaper$2.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/external/com/google/gdata/util/common/base/UnicodeEscaper.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/external/com/google/gdata/util/common/base/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/inspector/TagInspector.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/inspector/UnTrustedTagInspector.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/inspector/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/internal/Logger$Level.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/internal/Logger.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/internal/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/introspector/BeanAccess.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/introspector/FieldProperty.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/introspector/GenericProperty.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/introspector/MethodProperty.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/introspector/MissingProperty.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/introspector/Property.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/introspector/PropertySubstitute.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/introspector/PropertyUtils.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/introspector/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/nodes/AnchorNode.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/nodes/CollectionNode.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/nodes/MappingNode.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/nodes/Node.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/nodes/NodeId.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/nodes/NodeTuple.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/nodes/ScalarNode.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/nodes/SequenceNode.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/nodes/Tag.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/nodes/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/Parser.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserException.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseBlockMappingFirstKey.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseBlockMappingKey.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseBlockMappingValue.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseBlockMappingValueComment.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseBlockMappingValueCommentList.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseBlockNode.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseBlockSequenceEntryKey.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseBlockSequenceEntryValue.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseBlockSequenceFirstEntry.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseDocumentContent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseDocumentEnd.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseDocumentStart.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseFlowEndComment.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseFlowMappingEmptyValue.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseFlowMappingFirstKey.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseFlowMappingKey.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseFlowMappingValue.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseFlowSequenceEntry.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseFlowSequenceEntryMappingEnd.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseFlowSequenceEntryMappingKey.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseFlowSequenceEntryMappingValue.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseFlowSequenceFirstEntry.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseImplicitDocumentStart.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseIndentlessSequenceEntryKey.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseIndentlessSequenceEntryValue.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl$ParseStreamStart.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/ParserImpl.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/Production.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/VersionTagsTuple.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/parser/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/reader/ReaderException.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/reader/StreamReader.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/reader/UnicodeReader.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/reader/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/BaseRepresenter$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/BaseRepresenter.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/JsonRepresenter$RepresentByteArray.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/JsonRepresenter$RepresentDate.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/JsonRepresenter.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/Represent.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/Representer$RepresentJavaBean.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/Representer.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$IteratorWrapper.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$RepresentArray.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$RepresentBoolean.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$RepresentByteArray.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$RepresentDate.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$RepresentEnum.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$RepresentIterator.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$RepresentList.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$RepresentMap.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$RepresentNull.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$RepresentNumber.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$RepresentPrimitiveArray.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$RepresentSet.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$RepresentString.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter$RepresentUuid.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/SafeRepresenter.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/representer/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/resolver/Resolver$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/resolver/Resolver.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/resolver/ResolverTuple.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/resolver/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/scanner/Constant.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/scanner/Scanner.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/scanner/ScannerException.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/scanner/ScannerImpl$Chomping.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/scanner/ScannerImpl.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/scanner/SimpleKey.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/scanner/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/serializer/AnchorGenerator.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/serializer/NumberAnchorGenerator.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/serializer/Serializer$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/serializer/Serializer$2.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/serializer/Serializer.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/serializer/SerializerException.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/serializer/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/AliasToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/AnchorToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/BlockEndToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/BlockEntryToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/BlockMappingStartToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/BlockSequenceStartToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/CommentToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/DirectiveToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/DocumentEndToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/DocumentStartToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/FlowEntryToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/FlowMappingEndToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/FlowMappingStartToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/FlowSequenceEndToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/FlowSequenceStartToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/KeyToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/ScalarToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/StreamEndToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/StreamStartToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/TagToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/TagTuple.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/Token$ID.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/Token.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/ValueToken.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/tokens/\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/util/ArrayStack.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/util/ArrayUtils$CompositeUnmodifiableArrayList.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/util/ArrayUtils$UnmodifiableArrayList.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/util/ArrayUtils.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/util/EnumUtils.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/util/MergeUtils.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/util/PlatformFeatureDetector.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/util/Tuple.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/util/UriEncoder.class\\E"
+  }, {
+    "pattern":"\\Qorg/yaml/snakeyaml/util/\\E"
+  }, {
     "pattern":"\\Qprism_common.dll\\E"
   }, {
     "pattern":"\\Qprism_d3d.dll\\E"
@@ -30918,6 +31472,20 @@
     "pattern":"\\Qwaffle/windows/auth/package-info.class\\E"
   }, {
     "pattern":"\\Qwxdgaming/\\E"
+  }, {
+    "pattern":"\\Qwxdgaming/mariadb/ApplicationMain.class\\E"
+  }, {
+    "pattern":"\\Qwxdgaming/mariadb/DbConfig.class\\E"
+  }, {
+    "pattern":"\\Qwxdgaming/mariadb/GraalvmUtil$Tuple.class\\E"
+  }, {
+    "pattern":"\\Qwxdgaming/mariadb/GraalvmUtil.class\\E"
+  }, {
+    "pattern":"\\Qwxdgaming/mariadb/PlatformRunnable.class\\E"
+  }, {
+    "pattern":"\\Qwxdgaming/mariadb/ReflectAction.class\\E"
+  }, {
+    "pattern":"\\Qwxdgaming/mariadb/RunAsync.class\\E"
   }, {
     "pattern":"\\Qwxdgaming/mariadb/\\E"
   }, {

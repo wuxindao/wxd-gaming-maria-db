@@ -1,4 +1,4 @@
-package wxdgaming.mariadb.server;
+package wxdgaming.mariadb;
 
 /**
  * ui线程执行器

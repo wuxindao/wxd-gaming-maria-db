@@ -22,7 +22,6 @@ public class WebService {
 
     WebService() {}
 
-    @Setter private int port;
     @Setter Runnable showWindow;
     private HttpServer httpServer;
 
@@ -38,7 +37,7 @@ public class WebService {
         exchange.close();
     };
 
-    public void start() throws Exception {
+    public void start(int port) throws Exception {
         httpServer = HttpServer.create(new InetSocketAddress(port), 0);
 
 
@@ -52,9 +51,9 @@ public class WebService {
             httpHandler.handle(exchange);
         });
         httpServer.start();
-        log.info("http://localhost:{}/api/db/stop", this.port);
-        log.info("http://localhost:{}/api/db/check", this.port);
-        log.info("http://localhost:{}/api/db/show", this.port);
+        log.info("http://localhost:{}/api/db/stop", port);
+        log.info("http://localhost:{}/api/db/check", port);
+        log.info("http://localhost:{}/api/db/show", port);
     }
 
     public void stop() {

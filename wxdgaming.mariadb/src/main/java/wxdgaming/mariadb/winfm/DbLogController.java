@@ -8,8 +8,12 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import wxdgaming.mariadb.ApplicationMain;
+import wxdgaming.mariadb.DbConfig;
+import wxdgaming.mariadb.GraalvmUtil;
+import wxdgaming.mariadb.RunAsync;
 import wxdgaming.mariadb.server.DBFactory;
-import wxdgaming.mariadb.server.RunAsync;
 import wxdgaming.mariadb.server.WebService;
 
 import java.awt.*;
@@ -36,11 +40,24 @@ public class DbLogController {
             Runtime.getRuntime().halt(0);
         });
 
+
     }
 
     public void init() {
         try {
-            webview.getEngine().loadContent(ApplicationMain.readHtml());
+
+            webview.getEngine().loadContent(GraalvmUtil.readHtml());
+            webview.getEngine().getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
+                    if (StringUtils.isNotBlank(DbConfig.ins.getBgColor())) {
+                        webview.getEngine().executeScript("setBg('%s');".formatted(DbConfig.ins.getBgColor()));
+                    }
+                    if (DbConfig.ins.getFontSize() > 0) {
+                        webview.getEngine().executeScript("setFontSize(%s);".formatted(DbConfig.ins.getFontSize()));
+                    }
+                }
+            });
+
             textAreaUpdate = new TextAreaUpdate(webview, 1500, 50, 150);
 
             /*TODO 必须要等他初始化完成*/
@@ -215,6 +232,39 @@ public class DbLogController {
             log.error("文件：{}", path, ex);
         }
     }
+
+    /** 设置深色模式 */
+    public void setDarkBgColor(ActionEvent event) {
+        webview.getEngine().executeScript("setBg('body_dark');");
+        DbConfig.ins.setBgColor("body_dark");
+        DbConfig.ins.saveYaml();
+    }
+
+    /** 设置浅色模式 */
+    public void setLightBgColor(ActionEvent event) {
+        webview.getEngine().executeScript("setBg('body_light');");
+        DbConfig.ins.setBgColor("body_light");
+        DbConfig.ins.saveYaml();
+    }
+
+    public void setZoomIn(ActionEvent event) {
+        DbConfig.ins.setFontSize(DbConfig.ins.getFontSize() + 3);
+        webview.getEngine().executeScript("setFontSize(%s);".formatted(DbConfig.ins.getFontSize()));
+        DbConfig.ins.saveYaml();
+    }
+
+    public void setZoomReset(ActionEvent event) {
+        DbConfig.ins.setFontSize(13);
+        webview.getEngine().executeScript("setFontSize(%s);".formatted(DbConfig.ins.getFontSize()));
+        DbConfig.ins.saveYaml();
+    }
+
+    public void setZoomOut(ActionEvent event) {
+        DbConfig.ins.setFontSize(DbConfig.ins.getFontSize() - 3);
+        webview.getEngine().executeScript("setFontSize(%s);".formatted(DbConfig.ins.getFontSize()));
+        DbConfig.ins.saveYaml();
+    }
+
 
     @FXML
     private void about(ActionEvent event) {

@@ -18,6 +18,14 @@
                     <SeparatorMenuItem/>
                     <MenuItem text="退出" onAction="#closeAction"/>
                 </Menu>
+                <Menu text="视图">
+                    <MenuItem text="深色" onAction="#setDarkBgColor"/>
+                    <MenuItem text="浅色" onAction="#setLightBgColor"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="放大" onAction="#setZoomIn"/>
+                    <MenuItem text="正常" onAction="#setZoomReset"/>
+                    <MenuItem text="缩小" onAction="#setZoomOut"/>
+                </Menu>
                 <Menu text="编辑">
                     <MenuItem text="修改配置" onAction="#openConfig"/>
                     <SeparatorMenuItem/>

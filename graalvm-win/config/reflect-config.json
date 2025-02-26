@@ -1821,7 +1821,13 @@
   "queryAllPublicConstructors":true
 },
 {
+  "name":"java.beans.Introspector"
+},
+{
   "name":"java.beans.PropertyChangeListener"
+},
+{
+  "name":"java.beans.PropertyVetoException"
 },
 {
   "name":"java.beans.VetoableChangeListener"
@@ -1921,6 +1927,17 @@
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true,
   "methods":[{"name":"getResourceAsStream","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.Object",
+  "allDeclaredFields":true,
+  "queryAllPublicMethods":true
+},
+{
+  "name":"java.lang.ObjectBeanInfo"
+},
+{
+  "name":"java.lang.ObjectCustomizer"
 },
 {
   "name":"java.lang.Record"
@@ -2209,6 +2226,12 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"java.sql.Date"
+},
+{
+  "name":"java.sql.Timestamp"
 },
 {
   "name":"java.text.CharacterIterator"
@@ -4088,6 +4111,18 @@
   "methods":[{"name":"<init>","parameterTypes":["java.lang.Boolean","java.lang.Object"] }]
 },
 {
+  "name":"wxdgaming.mariadb.DbConfig",
+  "allDeclaredFields":true,
+  "queryAllPublicMethods":true,
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"getAutoBakSqlTimeM","parameterTypes":[] }, {"name":"getBgColor","parameterTypes":[] }, {"name":"getDataBases","parameterTypes":[] }, {"name":"getFontSize","parameterTypes":[] }, {"name":"getPort","parameterTypes":[] }, {"name":"getPwd","parameterTypes":[] }, {"name":"getServerTitle","parameterTypes":[] }, {"name":"getShowMaxLine","parameterTypes":[] }, {"name":"getUser","parameterTypes":[] }, {"name":"getWebPort","parameterTypes":[] }, {"name":"setAutoBakSqlTimeM","parameterTypes":["int"] }, {"name":"setBgColor","parameterTypes":["java.lang.String"] }, {"name":"setDataBases","parameterTypes":["java.lang.String"] }, {"name":"setFontSize","parameterTypes":["int"] }, {"name":"setPort","parameterTypes":["int"] }, {"name":"setPwd","parameterTypes":["java.lang.String"] }, {"name":"setServerTitle","parameterTypes":["java.lang.String"] }, {"name":"setShowMaxLine","parameterTypes":["int"] }, {"name":"setUser","parameterTypes":["java.lang.String"] }, {"name":"setWebPort","parameterTypes":["int"] }]
+},
+{
+  "name":"wxdgaming.mariadb.DbConfigBeanInfo"
+},
+{
+  "name":"wxdgaming.mariadb.DbConfigCustomizer"
+},
+{
   "name":"wxdgaming.mariadb.server.DBFactory",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -4165,7 +4200,7 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true,
-  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"about","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"bakAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"clearAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"clearFile","parameterTypes":["java.lang.String"] }, {"name":"closeAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"init","parameterTypes":[] }, {"name":"lambda$clearAction$3","parameterTypes":[] }, {"name":"lambda$clearFile$4","parameterTypes":["java.lang.String"] }, {"name":"lambda$startAction$1","parameterTypes":[] }, {"name":"lambda$stopAction$2","parameterTypes":[] }, {"name":"openConfig","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"openLogFile","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"sourceAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"startAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"stopAction","parameterTypes":["javafx.event.ActionEvent"] }]
+  "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"about","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"bakAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"clearAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"clearFile","parameterTypes":["java.lang.String"] }, {"name":"closeAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"init","parameterTypes":[] }, {"name":"lambda$clearAction$3","parameterTypes":[] }, {"name":"lambda$clearFile$4","parameterTypes":["java.lang.String"] }, {"name":"lambda$startAction$1","parameterTypes":[] }, {"name":"lambda$stopAction$2","parameterTypes":[] }, {"name":"openConfig","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"openLogFile","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"setDarkBgColor","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"setLightBgColor","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"setZoomIn","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"setZoomOut","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"setZoomReset","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"sourceAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"startAction","parameterTypes":["javafx.event.ActionEvent"] }, {"name":"stopAction","parameterTypes":["javafx.event.ActionEvent"] }]
 },
 {
   "name":"wxdgaming.mariadb.winfm.TextAreaUpdate",

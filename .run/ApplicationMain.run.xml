@@ -1,11 +1,11 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="ApplicationMain" type="Application" factoryName="Application" nameIsGenerated="true">
-    <option name="MAIN_CLASS_NAME" value="wxdgaming.mariadb.winfm.ApplicationMain" />
-    <module name="fx" />
+    <option name="MAIN_CLASS_NAME" value="wxdgaming.mariadb.ApplicationMain" />
+    <module name="wxdgaming.mariadb" />
     <option name="VM_PARAMETERS" value="-Dlogback.configurationFile=logback-utf8.xml" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="wxdgaming.mariadb.winfm.*" />
+        <option name="PATTERN" value="wxdgaming.mariadb.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

@@ -1,0 +1,10 @@
+autoBakSqlTimeM: 60
+bgColor: body_dark
+dataBases: local_game
+fontSize: 13
+port: 13306
+pwd: root
+serverTitle: 数据库引擎
+showMaxLine: 1500
+user: root
+webPort: 13301

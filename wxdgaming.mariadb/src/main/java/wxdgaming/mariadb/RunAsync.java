@@ -1,4 +1,4 @@
-package wxdgaming.mariadb.server;
+package wxdgaming.mariadb;
 
 import com.sun.javafx.application.PlatformImpl;
 

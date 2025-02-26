@@ -12,7 +12,10 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
-import wxdgaming.mariadb.server.RunAsync;
+import wxdgaming.mariadb.ApplicationMain;
+import wxdgaming.mariadb.DbConfig;
+import wxdgaming.mariadb.GraalvmUtil;
+import wxdgaming.mariadb.RunAsync;
 import wxdgaming.mariadb.server.WebService;
 
 import javax.imageio.ImageIO;
@@ -55,7 +58,7 @@ public class DbApplication extends Application {
         DbLogController controller = fxmlLoader.getController();
         controller.init();
         Scene scene = new Scene(loaded, 1000, 600, false, SceneAntialiasing.BALANCED);
-        primaryStage.setTitle(ApplicationMain.serverName());
+        primaryStage.setTitle(DbConfig.ins.serverName());
         primaryStage.setScene(scene);
 
         primaryStage.getIcons().add(image_logo);
@@ -74,7 +77,7 @@ public class DbApplication extends Application {
                 Thread.sleep(1000);
 
                 ApplicationMain.guiCountDownLatch.countDown();
-                if (StringUtils.isBlank(ApplicationMain.javaClassPath())) {
+                if (StringUtils.isBlank(GraalvmUtil.javaClassPath())) {
                     closeSelect(primaryStage);
                 }
             } catch (InterruptedException ignore) {}
@@ -88,7 +91,7 @@ public class DbApplication extends Application {
                 /*TODO 系统托盘图标*/
                 SystemTray tray = SystemTray.getSystemTray();
                 BufferedImage bufferedImage = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(__iconName));
-                TrayIcon trayIcon = new TrayIcon(bufferedImage, ApplicationMain.serverName());
+                TrayIcon trayIcon = new TrayIcon(bufferedImage, DbConfig.ins.serverName());
                 trayIcon.setImageAutoSize(true);
 
                 /*TODO 图标双击事件 */

@@ -77,3 +77,4 @@ db-server/target
 console/target
 .idea
 wxd-gaming.mariadb.iml
+wxdgaming.mariadb/target

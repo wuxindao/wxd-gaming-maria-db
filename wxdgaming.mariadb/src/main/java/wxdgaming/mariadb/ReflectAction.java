@@ -1,7 +1,8 @@
-package wxdgaming.mariadb.server;
+package wxdgaming.mariadb;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+import wxdgaming.mariadb.server.GvmExclude;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
