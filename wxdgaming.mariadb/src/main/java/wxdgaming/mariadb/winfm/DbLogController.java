@@ -49,11 +49,16 @@ public class DbLogController {
             webview.getEngine().loadContent(GraalvmUtil.readHtml());
             webview.getEngine().getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
                 if (newValue == javafx.concurrent.Worker.State.SUCCEEDED) {
-                    if (StringUtils.isNotBlank(DbConfig.ins.getBgColor())) {
-                        webview.getEngine().executeScript("setBg('%s');".formatted(DbConfig.ins.getBgColor()));
-                    }
-                    if (DbConfig.ins.getFontSize() > 0) {
-                        webview.getEngine().executeScript("setFontSize(%s);".formatted(DbConfig.ins.getFontSize()));
+                    try {
+                        webview.getEngine().executeScript("showMaxLine=%s".formatted(DbConfig.ins.getShowMaxLine()));
+                        if (StringUtils.isNotBlank(DbConfig.ins.getBgColor())) {
+                            webview.getEngine().executeScript("setBg('%s');".formatted(DbConfig.ins.getBgColor()));
+                        }
+                        if (DbConfig.ins.getFontSize() > 0) {
+                            webview.getEngine().executeScript("setFontSize(%s);".formatted(DbConfig.ins.getFontSize()));
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace(System.out);
                     }
                 }
             });
