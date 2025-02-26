@@ -18,8 +18,6 @@ import java.util.concurrent.locks.ReentrantLock;
 public class TextAreaUpdate extends Thread {
 
     private final WebView webView;
-    /** textarea 文本框展示的最大行数 */
-    private final int showMaxLine;
     private final long duration;
     /** 单次处理的行数 */
     private final int actionLine;
@@ -31,13 +29,11 @@ public class TextAreaUpdate extends Thread {
     /**
      * 构建 textarea 更新器
      *
-     * @param webView     文本框对象
-     * @param showMaxLine 展示的最大行数
-     * @param actionLine  单次处理的行数
+     * @param webView    文本框对象
+     * @param actionLine 单次处理的行数
      */
-    public TextAreaUpdate(WebView webView, int showMaxLine, long duration, int actionLine) {
+    public TextAreaUpdate(WebView webView, long duration, int actionLine) {
         this.webView = webView;
-        this.showMaxLine = showMaxLine;
         this.duration = duration;
         this.actionLine = actionLine;
         this.setPriority(Thread.MAX_PRIORITY);

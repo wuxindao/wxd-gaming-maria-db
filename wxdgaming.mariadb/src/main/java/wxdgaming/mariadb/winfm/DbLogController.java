@@ -63,7 +63,7 @@ public class DbLogController {
                 }
             });
 
-            textAreaUpdate = new TextAreaUpdate(webview, 1500, 50, 150);
+            textAreaUpdate = new TextAreaUpdate(webview, 50, 150);
 
             /*TODO 必须要等他初始化完成*/
             PrintStream printStream = new PrintStream(System.out) {
