@@ -223,12 +223,7 @@ public class DbLogController {
         String content = """
                     数据库服务
                 
-                提供游戏数据库服务存储数据，
-                
-                在过滤框可以根据关键字过滤自己想要查看的内容，多个过滤词用空格隔开
-                例如：
-                输入字符串：我是测试字符串
-                过滤词：我 字符
+                提供游戏数据库服务存储数据
                 """;
         alert.setHeaderText(content);
         alert.setContentText("版本：V1.0.10");
