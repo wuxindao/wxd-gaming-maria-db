@@ -86,28 +86,24 @@ public class ApplicationMain {
                     URL resource = contextClassLoader.getResource(string);
                     log.info("{} - {}", string, resource);
                 }
-                ReflectAction reflectAction = ReflectAction.of();
-                {
-                    Reflections reflections = new Reflections("javafx.reflections");
-                    Set<Class<?>> allClasses = reflections.getSubTypesOf(Object.class);
-                    for (Class<?> clazz : allClasses) {
-                        try {
-                            reflectAction.action(clazz, false);
-                        } catch (Exception ignored) {}
-                    }
-                }
-                {
-                    Reflections reflections = new Reflections("wxdgaming");
-                    Set<Class<?>> allClasses = reflections.getSubTypesOf(Object.class);
-                    for (Class<?> clazz : allClasses) {
-                        try {
-                            reflectAction.action(clazz, false);
-                        } catch (Exception ignored) {}
-                    }
-                }
+
+                reflectAction("com.sun.javafx");
+                reflectAction("javafx");
+                reflectAction("wxdgaming");
             }
         } catch (Throwable e) {
             e.printStackTrace(System.out);
+        }
+    }
+
+    public static void reflectAction(String packageName) {
+        ReflectAction reflectAction = ReflectAction.of();
+        Reflections reflections = new Reflections(packageName);
+        Set<Class<?>> allClasses = reflections.getSubTypesOf(Object.class);
+        for (Class<?> clazz : allClasses) {
+            try {
+                reflectAction.action(clazz, false);
+            } catch (Exception ignored) {}
         }
     }
 

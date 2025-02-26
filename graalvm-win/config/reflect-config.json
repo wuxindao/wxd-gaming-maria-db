@@ -619,6 +619,21 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"com.sun.glass.ui.Accessible$EventHandler"
+},
+{
+  "name":"com.sun.glass.ui.Application$EventHandler"
+},
+{
+  "name":"com.sun.glass.ui.ClipboardAssistance"
+},
+{
+  "name":"com.sun.glass.ui.Menu$EventHandler"
+},
+{
+  "name":"com.sun.glass.ui.MenuItem$Callback"
+},
+{
   "name":"com.sun.glass.ui.Screen",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -632,6 +647,15 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"com.sun.glass.ui.Screen$EventHandler"
+},
+{
+  "name":"com.sun.glass.ui.View$EventHandler"
+},
+{
+  "name":"com.sun.glass.ui.Window$EventHandler"
 },
 {
   "name":"com.sun.glass.ui.win.WinDnDClipboard",
@@ -680,6 +704,105 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"com.sun.java.scene.web.WebViewHelper$WebViewAccessor"
+},
+{
+  "name":"com.sun.javafx.animation.AnimationTimerHelper$Accessor"
+},
+{
+  "name":"com.sun.javafx.animation.InterpolatorHelper$Accessor"
+},
+{
+  "name":"com.sun.javafx.animation.KeyValueHelper$KeyValueAccessor"
+},
+{
+  "name":"com.sun.javafx.application.HostServicesDelegate"
+},
+{
+  "name":"com.sun.javafx.application.PlatformImpl$FinishListener"
+},
+{
+  "name":"com.sun.javafx.beans.event.AbstractNotifyListener"
+},
+{
+  "name":"com.sun.javafx.binding.ExpressionHelperBase"
+},
+{
+  "name":"com.sun.javafx.collections.FloatArraySyncer"
+},
+{
+  "name":"com.sun.javafx.collections.IntegerArraySyncer"
+},
+{
+  "name":"com.sun.javafx.collections.NonIterableChange"
+},
+{
+  "name":"com.sun.javafx.collections.TrackableObservableList"
+},
+{
+  "name":"com.sun.javafx.collections.VetoableListDecorator"
+},
+{
+  "name":"com.sun.javafx.collections.VetoableListDecorator$ModCountAccessor"
+},
+{
+  "name":"com.sun.javafx.css.TransitionMediator"
+},
+{
+  "name":"com.sun.javafx.css.parser.LexerState"
+},
+{
+  "name":"com.sun.javafx.cursor.CursorFrame"
+},
+{
+  "name":"com.sun.javafx.embed.EmbeddedSceneDSInterface"
+},
+{
+  "name":"com.sun.javafx.embed.EmbeddedSceneDTInterface"
+},
+{
+  "name":"com.sun.javafx.embed.EmbeddedSceneInterface"
+},
+{
+  "name":"com.sun.javafx.embed.EmbeddedStageInterface"
+},
+{
+  "name":"com.sun.javafx.event.CompositeEventHandler$EventProcessorRecord"
+},
+{
+  "name":"com.sun.javafx.event.EventRedirector"
+},
+{
+  "name":"com.sun.javafx.font.CMap"
+},
+{
+  "name":"com.sun.javafx.font.CharToGlyphMapper"
+},
+{
+  "name":"com.sun.javafx.font.DisposerRecord"
+},
+{
+  "name":"com.sun.javafx.font.FontConstants"
+},
+{
+  "name":"com.sun.javafx.font.FontFactory"
+},
+{
+  "name":"com.sun.javafx.font.FontResource"
+},
+{
+  "name":"com.sun.javafx.font.FontStrike"
+},
+{
+  "name":"com.sun.javafx.font.Glyph"
+},
+{
+  "name":"com.sun.javafx.font.Metrics"
+},
+{
+  "name":"com.sun.javafx.font.PGFont"
+},
+{
   "name":"com.sun.javafx.font.directwrite.DWFactory",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -696,6 +819,18 @@
   "methods":[{"name":"getFactory","parameterTypes":[] }]
 },
 {
+  "name":"com.sun.javafx.font.directwrite.IUnknown"
+},
+{
+  "name":"com.sun.javafx.fxml.FXMLLoaderHelper$FXMLLoaderAccessor"
+},
+{
+  "name":"com.sun.javafx.fxml.builder.ProxyBuilder$Property"
+},
+{
+  "name":"com.sun.javafx.fxml.builder.web.NodeBuilder"
+},
+{
   "name":"com.sun.javafx.fxml.builder.web.WebViewBuilder",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -710,6 +845,60 @@
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true,
   "methods":[{"name":"build","parameterTypes":[] }, {"name":"create","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.javafx.fxml.expression.Expression"
+},
+{
+  "name":"com.sun.javafx.geom.AreaOp"
+},
+{
+  "name":"com.sun.javafx.geom.BaseBounds"
+},
+{
+  "name":"com.sun.javafx.geom.Crossings"
+},
+{
+  "name":"com.sun.javafx.geom.Curve"
+},
+{
+  "name":"com.sun.javafx.geom.PathConsumer2D"
+},
+{
+  "name":"com.sun.javafx.geom.PathIterator"
+},
+{
+  "name":"com.sun.javafx.geom.Shape"
+},
+{
+  "name":"com.sun.javafx.geom.transform.CanTransformVec3d"
+},
+{
+  "name":"com.sun.javafx.iio.ImageFormatDescription"
+},
+{
+  "name":"com.sun.javafx.iio.ImageLoadListener"
+},
+{
+  "name":"com.sun.javafx.iio.ImageLoader"
+},
+{
+  "name":"com.sun.javafx.iio.ImageLoaderFactory"
+},
+{
+  "name":"com.sun.javafx.iio.common.PushbroomScaler"
+},
+{
+  "name":"com.sun.javafx.image.PixelConverter"
+},
+{
+  "name":"com.sun.javafx.image.PixelGetter"
+},
+{
+  "name":"com.sun.javafx.image.PixelSetter"
+},
+{
+  "name":"com.sun.javafx.logging.Logger"
 },
 {
   "name":"com.sun.javafx.logging.PrintLogger",
@@ -744,6 +933,21 @@
   "methods":[{"name":"createInstance","parameterTypes":[] }]
 },
 {
+  "name":"com.sun.javafx.menu.MenuItemBase"
+},
+{
+  "name":"com.sun.javafx.perf.PerformanceTracker"
+},
+{
+  "name":"com.sun.javafx.perf.PerformanceTracker$SceneAccessor"
+},
+{
+  "name":"com.sun.javafx.print.PrintHelper$PrintAccessor"
+},
+{
+  "name":"com.sun.javafx.property.adapter.ReadOnlyPropertyDescriptor"
+},
+{
   "name":"com.sun.javafx.reflect.Trampoline",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -758,6 +962,96 @@
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true,
   "methods":[{"name":"invoke","parameterTypes":["java.lang.reflect.Method","java.lang.Object","java.lang.Object[]"] }]
+},
+{
+  "name":"com.sun.javafx.runtime.async.AsyncOperation"
+},
+{
+  "name":"com.sun.javafx.runtime.async.AsyncOperationListener"
+},
+{
+  "name":"com.sun.javafx.scene.AmbientLightHelper$AmbientLightAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.CameraHelper$CameraAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.DirectionalLightHelper$DirectionalLightAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.GroupHelper$GroupAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.ImageViewHelper$ImageViewAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.LightBaseHelper$LightBaseAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.NodeHelper"
+},
+{
+  "name":"com.sun.javafx.scene.NodeHelper$NodeAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.ParallelCameraHelper$ParallelCameraAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.ParentHelper$ParentAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.PerspectiveCameraHelper$PerspectiveCameraAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.PointLightHelper$PointLightAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.SceneHelper$SceneAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.SpotLightHelper$SpotLightAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.SubSceneHelper$SubSceneAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.canvas.CanvasHelper$CanvasAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.control.ControlHelper$ControlAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.control.FormatterAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.control.IDisconnectable"
+},
+{
+  "name":"com.sun.javafx.scene.control.LabeledHelper$Accessor"
+},
+{
+  "name":"com.sun.javafx.scene.control.LabeledImpl"
+},
+{
+  "name":"com.sun.javafx.scene.control.ReadOnlyUnbackedObservableList"
+},
+{
+  "name":"com.sun.javafx.scene.control.SelectedCellsMap"
+},
+{
+  "name":"com.sun.javafx.scene.control.SelectedItemsReadOnlyObservableList"
+},
+{
+  "name":"com.sun.javafx.scene.control.TableColumnBaseHelper$TableColumnBaseAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.control.behavior.BehaviorBase"
+},
+{
+  "name":"com.sun.javafx.scene.control.behavior.TwoLevelFocusBehavior"
+},
+{
+  "name":"com.sun.javafx.scene.control.inputmap.InputMap$Mapping"
 },
 {
   "name":"com.sun.javafx.scene.control.skin.Utils",
@@ -776,6 +1070,258 @@
   "methods":[{"name":"getResource","parameterTypes":["java.lang.String"] }]
 },
 {
+  "name":"com.sun.javafx.scene.input.ClipboardHelper$ClipboardAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.input.DragboardHelper$DragboardAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.input.ExtendedInputMethodRequests"
+},
+{
+  "name":"com.sun.javafx.scene.input.TouchPointHelper$TouchPointAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.layout.PaneHelper"
+},
+{
+  "name":"com.sun.javafx.scene.layout.PaneHelper$PaneAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.layout.RegionHelper$RegionAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.media.MediaViewHelper$MediaViewAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.paint.MaterialHelper$MaterialAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.ArcHelper$ArcAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.ArcToHelper$ArcToAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.BoxHelper$BoxAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.CircleHelper$CircleAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.ClosePathHelper$ClosePathAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.CubicCurveHelper$CubicCurveAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.CubicCurveToHelper$CubicCurveToAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.CylinderHelper$CylinderAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.EllipseHelper$EllipseAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.HLineToHelper$HLineToAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.LineHelper$LineAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.LineToHelper$LineToAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.MeshHelper"
+},
+{
+  "name":"com.sun.javafx.scene.shape.MeshHelper$MeshAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.MeshViewHelper$MeshViewAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.MoveToHelper$MoveToAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.PathElementHelper"
+},
+{
+  "name":"com.sun.javafx.scene.shape.PathElementHelper$PathElementAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.PathHelper$PathAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.PolygonHelper$PolygonAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.PolylineHelper$PolylineAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.QuadCurveHelper$QuadCurveAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.QuadCurveToHelper$QuadCurveToAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.RectangleHelper$RectangleAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.SVGPathHelper$SVGPathAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.Shape3DHelper$Shape3DAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.ShapeHelper$ShapeAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.SphereHelper$SphereAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.TextHelper$TextAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.TriangleMeshHelper$TriangleMeshAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.shape.VLineToHelper$VLineToAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.text.FontHelper$FontAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.text.GlyphList"
+},
+{
+  "name":"com.sun.javafx.scene.text.TextLayout"
+},
+{
+  "name":"com.sun.javafx.scene.text.TextLayoutFactory"
+},
+{
+  "name":"com.sun.javafx.scene.text.TextLine"
+},
+{
+  "name":"com.sun.javafx.scene.text.TextSpan"
+},
+{
+  "name":"com.sun.javafx.scene.transform.TransformHelper$TransformAccessor"
+},
+{
+  "name":"com.sun.javafx.scene.traversal.Algorithm"
+},
+{
+  "name":"com.sun.javafx.scene.traversal.TraversalContext"
+},
+{
+  "name":"com.sun.javafx.scene.traversal.TraversalEngine"
+},
+{
+  "name":"com.sun.javafx.scene.web.Debugger"
+},
+{
+  "name":"com.sun.javafx.scene.web.PrintableHelper$PrintableAccessor"
+},
+{
+  "name":"com.sun.javafx.sg.prism.MediaFrameTracker"
+},
+{
+  "name":"com.sun.javafx.sg.prism.NGNode"
+},
+{
+  "name":"com.sun.javafx.stage.EmbeddedWindowHelper$EmbeddedWindowAccessor"
+},
+{
+  "name":"com.sun.javafx.stage.PopupWindowHelper$PopupWindowAccessor"
+},
+{
+  "name":"com.sun.javafx.stage.StageHelper$StageAccessor"
+},
+{
+  "name":"com.sun.javafx.stage.StagePeerListener$StageAccessor"
+},
+{
+  "name":"com.sun.javafx.stage.WindowHelper"
+},
+{
+  "name":"com.sun.javafx.stage.WindowHelper$WindowAccessor"
+},
+{
+  "name":"com.sun.javafx.text.GlyphLayout"
+},
+{
+  "name":"com.sun.javafx.tk.CompletionListener"
+},
+{
+  "name":"com.sun.javafx.tk.FontLoader"
+},
+{
+  "name":"com.sun.javafx.tk.ImageLoader"
+},
+{
+  "name":"com.sun.javafx.tk.ScreenConfigurationAccessor"
+},
+{
+  "name":"com.sun.javafx.tk.TKClipboard"
+},
+{
+  "name":"com.sun.javafx.tk.TKDragGestureListener"
+},
+{
+  "name":"com.sun.javafx.tk.TKDragSourceListener"
+},
+{
+  "name":"com.sun.javafx.tk.TKDropTargetListener"
+},
+{
+  "name":"com.sun.javafx.tk.TKListener"
+},
+{
+  "name":"com.sun.javafx.tk.TKPulseListener"
+},
+{
+  "name":"com.sun.javafx.tk.TKScene"
+},
+{
+  "name":"com.sun.javafx.tk.TKSceneListener"
+},
+{
+  "name":"com.sun.javafx.tk.TKScenePaintListener"
+},
+{
+  "name":"com.sun.javafx.tk.TKStage"
+},
+{
+  "name":"com.sun.javafx.tk.TKStageListener"
+},
+{
+  "name":"com.sun.javafx.tk.TKSystemMenu"
+},
+{
+  "name":"com.sun.javafx.tk.Toolkit"
+},
+{
+  "name":"com.sun.javafx.tk.Toolkit$ImageAccessor"
+},
+{
+  "name":"com.sun.javafx.tk.Toolkit$PaintAccessor"
+},
+{
+  "name":"com.sun.javafx.tk.Toolkit$WritableImageAccessor"
+},
+{
+  "name":"com.sun.javafx.tk.quantum.GlassTouchEventListener"
+},
+{
+  "name":"com.sun.javafx.tk.quantum.OverlayWarningHelper$OverlayWarningAccessor"
+},
+{
+  "name":"com.sun.javafx.tk.quantum.PerformanceTrackerHelper"
+},
+{
   "name":"com.sun.javafx.tk.quantum.QuantumToolkit",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -792,6 +1338,24 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"com.sun.javafx.webkit.Accessor"
+},
+{
+  "name":"com.sun.javafx.webkit.prism.WCGraphicsPrismContext$Composite"
+},
+{
+  "name":"com.sun.javafx.webkit.prism.WCGraphicsPrismContext$Layer"
+},
+{
+  "name":"com.sun.javafx.webkit.theme.ContextMenuImpl$MenuItemPeer"
+},
+{
+  "name":"com.sun.javafx.webkit.theme.RenderThemeImpl$Widget"
+},
+{
+  "name":"com.sun.javafx.webkit.theme.Renderer"
+},
+{
   "name":"com.sun.javafx.webkit.theme.ScrollBarWidget",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -805,6 +1369,36 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"com.sun.javafx.webkit.theme.ScrollBarWidgetHelper$ScrollBarWidgetAccessor"
+},
+{
+  "name":"com.sun.media.jfxmedia.events.AudioSpectrumListener"
+},
+{
+  "name":"com.sun.media.jfxmedia.events.BufferListener"
+},
+{
+  "name":"com.sun.media.jfxmedia.events.MarkerListener"
+},
+{
+  "name":"com.sun.media.jfxmedia.events.MediaErrorListener"
+},
+{
+  "name":"com.sun.media.jfxmedia.events.MetadataListener"
+},
+{
+  "name":"com.sun.media.jfxmedia.events.PlayerStateListener"
+},
+{
+  "name":"com.sun.media.jfxmedia.events.PlayerTimeListener"
+},
+{
+  "name":"com.sun.media.jfxmedia.events.VideoRendererListener"
+},
+{
+  "name":"com.sun.media.jfxmedia.events.VideoTrackSizeListener"
 },
 {
   "name":"com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl",
@@ -837,6 +1431,15 @@
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true,
   "methods":[{"name":"getFontFactory","parameterTypes":[] }, {"name":"getPipeline","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.prism.MediaFrame"
+},
+{
+  "name":"com.sun.prism.PresentableState"
+},
+{
+  "name":"com.sun.prism.ResourceFactoryListener"
 },
 {
   "name":"com.sun.prism.d3d.D3DPipeline",
@@ -1003,6 +1606,27 @@
   "methods":[{"name":"loadShader","parameterTypes":["com.sun.prism.ps.ShaderFactory","java.io.InputStream"] }]
 },
 {
+  "name":"com.sun.scenario.animation.AbstractPrimaryTimer"
+},
+{
+  "name":"com.sun.scenario.animation.shared.AnimationAccessor"
+},
+{
+  "name":"com.sun.scenario.animation.shared.PulseReceiver"
+},
+{
+  "name":"com.sun.scenario.animation.shared.TimerReceiver"
+},
+{
+  "name":"com.sun.scenario.effect.Blend"
+},
+{
+  "name":"com.sun.scenario.effect.Effect"
+},
+{
+  "name":"com.sun.scenario.effect.EffectHelper$EffectAccessor"
+},
+{
   "name":"com.sun.scenario.effect.impl.hw.d3d.D3DShaderSource",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -1067,6 +1691,105 @@
   "methods":[{"name":"createRenderer","parameterTypes":["com.sun.scenario.effect.FilterContext"] }]
 },
 {
+  "name":"com.sun.webkit.ContextMenu"
+},
+{
+  "name":"com.sun.webkit.CursorManager"
+},
+{
+  "name":"com.sun.webkit.DisposerRecord"
+},
+{
+  "name":"com.sun.webkit.EventLoop"
+},
+{
+  "name":"com.sun.webkit.InputMethodClient"
+},
+{
+  "name":"com.sun.webkit.InspectorClient"
+},
+{
+  "name":"com.sun.webkit.Invoker"
+},
+{
+  "name":"com.sun.webkit.LoadListenerClient"
+},
+{
+  "name":"com.sun.webkit.Pasteboard"
+},
+{
+  "name":"com.sun.webkit.PopupMenu"
+},
+{
+  "name":"com.sun.webkit.ThemeClient"
+},
+{
+  "name":"com.sun.webkit.UIClient"
+},
+{
+  "name":"com.sun.webkit.Utilities"
+},
+{
+  "name":"com.sun.webkit.WebPageClient"
+},
+{
+  "name":"com.sun.webkit.graphics.Ref"
+},
+{
+  "name":"com.sun.webkit.graphics.RenderTheme"
+},
+{
+  "name":"com.sun.webkit.graphics.ScrollBarTheme"
+},
+{
+  "name":"com.sun.webkit.graphics.WCFont"
+},
+{
+  "name":"com.sun.webkit.graphics.WCFontCustomPlatformData"
+},
+{
+  "name":"com.sun.webkit.graphics.WCGradient"
+},
+{
+  "name":"com.sun.webkit.graphics.WCGraphicsContext"
+},
+{
+  "name":"com.sun.webkit.graphics.WCGraphicsManager"
+},
+{
+  "name":"com.sun.webkit.graphics.WCImage"
+},
+{
+  "name":"com.sun.webkit.graphics.WCImageDecoder"
+},
+{
+  "name":"com.sun.webkit.graphics.WCImageFrame"
+},
+{
+  "name":"com.sun.webkit.graphics.WCMediaPlayer"
+},
+{
+  "name":"com.sun.webkit.graphics.WCPageBackBuffer"
+},
+{
+  "name":"com.sun.webkit.graphics.WCPath"
+},
+{
+  "name":"com.sun.webkit.graphics.WCPathIterator"
+},
+{
+  "name":"com.sun.webkit.graphics.WCRenderQueue"
+},
+{
+  "name":"com.sun.webkit.graphics.WCStroke"
+},
+{
+  "name":"com.sun.webkit.graphics.WCTextRun"
+},
+{
+  "name":"com.sun.webkit.security.WCMessageDigest"
+},
+{
   "name":"com.sun.xml.internal.stream.XMLInputFactoryImpl",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -1098,6 +1821,15 @@
   "queryAllPublicConstructors":true
 },
 {
+  "name":"java.beans.PropertyChangeListener"
+},
+{
+  "name":"java.beans.VetoableChangeListener"
+},
+{
+  "name":"java.io.BufferedInputStream"
+},
+{
   "name":"java.io.FilePermission",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -1111,6 +1843,24 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"java.io.FilenameFilter"
+},
+{
+  "name":"java.io.IOException"
+},
+{
+  "name":"java.io.InputStream"
+},
+{
+  "name":"java.io.ObjectInputStream"
+},
+{
+  "name":"java.io.PrintStream"
+},
+{
+  "name":"java.io.Serializable"
 },
 {
   "name":"java.lang.Character",
@@ -1145,6 +1895,18 @@
   "methods":[{"name":"getModule","parameterTypes":[] }]
 },
 {
+  "name":"java.lang.Cloneable"
+},
+{
+  "name":"java.lang.Comparable"
+},
+{
+  "name":"java.lang.Enum"
+},
+{
+  "name":"java.lang.Exception"
+},
+{
   "name":"java.lang.Module",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -1159,6 +1921,15 @@
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true,
   "methods":[{"name":"getResourceAsStream","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"java.lang.Record"
+},
+{
+  "name":"java.lang.Runnable"
+},
+{
+  "name":"java.lang.RuntimeException"
 },
 {
   "name":"java.lang.RuntimePermission",
@@ -1191,6 +1962,12 @@
   "queryAllPublicConstructors":true
 },
 {
+  "name":"java.lang.StringBuilder"
+},
+{
+  "name":"java.lang.System$Logger"
+},
+{
   "name":"java.lang.Thread",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -1206,6 +1983,18 @@
   "queryAllPublicConstructors":true,
   "fields":[{"name":"threadLocalRandomProbe"}],
   "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"<init>","parameterTypes":["java.lang.Runnable"] }, {"name":"<init>","parameterTypes":["java.lang.Runnable","java.lang.String"] }, {"name":"<init>","parameterTypes":["java.lang.Runnable","java.security.AccessControlContext"] }, {"name":"<init>","parameterTypes":["java.lang.String"] }, {"name":"<init>","parameterTypes":["java.lang.String","int","boolean"] }, {"name":"<init>","parameterTypes":["java.lang.ThreadGroup","java.lang.Runnable"] }, {"name":"<init>","parameterTypes":["java.lang.ThreadGroup","java.lang.Runnable","java.lang.String"] }, {"name":"<init>","parameterTypes":["java.lang.ThreadGroup","java.lang.Runnable","java.lang.String","long"] }, {"name":"<init>","parameterTypes":["java.lang.ThreadGroup","java.lang.Runnable","java.lang.String","long","boolean"] }, {"name":"<init>","parameterTypes":["java.lang.ThreadGroup","java.lang.String"] }, {"name":"<init>","parameterTypes":["java.lang.ThreadGroup","java.lang.String","int","java.lang.Runnable","long","java.security.AccessControlContext"] }, {"name":"alive","parameterTypes":[] }, {"name":"asyncGetStackTrace","parameterTypes":[] }, {"name":"checkAccess","parameterTypes":[] }, {"name":"clearInterrupt","parameterTypes":[] }, {"name":"clearReferences","parameterTypes":[] }, {"name":"clone","parameterTypes":[] }, {"name":"countStackFrames","parameterTypes":[] }, {"name":"daemon","parameterTypes":["boolean"] }, {"name":"dispatchUncaughtException","parameterTypes":["java.lang.Throwable"] }, {"name":"exit","parameterTypes":[] }, {"name":"getAndClearInterrupt","parameterTypes":[] }, {"name":"getContextClassLoader","parameterTypes":[] }, {"name":"getContinuation","parameterTypes":[] }, {"name":"getId","parameterTypes":[] }, {"name":"getName","parameterTypes":[] }, {"name":"getPriority","parameterTypes":[] }, {"name":"getStackTrace","parameterTypes":[] }, {"name":"getStackTrace0","parameterTypes":[] }, {"name":"getState","parameterTypes":[] }, {"name":"getThreadGroup","parameterTypes":[] }, {"name":"getUncaughtExceptionHandler","parameterTypes":[] }, {"name":"headStackableScopes","parameterTypes":[] }, {"name":"inheritScopedValueBindings","parameterTypes":["jdk.internal.vm.ThreadContainer"] }, {"name":"interrupt","parameterTypes":[] }, {"name":"interrupt0","parameterTypes":[] }, {"name":"isAlive","parameterTypes":[] }, {"name":"isDaemon","parameterTypes":[] }, {"name":"isInterrupted","parameterTypes":[] }, {"name":"isTerminated","parameterTypes":[] }, {"name":"isVirtual","parameterTypes":[] }, {"name":"join","parameterTypes":[] }, {"name":"join","parameterTypes":["long"] }, {"name":"join","parameterTypes":["long","int"] }, {"name":"join","parameterTypes":["java.time.Duration"] }, {"name":"priority","parameterTypes":["int"] }, {"name":"resume","parameterTypes":[] }, {"name":"run","parameterTypes":[] }, {"name":"runWith","parameterTypes":["java.lang.Object","java.lang.Runnable"] }, {"name":"setContextClassLoader","parameterTypes":["java.lang.ClassLoader"] }, {"name":"setContinuation","parameterTypes":["jdk.internal.vm.Continuation"] }, {"name":"setCurrentThread","parameterTypes":["java.lang.Thread"] }, {"name":"setDaemon","parameterTypes":["boolean"] }, {"name":"setInterrupt","parameterTypes":[] }, {"name":"setName","parameterTypes":["java.lang.String"] }, {"name":"setNativeName","parameterTypes":["java.lang.String"] }, {"name":"setPriority","parameterTypes":["int"] }, {"name":"setPriority0","parameterTypes":["int"] }, {"name":"setThreadContainer","parameterTypes":["jdk.internal.vm.ThreadContainer"] }, {"name":"setUncaughtExceptionHandler","parameterTypes":["java.lang.Thread$UncaughtExceptionHandler"] }, {"name":"start","parameterTypes":[] }, {"name":"start","parameterTypes":["jdk.internal.vm.ThreadContainer"] }, {"name":"start0","parameterTypes":[] }, {"name":"stop","parameterTypes":[] }, {"name":"suspend","parameterTypes":[] }, {"name":"threadContainer","parameterTypes":[] }, {"name":"threadId","parameterTypes":[] }, {"name":"threadState","parameterTypes":[] }, {"name":"toString","parameterTypes":[] }, {"name":"uncaughtExceptionHandler","parameterTypes":["java.lang.Thread$UncaughtExceptionHandler"] }]
+},
+{
+  "name":"java.lang.ThreadLocal"
+},
+{
+  "name":"java.lang.annotation.Annotation"
+},
+{
+  "name":"java.lang.invoke.CallSite"
+},
+{
+  "name":"java.lang.ref.WeakReference"
 },
 {
   "name":"java.net.NetPermission",
@@ -1302,6 +2091,9 @@
   "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
 },
 {
+  "name":"java.nio.file.SimpleFileVisitor"
+},
+{
   "name":"java.security.AlgorithmParametersSpi",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -1332,6 +2124,9 @@
   "queryAllPublicConstructors":true
 },
 {
+  "name":"java.security.BasicPermission"
+},
+{
   "name":"java.security.KeyStoreSpi",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -1345,6 +2140,15 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"java.security.PrivilegedAction"
+},
+{
+  "name":"java.security.PrivilegedExceptionAction"
+},
+{
+  "name":"java.security.SecureClassLoader"
 },
 {
   "name":"java.security.SecureRandomParameters",
@@ -1407,6 +2211,27 @@
   "queryAllPublicConstructors":true
 },
 {
+  "name":"java.text.CharacterIterator"
+},
+{
+  "name":"java.util.AbstractList"
+},
+{
+  "name":"java.util.AbstractMap"
+},
+{
+  "name":"java.util.AbstractSet"
+},
+{
+  "name":"java.util.ArrayList"
+},
+{
+  "name":"java.util.Collection"
+},
+{
+  "name":"java.util.Comparator"
+},
+{
   "name":"java.util.Date",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -1420,6 +2245,38 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"java.util.EventListener"
+},
+{
+  "name":"java.util.EventObject"
+},
+{
+  "name":"java.util.HashMap"
+},
+{
+  "name":"java.util.Iterator"
+},
+{
+  "name":"java.util.LinkedHashMap"
+},
+{
+  "name":"java.util.List",
+  "methods":[{"name":"copyOf","parameterTypes":["java.util.Collection"] }]
+},
+{
+  "name":"java.util.ListIterator"
+},
+{
+  "name":"java.util.Map"
+},
+{
+  "name":"java.util.Map$Entry"
+},
+{
+  "name":"java.util.Optional",
+  "methods":[{"name":"isEmpty","parameterTypes":[] }]
 },
 {
   "name":"java.util.PropertyPermission",
@@ -1437,6 +2294,21 @@
   "queryAllPublicConstructors":true
 },
 {
+  "name":"java.util.RandomAccess"
+},
+{
+  "name":"java.util.Set"
+},
+{
+  "name":"java.util.TimerTask"
+},
+{
+  "name":"java.util.TreeMap"
+},
+{
+  "name":"java.util.concurrent.Callable"
+},
+{
   "name":"java.util.concurrent.ForkJoinTask",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -1450,6 +2322,18 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"java.util.concurrent.FutureTask"
+},
+{
+  "name":"java.util.concurrent.LinkedBlockingQueue"
+},
+{
+  "name":"java.util.concurrent.ThreadFactory"
+},
+{
+  "name":"java.util.concurrent.ThreadPoolExecutor"
 },
 {
   "name":"java.util.concurrent.atomic.AtomicBoolean",
@@ -1500,7 +2384,22 @@
   "fields":[{"name":"base"}, {"name":"cellsBusy"}]
 },
 {
+  "name":"java.util.function.Function"
+},
+{
+  "name":"java.util.function.Predicate"
+},
+{
+  "name":"java.util.zip.DeflaterInputStream"
+},
+{
+  "name":"javafx.animation.Animation"
+},
+{
   "name":"javafx.animation.AnimationTimer"
+},
+{
+  "name":"javafx.animation.Interpolatable"
 },
 {
   "name":"javafx.animation.Interpolator"
@@ -1522,6 +2421,201 @@
   "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"getHostServices","parameterTypes":[] }, {"name":"getParameters","parameterTypes":[] }, {"name":"init","parameterTypes":[] }, {"name":"notifyPreloader","parameterTypes":["javafx.application.Preloader$PreloaderNotification"] }, {"name":"start","parameterTypes":["javafx.stage.Stage"] }, {"name":"stop","parameterTypes":[] }]
 },
 {
+  "name":"javafx.application.Application$Parameters"
+},
+{
+  "name":"javafx.application.Platform$Preferences"
+},
+{
+  "name":"javafx.application.Preloader$PreloaderNotification"
+},
+{
+  "name":"javafx.beans.InvalidationListener"
+},
+{
+  "name":"javafx.beans.Observable"
+},
+{
+  "name":"javafx.beans.WeakListener"
+},
+{
+  "name":"javafx.beans.binding.BooleanBinding"
+},
+{
+  "name":"javafx.beans.binding.DoubleBinding"
+},
+{
+  "name":"javafx.beans.binding.FloatBinding"
+},
+{
+  "name":"javafx.beans.binding.IntegerBinding"
+},
+{
+  "name":"javafx.beans.binding.LongBinding"
+},
+{
+  "name":"javafx.beans.binding.ObjectBinding"
+},
+{
+  "name":"javafx.beans.binding.StringBinding"
+},
+{
+  "name":"javafx.beans.binding.StringExpression"
+},
+{
+  "name":"javafx.beans.property.BooleanPropertyBase"
+},
+{
+  "name":"javafx.beans.property.IntegerPropertyBase"
+},
+{
+  "name":"javafx.beans.property.ObjectPropertyBase"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyBooleanPropertyBase"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyObjectPropertyBase"
+},
+{
+  "name":"javafx.beans.property.ReadOnlyObjectWrapper"
+},
+{
+  "name":"javafx.beans.property.SimpleDoubleProperty"
+},
+{
+  "name":"javafx.beans.property.SimpleIntegerProperty"
+},
+{
+  "name":"javafx.beans.property.SimpleObjectProperty"
+},
+{
+  "name":"javafx.beans.property.StringPropertyBase"
+},
+{
+  "name":"javafx.beans.value.ChangeListener"
+},
+{
+  "name":"javafx.beans.value.ObservableDoubleValue"
+},
+{
+  "name":"javafx.beans.value.ObservableFloatValue"
+},
+{
+  "name":"javafx.beans.value.ObservableIntegerValue"
+},
+{
+  "name":"javafx.beans.value.ObservableLongValue"
+},
+{
+  "name":"javafx.beans.value.ObservableObjectValue"
+},
+{
+  "name":"javafx.beans.value.ObservableValueBase"
+},
+{
+  "name":"javafx.beans.value.WritableValue"
+},
+{
+  "name":"javafx.collections.ArrayChangeListener"
+},
+{
+  "name":"javafx.collections.ListChangeListener"
+},
+{
+  "name":"javafx.collections.ListChangeListener$Change"
+},
+{
+  "name":"javafx.collections.MapChangeListener"
+},
+{
+  "name":"javafx.collections.MapChangeListener$Change"
+},
+{
+  "name":"javafx.collections.ModifiableObservableListBase"
+},
+{
+  "name":"javafx.collections.ObservableArrayBase"
+},
+{
+  "name":"javafx.collections.ObservableFloatArray"
+},
+{
+  "name":"javafx.collections.ObservableIntegerArray"
+},
+{
+  "name":"javafx.collections.ObservableList"
+},
+{
+  "name":"javafx.collections.ObservableListBase"
+},
+{
+  "name":"javafx.collections.ObservableMap"
+},
+{
+  "name":"javafx.collections.ObservableSet"
+},
+{
+  "name":"javafx.collections.SetChangeListener"
+},
+{
+  "name":"javafx.collections.SetChangeListener$Change"
+},
+{
+  "name":"javafx.concurrent.Service"
+},
+{
+  "name":"javafx.concurrent.Task"
+},
+{
+  "name":"javafx.concurrent.Worker"
+},
+{
+  "name":"javafx.css.CssMetaData"
+},
+{
+  "name":"javafx.css.CssParser$ParseError"
+},
+{
+  "name":"javafx.css.FontCssMetaData"
+},
+{
+  "name":"javafx.css.FontFace"
+},
+{
+  "name":"javafx.css.ParsedValue"
+},
+{
+  "name":"javafx.css.PseudoClass"
+},
+{
+  "name":"javafx.css.Selector"
+},
+{
+  "name":"javafx.css.SimpleStyleableObjectProperty"
+},
+{
+  "name":"javafx.css.StyleConverter"
+},
+{
+  "name":"javafx.css.Styleable"
+},
+{
+  "name":"javafx.event.Event"
+},
+{
+  "name":"javafx.event.EventDispatchChain"
+},
+{
+  "name":"javafx.event.EventDispatcher"
+},
+{
+  "name":"javafx.event.EventHandler"
+},
+{
+  "name":"javafx.event.EventTarget"
+},
+{
   "name":"javafx.fxml.FXMLLoader",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -1535,6 +2629,12 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"javafx.fxml.FXMLLoader$Element"
+},
+{
+  "name":"javafx.geometry.Bounds"
 },
 {
   "name":"javafx.geometry.Insets",
@@ -1582,6 +2682,9 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"javafx.scene.Cursor"
 },
 {
   "name":"javafx.scene.Group"
@@ -1648,6 +2751,21 @@
   "queryAllPublicConstructors":true
 },
 {
+  "name":"javafx.scene.control.Button"
+},
+{
+  "name":"javafx.scene.control.CheckBox"
+},
+{
+  "name":"javafx.scene.control.CheckMenuItem"
+},
+{
+  "name":"javafx.scene.control.ChoiceBox"
+},
+{
+  "name":"javafx.scene.control.ConstrainedColumnResizeBase"
+},
+{
   "name":"javafx.scene.control.Control",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -1661,6 +2779,18 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"javafx.scene.control.CustomMenuItem"
+},
+{
+  "name":"javafx.scene.control.FXDialog"
+},
+{
+  "name":"javafx.scene.control.FocusModel"
+},
+{
+  "name":"javafx.scene.control.Label"
 },
 {
   "name":"javafx.scene.control.Labeled"
@@ -1698,6 +2828,9 @@
   "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"getMenus","parameterTypes":[] }]
 },
 {
+  "name":"javafx.scene.control.MenuButton"
+},
+{
   "name":"javafx.scene.control.MenuItem",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -1712,6 +2845,24 @@
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true,
   "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"getId","parameterTypes":[] }, {"name":"setDisable","parameterTypes":["boolean"] }, {"name":"setId","parameterTypes":["java.lang.String"] }, {"name":"setMnemonicParsing","parameterTypes":["boolean"] }, {"name":"setOnAction","parameterTypes":["javafx.event.EventHandler"] }, {"name":"setText","parameterTypes":["java.lang.String"] }]
+},
+{
+  "name":"javafx.scene.control.ProgressBar"
+},
+{
+  "name":"javafx.scene.control.RadioButton"
+},
+{
+  "name":"javafx.scene.control.RadioMenuItem"
+},
+{
+  "name":"javafx.scene.control.ResizeFeaturesBase"
+},
+{
+  "name":"javafx.scene.control.ScrollBar"
+},
+{
+  "name":"javafx.scene.control.SelectionModel"
 },
 {
   "name":"javafx.scene.control.SeparatorMenuItem",
@@ -1730,6 +2881,30 @@
   "methods":[{"name":"<init>","parameterTypes":[] }]
 },
 {
+  "name":"javafx.scene.control.Skin"
+},
+{
+  "name":"javafx.scene.control.SkinBase"
+},
+{
+  "name":"javafx.scene.control.Skinnable"
+},
+{
+  "name":"javafx.scene.control.Slider"
+},
+{
+  "name":"javafx.scene.control.SpinnerValueFactory"
+},
+{
+  "name":"javafx.scene.control.TablePositionBase"
+},
+{
+  "name":"javafx.scene.control.TextField"
+},
+{
+  "name":"javafx.scene.control.Toggle"
+},
+{
   "name":"javafx.scene.effect.Effect",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -1743,6 +2918,9 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"javafx.scene.effect.Light"
 },
 {
   "name":"javafx.scene.image.Image",
@@ -1773,6 +2951,33 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"javafx.scene.image.PixelFormat"
+},
+{
+  "name":"javafx.scene.image.PixelReader"
+},
+{
+  "name":"javafx.scene.image.PixelWriter"
+},
+{
+  "name":"javafx.scene.input.Clipboard"
+},
+{
+  "name":"javafx.scene.input.InputMethodRequests"
+},
+{
+  "name":"javafx.scene.input.KeyCombination"
+},
+{
+  "name":"javafx.scene.layout.ConstraintsBase"
+},
+{
+  "name":"javafx.scene.layout.GridPane"
+},
+{
+  "name":"javafx.scene.layout.HBox"
 },
 {
   "name":"javafx.scene.layout.Pane",
@@ -1823,10 +3028,31 @@
   "methods":[{"name":"<init>","parameterTypes":[] }, {"name":"getAlignment","parameterTypes":["javafx.scene.Node"] }, {"name":"getAlignment","parameterTypes":["javafx.scene.Parent"] }, {"name":"getAlignment","parameterTypes":["javafx.scene.control.Control"] }, {"name":"getAlignment","parameterTypes":["javafx.scene.control.MenuBar"] }, {"name":"getAlignment","parameterTypes":["javafx.scene.control.Skinnable"] }, {"name":"getAlignment","parameterTypes":["javafx.scene.layout.Region"] }, {"name":"getAlignment","parameterTypes":["javafx.scene.web.WebView"] }, {"name":"isAlignment","parameterTypes":["javafx.scene.Parent"] }, {"name":"isAlignment","parameterTypes":["javafx.scene.control.Control"] }, {"name":"isAlignment","parameterTypes":["javafx.scene.control.MenuBar"] }, {"name":"isAlignment","parameterTypes":["javafx.scene.control.Skinnable"] }, {"name":"isAlignment","parameterTypes":["javafx.scene.layout.Region"] }, {"name":"isAlignment","parameterTypes":["javafx.scene.web.WebView"] }, {"name":"setAlignment","parameterTypes":["java.lang.Object","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.css.Styleable","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.event.EventTarget","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.Node","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.Node","javafx.geometry.Pos"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.Parent","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.Parent","javafx.geometry.Pos"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.control.Control","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.control.Control","javafx.geometry.Pos"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.control.MenuBar","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.control.MenuBar","javafx.geometry.Pos"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.control.Skinnable","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.control.Skinnable","javafx.geometry.Pos"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.layout.Region","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.layout.Region","javafx.geometry.Pos"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.web.WebView","java.lang.String"] }, {"name":"setAlignment","parameterTypes":["javafx.scene.web.WebView","javafx.geometry.Pos"] }, {"name":"setMargin","parameterTypes":["javafx.scene.Node","javafx.geometry.Insets"] }, {"name":"setMargin","parameterTypes":["javafx.scene.Parent","javafx.geometry.Insets"] }, {"name":"setMargin","parameterTypes":["javafx.scene.web.WebView","javafx.geometry.Insets"] }]
 },
 {
+  "name":"javafx.scene.layout.TilePane"
+},
+{
+  "name":"javafx.scene.layout.VBox"
+},
+{
+  "name":"javafx.scene.media.Track"
+},
+{
+  "name":"javafx.scene.paint.Material"
+},
+{
+  "name":"javafx.scene.paint.Paint"
+},
+{
   "name":"javafx.scene.shape.LineTo"
 },
 {
+  "name":"javafx.scene.shape.Mesh"
+},
+{
   "name":"javafx.scene.shape.MoveTo"
+},
+{
+  "name":"javafx.scene.shape.ObservableFaceArray"
 },
 {
   "name":"javafx.scene.shape.Path"
@@ -1878,6 +3104,9 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"javafx.scene.shape.Shape3D$Key"
 },
 {
   "name":"javafx.scene.text.Font",
@@ -2002,6 +3231,18 @@
   "queryAllPublicConstructors":true
 },
 {
+  "name":"javafx.util.Builder"
+},
+{
+  "name":"javafx.util.BuilderFactory"
+},
+{
+  "name":"javafx.util.Callback"
+},
+{
+  "name":"javafx.util.StringConverter"
+},
+{
   "name":"javax.imageio.spi.ImageReaderSpi",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -2079,6 +3320,9 @@
   "queryAllPublicConstructors":true
 },
 {
+  "name":"javax.xml.stream.util.StreamReaderDelegate"
+},
+{
   "name":"jdk.internal.misc.Unsafe",
   "allDeclaredFields":true,
   "allPublicFields":true,
@@ -2092,6 +3336,9 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"jdk.jfr.Event"
 },
 {
   "name":"org.apache.logging.log4j.spi.ExtendedLogger",
@@ -2167,6 +3414,9 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true
+},
+{
+  "name":"org.xml.sax.helpers.DefaultHandler"
 },
 {
   "name":"sun.awt.Symbol",

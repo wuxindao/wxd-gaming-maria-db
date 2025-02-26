@@ -231,7 +231,7 @@ public class DbLogController {
                 过滤词：我 字符
                 """;
         alert.setHeaderText(content);
-        alert.setContentText("版本：V1.0.1");
+        alert.setContentText("版本：V1.0.10");
         alert.showAndWait();
     }
 

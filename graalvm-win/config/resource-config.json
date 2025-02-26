@@ -9575,6 +9575,8 @@
   }, {
     "pattern":"\\Qcom/sun/javafx/webkit/theme/\\E"
   }, {
+    "pattern":"\\Qcom/sun/javafx\\E"
+  }, {
     "pattern":"\\Qcom/sun/jna/AltCallingConvention.class\\E"
   }, {
     "pattern":"\\Qcom/sun/jna/Callback$UncaughtExceptionHandler.class\\E"
@@ -21457,6 +21459,8 @@
   }, {
     "pattern":"\\Qjavafx/util/converter/\\E"
   }, {
+    "pattern":"\\Qjavafx\\E"
+  }, {
     "pattern":"\\Qjavafx_font.dll\\E"
   }, {
     "pattern":"\\Qjavafx_iio.dll\\E"
@@ -30957,6 +30961,8 @@
   }, {
     "pattern":"\\Qwxdgaming/mariadb/winfm/db-log-view.fxml\\E"
   }, {
+    "pattern":"\\Qwxdgaming\\E"
+  }, {
     "pattern":"java.base:\\Qjdk/internal/icu/impl/data/icudt72b/nfkc.nrm\\E"
   }, {
     "pattern":"java.base:\\Qjdk/internal/icu/impl/data/icudt72b/ubidi.icu\\E"
@@ -30995,7 +31001,7 @@
     "locales":["", "de", "en", "es", "fr", "it", "ja", "ko", "pt-BR", "sv", "und", "zh-CN", "zh-TW"]
   }, {
     "name":"com/sun/javafx/scene/control/skin/resources/controls",
-    "locales":["", "zh-CN"]
+    "locales":["", "und", "zh-CN"]
   }, {
     "name":"sun.awt.resources.awt",
     "locales":["zh-CN"],
