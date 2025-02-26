@@ -1,4 +1,5 @@
 autoBakSqlTimeM: 60
+autoWarp: false
 bgColor: body_dark
 dataBases: local_game
 fontSize: 13

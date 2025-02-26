@@ -2,7 +2,7 @@ package wxdgaming.mariadb.winfm;
 
 import com.sun.javafx.application.PlatformImpl;
 import javafx.scene.web.WebView;
-import org.apache.commons.lang3.StringEscapeUtils;
+import org.apache.commons.text.StringEscapeUtils;
 
 import java.util.ArrayList;
 import java.util.List;

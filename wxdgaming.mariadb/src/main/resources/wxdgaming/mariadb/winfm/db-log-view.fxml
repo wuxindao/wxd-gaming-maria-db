@@ -22,6 +22,9 @@
                     <MenuItem text="深色" onAction="#setDarkBgColor"/>
                     <MenuItem text="浅色" onAction="#setLightBgColor"/>
                     <SeparatorMenuItem/>
+                    <MenuItem text="换行" onAction="#setSpanWarp"/>
+                    <MenuItem text="不换行" onAction="#setSpanNonWarp"/>
+                    <SeparatorMenuItem/>
                     <MenuItem text="放大" onAction="#setZoomIn"/>
                     <MenuItem text="正常" onAction="#setZoomReset"/>
                     <MenuItem text="缩小" onAction="#setZoomOut"/>

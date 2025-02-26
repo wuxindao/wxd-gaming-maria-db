@@ -57,6 +57,11 @@ public class DbLogController {
                         if (DbConfig.ins.getFontSize() > 0) {
                             webview.getEngine().executeScript("setFontSize(%s);".formatted(DbConfig.ins.getFontSize()));
                         }
+                        if (DbConfig.ins.isAutoWarp()) {
+                            webview.getEngine().executeScript("setSpanWarp();");
+                        } else {
+                            webview.getEngine().executeScript("setSpanNonWarp();");
+                        }
                     } catch (Exception e) {
                         e.printStackTrace(System.out);
                     }
@@ -249,6 +254,18 @@ public class DbLogController {
     public void setLightBgColor(ActionEvent event) {
         webview.getEngine().executeScript("setBg('body_light');");
         DbConfig.ins.setBgColor("body_light");
+        DbConfig.ins.saveYaml();
+    }
+
+    public void setSpanWarp(ActionEvent event) {
+        webview.getEngine().executeScript("setSpanWarp();");
+        DbConfig.ins.setAutoWarp(true);
+        DbConfig.ins.saveYaml();
+    }
+
+    public void setSpanNonWarp(ActionEvent event) {
+        webview.getEngine().executeScript("setSpanNonWarp();");
+        DbConfig.ins.setAutoWarp(false);
         DbConfig.ins.saveYaml();
     }
 

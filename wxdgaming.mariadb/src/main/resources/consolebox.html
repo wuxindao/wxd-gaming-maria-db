@@ -61,9 +61,11 @@
             color: rgba(0, 0, 0);
         }
 
-        #div_console { overflow-y: auto;width: 100%;height: 100%;padding-left: 5px; padding-top: 10px; padding-bottom: 10px;}
+        #div_console { overflow: auto;width: 100%;height: 100%;padding-left: 5px; padding-top: 10px; padding-bottom: 10px;}
 
-        span {text-wrap: wrap;white-space: pre-wrap;word-break: break-all;display: block;}
+        .span_non_wrap span {text-wrap: nowrap;white-space: nowrap;word-break: keep-all;display: block;}
+
+        .span_wrap span {text-wrap: wrap;white-space: pre-wrap;word-break: break-all;display: block;}
 
         /* 滚动条宽度 */
         ::-webkit-scrollbar { width: 8px;height: 8px; background-color: transparent; }
@@ -316,6 +318,15 @@
         function setBg(bgName) {
             $(document.body).attr("class", bgName);
         }
+
+        function setSpanWarp() {
+            $("#div_console").attr("class", "span_wrap");
+        }
+
+        function setSpanNonWarp() {
+            $("#div_console").attr("class", "span_non_wrap");
+        }
+
     </script>
 </head>
 <body>
@@ -348,7 +359,7 @@
         <label id="lab_find_result"></label>
     </div>
 </div>
-<div id="div_console">
+<div id="div_console" class="span_wrap">
     <span>hello world!</span>
 </div>
 </body>
