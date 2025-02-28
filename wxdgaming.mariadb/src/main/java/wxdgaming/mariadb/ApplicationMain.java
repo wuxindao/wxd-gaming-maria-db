@@ -20,6 +20,7 @@ public class ApplicationMain {
     public static void main(String[] args) throws Exception {
         initGraalvm();
         DbConfig.loadYaml();
+        GraalvmUtil.initGui();
         startDb(true);
         Thread.sleep(2000);
     }

@@ -1,12 +1,10 @@
 package wxdgaming.mariadb;
 
-import org.apache.commons.io.IOUtils;
-
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -55,12 +53,42 @@ public class GraalvmUtil {
         }
     }
 
-    public static String readHtml() {
-        try (InputStream resourceAsStream = ApplicationMain.class.getResourceAsStream("/consolebox.html")) {
-            return IOUtils.toString(resourceAsStream, StandardCharsets.UTF_8);
+    public static void initGui() {
+        try {
+            String cmdFilePath = "show-log.cmd";
+            File file = new File(cmdFilePath);
+            if (!file.exists()) {
+                return;
+            }
+            // 构建包含 start 命令的命令数组
+            String[] command = {"cmd.exe", "/c", "start", "cmd.exe", "/c", cmdFilePath};
+            ProcessBuilder sh = new ProcessBuilder(command);
+            asyncExeLocalCommand(null, sh);
+            Thread.sleep(3000);
         } catch (Exception e) {
-            throw new RuntimeException("加载文件失败");
+            e.printStackTrace(System.err);
         }
+    }
+
+    public static void asyncExeLocalCommand(File file, ProcessBuilder pb) throws IOException {
+        // 不使用Runtime.getRuntime().exec(command)的方式,因为无法设置以下特性
+        // Java执行本地命令是启用一个子进程处理,默认情况下子进程与父进程I/O通过管道相连(默认ProcessBuilder.Redirect.PIPE)
+        // 当服务执行自身重启的命令时,父进程关闭导致管道连接中断,将导致子进程也崩溃,从而无法完成后续的启动
+        // 解决方式,(1)设置子进程IO输出重定向到指定文件;(2)设置属性子进程的I/O源或目标将与当前进程的相同,两者相互独立
+        if (file == null || !file.exists()) {
+            // 设置属性子进程的I/O源或目标将与当前进程的相同,两者相互独立
+            pb.redirectOutput(ProcessBuilder.Redirect.INHERIT);
+            pb.redirectError(ProcessBuilder.Redirect.INHERIT);
+            pb.redirectInput(ProcessBuilder.Redirect.INHERIT);
+        } else {
+            // 设置子进程IO输出重定向到指定文件
+            // 错误输出与标准输出,输出到一块
+            pb.redirectErrorStream(true);
+            // 设置输出日志
+            pb.redirectOutput(ProcessBuilder.Redirect.appendTo(file));
+        }
+        // 执行命令进程
+        pb.start();
     }
 
     public static String javaClassPath() {
