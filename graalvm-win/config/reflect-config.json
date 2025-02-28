@@ -3,6 +3,10 @@
   "name":"[Lorg.springframework.util.ConcurrentReferenceHashMap$Segment;"
 },
 {
+  "name":"ch.qos.logback.classic.BasicConfigurator",
+  "methods":[{"name":"<init>","parameterTypes":[] }]
+},
+{
   "name":"ch.qos.logback.classic.Level",
   "methods":[{"name":"valueOf","parameterTypes":["java.lang.String"] }]
 },

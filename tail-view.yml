@@ -1,6 +1,11 @@
 autoWarp: false
 bgColor: body_light
-filePath: null
+filePath: G:\gitee\wxd-gaming-maria-db\target\logs\tail-2025-02-28.log
 fontSize: 13
 lastN: 150
+menuConfigs:
+- name: 启动数据库
+  path: start-mysql.bat
+- name: 关闭数据库
+  path: stop-mysql.bat
 showMaxLine: 1500

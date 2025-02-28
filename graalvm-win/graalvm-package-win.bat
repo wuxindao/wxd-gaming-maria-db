@@ -1,2 +1,2 @@
 @echo off
-C:\java\graalvm-jdk-21.0.6+8.1\bin\java -agentlib:native-image-agent=config-merge-dir=graalvm-win/config -Dfile.encoding=UTF-8 -Dbuild.graalvm=true -Dlogback.configurationFile=logback-gbk.xml -cp "target/mysql-server.jar;target/lib/*" wxdgaming.mariadb.ApplicationMain 1
+C:\java\graalvm-jdk-21.0.6+8.1\bin\java -agentlib:native-image-agent=config-merge-dir=graalvm-win/config -Dfile.encoding=UTF-8 -Dbuild.graalvm=true -Dlogback.configurationFile=logback-utf8.xml -cp "target/mysql-server.jar;target/lib/*" wxdgaming.mariadb.ApplicationMain 1
