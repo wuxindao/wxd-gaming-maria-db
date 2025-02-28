@@ -1,12 +1,10 @@
 package wxdgaming.mariadb;
 
-import javafx.application.Application;
 import lombok.extern.slf4j.Slf4j;
 import org.reflections.Reflections;
 import wxdgaming.mariadb.server.DBFactory;
 import wxdgaming.mariadb.server.LogbackResetTimeFilter;
 import wxdgaming.mariadb.server.WebService;
-import wxdgaming.mariadb.winfm.DbApplication;
 
 import java.net.URI;
 import java.net.URL;
@@ -14,34 +12,18 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
 
 @Slf4j
 public class ApplicationMain {
-
-    public static CountDownLatch guiCountDownLatch = new CountDownLatch(1);
 
 
     public static void main(String[] args) throws Exception {
         initGraalvm();
         DbConfig.loadYaml();
-        Thread.ofPlatform().start(() -> ApplicationMain.initGui(guiCountDownLatch));
-        guiCountDownLatch.await();
         startDb(true);
-
         Thread.sleep(2000);
     }
 
-
-    public static void initGui(CountDownLatch countDownLatch) {
-        try {
-            Application.launch(DbApplication.class);
-        } catch (Throwable throwable) {
-            throwable.printStackTrace(System.err);
-        } finally {
-            countDownLatch.countDown();
-        }
-    }
 
     public static void initGraalvm() {
         try {
