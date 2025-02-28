@@ -2,7 +2,6 @@ package wxdgaming.mariadb;
 
 import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
-import wxdgaming.mariadb.server.GvmExclude;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -49,7 +48,6 @@ public class ReflectAction {
         if (cls == Object.class) return;
         if (checkPackage && (!cls.getName().startsWith("wxdgaming.mariadb")))
             return;
-        if (cls.getAnnotation(GvmExclude.class) != null) return;
         if (cls.getSuperclass() != null) action(cls.getSuperclass(), checkPackage);
 
         actionField(cls);
@@ -71,7 +69,6 @@ public class ReflectAction {
                 if (Modifier.isStatic(declaredConstructor.getModifiers())) {
                     continue;
                 }
-                if (declaredConstructor.getAnnotation(GvmExclude.class) != null) continue;
                 try {
                     Object findMethod = cls.getDeclaredConstructor(declaredConstructor.getParameterTypes());
                     log.info("reflectActionMethod: " + findMethod);
@@ -84,7 +81,6 @@ public class ReflectAction {
                 if (Modifier.isStatic(method.getModifiers())) {
                     continue;
                 }
-                if (method.getAnnotation(GvmExclude.class) != null) continue;
                 try {
                     Method findMethod = cls.getDeclaredMethod(method.getName(), method.getParameterTypes());
                     log.info("reflectActionMethod: " + findMethod);
@@ -99,7 +95,6 @@ public class ReflectAction {
             if (Modifier.isStatic(field.getModifiers())) {
                 continue;
             }
-            if (field.getAnnotation(GvmExclude.class) != null) continue;
             try {
                 log.info("reflectActionField: " + cls.getDeclaredField(field.getName()));
             } catch (Throwable ignore) {}

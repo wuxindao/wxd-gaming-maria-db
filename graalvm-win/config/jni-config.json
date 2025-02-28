@@ -450,8 +450,7 @@
   "queryAllDeclaredMethods":true,
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
-  "queryAllPublicConstructors":true,
-  "fields":[{"name":"disableD3D9Ex"}]
+  "queryAllPublicConstructors":true
 },
 {
   "name":"com.sun.webkit.CursorManager",
@@ -515,6 +514,10 @@
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true,
   "methods":[{"name":"fwkSetFireTime","parameterTypes":["double"] }, {"name":"fwkStopTimer","parameterTypes":[] }]
+},
+{
+  "name":"com.sun.webkit.WCPasteboard",
+  "methods":[{"name":"getPlainText","parameterTypes":[] }, {"name":"writeSelection","parameterTypes":["boolean","java.lang.String","java.lang.String"] }]
 },
 {
   "name":"com.sun.webkit.WCWidget",
@@ -915,7 +918,7 @@
   "queryAllPublicMethods":true,
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true,
-  "methods":[{"name":"getDefaultToolkit","parameterTypes":[] }, {"name":"getFontMetrics","parameterTypes":["java.awt.Font"] }]
+  "methods":[{"name":"beep","parameterTypes":[] }, {"name":"getDefaultToolkit","parameterTypes":[] }, {"name":"getFontMetrics","parameterTypes":["java.awt.Font"] }]
 },
 {
   "name":"java.awt.TrayIcon",
@@ -1292,6 +1295,10 @@
   "queryAllDeclaredConstructors":true,
   "queryAllPublicConstructors":true,
   "methods":[{"name":"name","parameterTypes":[] }]
+},
+{
+  "name":"java.lang.Integer",
+  "methods":[{"name":"valueOf","parameterTypes":["int"] }]
 },
 {
   "name":"java.lang.Object",

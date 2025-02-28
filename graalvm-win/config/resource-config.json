@@ -153,6 +153,12 @@
   }, {
     "pattern":"\\QMETA-INF/maven/org.apache.commons/commons-lang3/pom.xml\\E"
   }, {
+    "pattern":"\\QMETA-INF/maven/org.apache.commons/commons-text/\\E"
+  }, {
+    "pattern":"\\QMETA-INF/maven/org.apache.commons/commons-text/pom.properties\\E"
+  }, {
+    "pattern":"\\QMETA-INF/maven/org.apache.commons/commons-text/pom.xml\\E"
+  }, {
     "pattern":"\\QMETA-INF/maven/org.javassist/\\E"
   }, {
     "pattern":"\\QMETA-INF/maven/org.javassist/javassist/\\E"
@@ -384,6 +390,10 @@
     "pattern":"\\QMETA-INF/versions/21/ch/qos/logback/\\E"
   }, {
     "pattern":"\\QMETA-INF/versions/21/ch/qos/logback/core/\\E"
+  }, {
+    "pattern":"\\QMETA-INF/versions/21/ch/qos/logback/core/property/ConsoleCharsetPropertyDefiner.class\\E"
+  }, {
+    "pattern":"\\QMETA-INF/versions/21/ch/qos/logback/core/property/\\E"
   }, {
     "pattern":"\\QMETA-INF/versions/21/ch/qos/logback/core/util/ExecutorServiceUtil$1.class\\E"
   }, {
@@ -2239,6 +2249,8 @@
   }, {
     "pattern":"\\Qch/qos/logback/classic/\\E"
   }, {
+    "pattern":"\\Qch/qos/logback/classic/boolex/ExceptionMatchEvaluator.class\\E"
+  }, {
     "pattern":"\\Qch/qos/logback/classic/boolex/IEvaluator.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/classic/boolex/JaninoEventEvaluator.class\\E"
@@ -2248,6 +2260,8 @@
     "pattern":"\\Qch/qos/logback/classic/boolex/OnErrorEvaluator.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/classic/boolex/OnMarkerEvaluator.class\\E"
+  }, {
+    "pattern":"\\Qch/qos/logback/classic/boolex/StubEventEvaluator.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/classic/boolex/\\E"
   }, {
@@ -2305,6 +2319,10 @@
   }, {
     "pattern":"\\Qch/qos/logback/classic/joran/ModelClassToModelHandlerLinker.class\\E"
   }, {
+    "pattern":"\\Qch/qos/logback/classic/joran/PropertiesConfigurator$1.class\\E"
+  }, {
+    "pattern":"\\Qch/qos/logback/classic/joran/PropertiesConfigurator.class\\E"
+  }, {
     "pattern":"\\Qch/qos/logback/classic/joran/ReconfigureOnChangeTask.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/classic/joran/ReconfigureOnChangeTaskListener.class\\E"
@@ -2328,6 +2346,8 @@
     "pattern":"\\Qch/qos/logback/classic/joran/action/LoggerAction.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/classic/joran/action/LoggerContextListenerAction.class\\E"
+  }, {
+    "pattern":"\\Qch/qos/logback/classic/joran/action/PropertiesConfiguratorAction.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/classic/joran/action/ReceiverAction.class\\E"
   }, {
@@ -2367,6 +2387,8 @@
   }, {
     "pattern":"\\Qch/qos/logback/classic/model/LoggerModel.class\\E"
   }, {
+    "pattern":"\\Qch/qos/logback/classic/model/PropertiesConfiguratorModel.class\\E"
+  }, {
     "pattern":"\\Qch/qos/logback/classic/model/ReceiverModel.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/classic/model/RootLoggerModel.class\\E"
@@ -2386,6 +2408,8 @@
     "pattern":"\\Qch/qos/logback/classic/model/processor/LoggerContextListenerModelHandler.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/classic/model/processor/LoggerModelHandler.class\\E"
+  }, {
+    "pattern":"\\Qch/qos/logback/classic/model/processor/PropertiesConfiguratorModelHandler.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/classic/model/processor/ReceiverModelHandler.class\\E"
   }, {
@@ -2480,6 +2504,8 @@
     "pattern":"\\Qch/qos/logback/classic/pattern/MDCConverter.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/classic/pattern/MarkerConverter.class\\E"
+  }, {
+    "pattern":"\\Qch/qos/logback/classic/pattern/MaskedKeyValuePairConverter.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/classic/pattern/MessageConverter.class\\E"
   }, {
@@ -2817,6 +2843,8 @@
   }, {
     "pattern":"\\Qch/qos/logback/core/joran/action/PropertyAction.class\\E"
   }, {
+    "pattern":"\\Qch/qos/logback/core/joran/action/ResourceAction.class\\E"
+  }, {
     "pattern":"\\Qch/qos/logback/core/joran/action/SequenceNumberGeneratorAction.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/joran/action/SerializeModelAction.class\\E"
@@ -2905,6 +2933,10 @@
   }, {
     "pattern":"\\Qch/qos/logback/core/joran/spi/HostClassAndPropertyDouble.class\\E"
   }, {
+    "pattern":"\\Qch/qos/logback/core/joran/spi/HttpUtil$RequestMethod.class\\E"
+  }, {
+    "pattern":"\\Qch/qos/logback/core/joran/spi/HttpUtil.class\\E"
+  }, {
     "pattern":"\\Qch/qos/logback/core/joran/spi/JoranException.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/joran/spi/NewRuleProvider.class\\E"
@@ -2959,6 +2991,8 @@
   }, {
     "pattern":"\\Qch/qos/logback/core/model/ComponentModel.class\\E"
   }, {
+    "pattern":"\\Qch/qos/logback/core/model/ConversionRuleModel.class\\E"
+  }, {
     "pattern":"\\Qch/qos/logback/core/model/DefineModel.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/model/EventEvaluatorModel.class\\E"
@@ -2988,6 +3022,8 @@
     "pattern":"\\Qch/qos/logback/core/model/ParamModel.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/model/PropertyModel.class\\E"
+  }, {
+    "pattern":"\\Qch/qos/logback/core/model/ResourceModel.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/model/SequenceNumberGeneratorModel.class\\E"
   }, {
@@ -3026,6 +3062,8 @@
     "pattern":"\\Qch/qos/logback/core/model/processor/ChainedModelFilter$1.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/model/processor/ChainedModelFilter.class\\E"
+  }, {
+    "pattern":"\\Qch/qos/logback/core/model/processor/ConversionRuleModelHandler.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/model/processor/DefaultProcessor$1.class\\E"
   }, {
@@ -3072,6 +3110,8 @@
     "pattern":"\\Qch/qos/logback/core/model/processor/PropertyModelHandler.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/model/processor/RefContainerDependencyAnalyser.class\\E"
+  }, {
+    "pattern":"\\Qch/qos/logback/core/model/processor/ResourceHandlerBase.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/model/processor/SequenceNumberGeneratorModelHandler.class\\E"
   }, {
@@ -3255,6 +3295,8 @@
   }, {
     "pattern":"\\Qch/qos/logback/core/pattern/color/BoldYellowCompositeConverter.class\\E"
   }, {
+    "pattern":"\\Qch/qos/logback/core/pattern/color/ConverterSupplierByClassName.class\\E"
+  }, {
     "pattern":"\\Qch/qos/logback/core/pattern/color/CyanCompositeConverter.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/pattern/color/ForegroundCompositeConverterBase.class\\E"
@@ -3339,6 +3381,10 @@
   }, {
     "pattern":"\\Qch/qos/logback/core/rolling/FixedWindowRollingPolicy.class\\E"
   }, {
+    "pattern":"\\Qch/qos/logback/core/rolling/LengthCounter.class\\E"
+  }, {
+    "pattern":"\\Qch/qos/logback/core/rolling/LengthCounterBase.class\\E"
+  }, {
     "pattern":"\\Qch/qos/logback/core/rolling/RollingFileAppender.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/rolling/RollingPolicy.class\\E"
@@ -3350,6 +3396,10 @@
     "pattern":"\\Qch/qos/logback/core/rolling/SizeAndTimeBasedFNATP$Usage.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/rolling/SizeAndTimeBasedFNATP.class\\E"
+  }, {
+    "pattern":"\\Qch/qos/logback/core/rolling/SizeAndTimeBasedFileNamingAndTriggeringPolicy$Usage.class\\E"
+  }, {
+    "pattern":"\\Qch/qos/logback/core/rolling/SizeAndTimeBasedFileNamingAndTriggeringPolicy.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/rolling/SizeAndTimeBasedRollingPolicy.class\\E"
   }, {
@@ -3553,6 +3603,8 @@
   }, {
     "pattern":"\\Qch/qos/logback/core/subst/\\E"
   }, {
+    "pattern":"\\Qch/qos/logback/core/testUtil/AbstractMultiThreadedHarness.class\\E"
+  }, {
     "pattern":"\\Qch/qos/logback/core/testUtil/CoreTestConstants.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/testUtil/DelayingListAppender.class\\E"
@@ -3572,6 +3624,8 @@
     "pattern":"\\Qch/qos/logback/core/testUtil/NPEAppender.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/testUtil/RandomUtil.class\\E"
+  }, {
+    "pattern":"\\Qch/qos/logback/core/testUtil/RunnableWithCounterAndDone.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/testUtil/StringListAppender.class\\E"
   }, {
@@ -3640,6 +3694,8 @@
     "pattern":"\\Qch/qos/logback/core/util/Loader.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/util/LocationUtil.class\\E"
+  }, {
+    "pattern":"\\Qch/qos/logback/core/util/MD5Util.class\\E"
   }, {
     "pattern":"\\Qch/qos/logback/core/util/NetworkAddressUtil.class\\E"
   }, {
@@ -24933,7 +24989,15 @@
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/AnnotationUtils.class\\E"
   }, {
+    "pattern":"\\Qorg/apache/commons/lang3/AppendableJoiner$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/AppendableJoiner$Builder.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/AppendableJoiner.class\\E"
+  }, {
     "pattern":"\\Qorg/apache/commons/lang3/ArchUtils.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/ArrayFill.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/ArraySorter.class\\E"
   }, {
@@ -24942,6 +25006,8 @@
     "pattern":"\\Qorg/apache/commons/lang3/BitField.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/BooleanUtils.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/CachedRandomBits.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/CharEncoding.class\\E"
   }, {
@@ -25027,6 +25093,8 @@
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/RegExUtils.class\\E"
   }, {
+    "pattern":"\\Qorg/apache/commons/lang3/RuntimeEnvironment.class\\E"
+  }, {
     "pattern":"\\Qorg/apache/commons/lang3/SerializationException.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/SerializationUtils$ClassLoaderAwareObjectInputStream.class\\E"
@@ -25079,6 +25147,8 @@
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/arch/package-info.class\\E"
   }, {
+    "pattern":"\\Qorg/apache/commons/lang3/builder/AbstractSupplier.class\\E"
+  }, {
     "pattern":"\\Qorg/apache/commons/lang3/builder/Builder.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/builder/CompareToBuilder.class\\E"
@@ -25121,6 +25191,10 @@
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/builder/DiffBuilder$9.class\\E"
   }, {
+    "pattern":"\\Qorg/apache/commons/lang3/builder/DiffBuilder$Builder.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/builder/DiffBuilder$SDiff.class\\E"
+  }, {
     "pattern":"\\Qorg/apache/commons/lang3/builder/DiffBuilder.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/builder/DiffExclude.class\\E"
@@ -25144,6 +25218,10 @@
     "pattern":"\\Qorg/apache/commons/lang3/builder/RecursiveToStringStyle.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/builder/Reflection.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/builder/ReflectionDiffBuilder$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/builder/ReflectionDiffBuilder$Builder.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/builder/ReflectionDiffBuilder.class\\E"
   }, {
@@ -25199,11 +25277,27 @@
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/concurrent/AbstractCircuitBreaker.class\\E"
   }, {
+    "pattern":"\\Qorg/apache/commons/lang3/concurrent/AbstractConcurrentInitializer$AbstractBuilder.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/concurrent/AbstractConcurrentInitializer.class\\E"
+  }, {
     "pattern":"\\Qorg/apache/commons/lang3/concurrent/AbstractFutureProxy.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/concurrent/AtomicInitializer$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/concurrent/AtomicInitializer$Builder.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/concurrent/AtomicInitializer.class\\E"
   }, {
+    "pattern":"\\Qorg/apache/commons/lang3/concurrent/AtomicSafeInitializer$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/concurrent/AtomicSafeInitializer$Builder.class\\E"
+  }, {
     "pattern":"\\Qorg/apache/commons/lang3/concurrent/AtomicSafeInitializer.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/concurrent/BackgroundInitializer$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/concurrent/BackgroundInitializer$Builder.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/concurrent/BackgroundInitializer$InitializationTask.class\\E"
   }, {
@@ -25248,6 +25342,10 @@
     "pattern":"\\Qorg/apache/commons/lang3/concurrent/EventCountCircuitBreaker.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/concurrent/FutureTasks.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/concurrent/LazyInitializer$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/concurrent/LazyInitializer$Builder.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/concurrent/LazyInitializer.class\\E"
   }, {
@@ -25416,6 +25514,8 @@
     "pattern":"\\Qorg/apache/commons/lang3/function/FailableToLongBiFunction.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/function/FailableToLongFunction.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/function/Functions.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/function/IntToCharFunction.class\\E"
   }, {
@@ -25594,6 +25694,10 @@
     "pattern":"\\Qorg/apache/commons/lang3/text/translate/\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/text/translate/package-info.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/time/AbstractFormatCache$ArrayKey.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/lang3/time/AbstractFormatCache.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/lang3/time/CalendarUtils.class\\E"
   }, {
@@ -25786,6 +25890,350 @@
     "pattern":"\\Qorg/apache/commons/logging/impl/SimpleLog.class\\E"
   }, {
     "pattern":"\\Qorg/apache/commons/logging/impl/\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/AlphabetConverter.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/Builder.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/CaseUtils.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/CharacterPredicate.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/CharacterPredicates$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/CharacterPredicates$2.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/CharacterPredicates$3.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/CharacterPredicates$4.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/CharacterPredicates$5.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/CharacterPredicates$6.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/CharacterPredicates$7.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/CharacterPredicates.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/CompositeFormat.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/ExtendedMessageFormat.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/FormatFactory.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/FormattableUtils.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/RandomStringGenerator$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/RandomStringGenerator$Builder.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/RandomStringGenerator.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrBuilder$StrBuilderReader.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrBuilder$StrBuilderTokenizer.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrBuilder$StrBuilderWriter.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrBuilder.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrLookup$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrLookup$MapStrLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrLookup$ResourceBundleLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrLookup$SystemPropertiesStrLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrMatcher$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrMatcher$CharMatcher.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrMatcher$CharSetMatcher.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrMatcher$NoMatcher.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrMatcher$StringMatcher.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrMatcher$TrimMatcher.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrMatcher.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrSubstitutor.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StrTokenizer.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StringEscapeUtils$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StringEscapeUtils$Builder.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StringEscapeUtils$XsiUnescaper.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StringEscapeUtils.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StringSubstitutor$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StringSubstitutor$Result.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StringSubstitutor.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/StringTokenizer.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/TextRandomProvider.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/TextStringBuilder$TextStringBuilderReader.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/TextStringBuilder$TextStringBuilderTokenizer.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/TextStringBuilder$TextStringBuilderWriter.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/TextStringBuilder.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/WordUtils.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/diff/CommandVisitor.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/diff/DeleteCommand.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/diff/EditCommand.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/diff/EditScript.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/diff/InsertCommand.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/diff/KeepCommand.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/diff/ReplacementsFinder.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/diff/ReplacementsHandler.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/diff/StringsComparator$Snake.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/diff/StringsComparator.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/diff/\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/diff/package-info.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/io/StringSubstitutorReader.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/io/\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/io/package-info.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/AbstractPathFencedLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/AbstractStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/BiFunctionStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/BiStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/ConstantStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/DateStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/DefaultStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/DnsStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/FileStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/FunctionStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/IllegalArgumentExceptions.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/InetAddressKeys.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/InetAddressStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/InterpolatorStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/JavaPlatformStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/PropertiesStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/ResourceBundleStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/ScriptStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/StringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/StringLookupFactory$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/StringLookupFactory$Builder.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/StringLookupFactory$DefaultStringLookupsHolder.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/StringLookupFactory.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/UrlDecoderStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/UrlEncoderStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/UrlStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/XmlDecoderStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/XmlEncoderStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/XmlStringLookup.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/lookup/package-info.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/matcher/AbstractStringMatcher$AndStringMatcher.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/matcher/AbstractStringMatcher$CharArrayMatcher.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/matcher/AbstractStringMatcher$CharMatcher.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/matcher/AbstractStringMatcher$CharSetMatcher.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/matcher/AbstractStringMatcher$NoneMatcher.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/matcher/AbstractStringMatcher$TrimMatcher.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/matcher/AbstractStringMatcher.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/matcher/StringMatcher.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/matcher/StringMatcherFactory.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/matcher/\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/matcher/package-info.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/numbers/DoubleFormat$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/numbers/DoubleFormat$AbstractDoubleFormat.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/numbers/DoubleFormat$Builder.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/numbers/DoubleFormat$EngineeringDoubleFormat.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/numbers/DoubleFormat$MixedDoubleFormat.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/numbers/DoubleFormat$PlainDoubleFormat.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/numbers/DoubleFormat$ScientificDoubleFormat.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/numbers/DoubleFormat.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/numbers/ParsedDecimal$FormatOptions.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/numbers/ParsedDecimal.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/numbers/\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/numbers/package-info.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/package-info.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/CharSequenceTokenizer.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/CosineDistance.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/CosineSimilarity.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/Counter.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/EditDistance.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/EditDistanceFrom.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/FuzzyScore.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/HammingDistance.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/IntersectionResult.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/IntersectionSimilarity$1.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/IntersectionSimilarity$BagCount.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/IntersectionSimilarity$TinyBag.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/IntersectionSimilarity.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/JaccardDistance.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/JaccardSimilarity.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/JaroWinklerDistance.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/JaroWinklerSimilarity.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/LevenshteinDetailedDistance.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/LevenshteinDistance.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/LevenshteinResults.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/LongestCommonSubsequence.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/LongestCommonSubsequenceDistance.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/ObjectSimilarityScore.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/RegexTokenizer.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/SimilarityCharacterInput.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/SimilarityInput.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/SimilarityScore.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/SimilarityScoreFrom.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/Tokenizer.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/similarity/package-info.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/AggregateTranslator.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/CharSequenceTranslator.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/CodePointTranslator.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/CsvTranslators$CsvEscaper.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/CsvTranslators$CsvUnescaper.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/CsvTranslators.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/EntityArrays.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/JavaUnicodeEscaper.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/LookupTranslator.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/NumericEntityEscaper.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/NumericEntityUnescaper$OPTION.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/NumericEntityUnescaper.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/OctalUnescaper.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/SinglePassTranslator.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/UnicodeEscaper.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/UnicodeUnescaper.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/UnicodeUnpairedSurrogateRemover.class\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/\\E"
+  }, {
+    "pattern":"\\Qorg/apache/commons/text/translate/package-info.class\\E"
   }, {
     "pattern":"\\Qorg/checkerframework/\\E"
   }, {
@@ -28362,6 +28810,8 @@
     "pattern":"\\Qorg/slf4j/helpers/Reporter$TargetChoice.class\\E"
   }, {
     "pattern":"\\Qorg/slf4j/helpers/Reporter.class\\E"
+  }, {
+    "pattern":"\\Qorg/slf4j/helpers/Slf4jEnvUtil.class\\E"
   }, {
     "pattern":"\\Qorg/slf4j/helpers/SubstituteLogger.class\\E"
   }, {
@@ -31339,6 +31789,8 @@
   }, {
     "pattern":"\\Qrelease-timestamp.txt\\E"
   }, {
+    "pattern":"\\Qsun/launcher\\E"
+  }, {
     "pattern":"\\Qucrtbase.dll\\E"
   }, {
     "pattern":"\\Qvcruntime140.dll\\E"
@@ -31569,7 +32021,7 @@
     "locales":["", "de", "en", "es", "fr", "it", "ja", "ko", "pt-BR", "sv", "und", "zh-CN", "zh-TW"]
   }, {
     "name":"com/sun/javafx/scene/control/skin/resources/controls",
-    "locales":["", "und", "zh-CN"]
+    "locales":["und", "zh-CN"]
   }, {
     "name":"sun.awt.resources.awt",
     "locales":["zh-CN"],

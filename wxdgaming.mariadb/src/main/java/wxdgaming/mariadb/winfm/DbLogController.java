@@ -235,7 +235,7 @@ public class DbLogController {
 
     @FXML
     private void openConfig(ActionEvent event) {
-        Path path = Paths.get("my.ini").toAbsolutePath();
+        Path path = Paths.get(DbConfig.dbConfigFile.getPath()).toAbsolutePath();
         try {
             Desktop.getDesktop().open(path.toFile());
         } catch (IOException ex) {
