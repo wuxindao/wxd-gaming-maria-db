@@ -78,3 +78,5 @@ console/target
 .idea
 wxd-gaming.mariadb.iml
 wxdgaming.mariadb/target
+show-log.cmd
+view.yml
