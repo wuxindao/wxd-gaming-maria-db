@@ -1,2 +1,2 @@
 @echo off
-start http://localhost:19902/api/db/stop
+curl http://localhost:13301/api/db/stop

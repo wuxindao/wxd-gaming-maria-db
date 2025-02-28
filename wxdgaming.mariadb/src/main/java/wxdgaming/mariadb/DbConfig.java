@@ -8,7 +8,6 @@ import org.yaml.snakeyaml.Yaml;
 import org.yaml.snakeyaml.representer.Representer;
 
 import java.io.File;
-import java.io.IOException;
 import java.nio.file.Files;
 
 /**
@@ -26,26 +25,21 @@ public class DbConfig {
 
     public static void loadYaml() {
         try {
-            DumperOptions dumperOptions = new DumperOptions();
-            Representer representer = new Representer(dumperOptions);
-            representer.getPropertyUtils().setSkipMissingProperties(true);
-            Yaml yaml = new Yaml(representer, dumperOptions);
-            ins = yaml.loadAs(Files.newInputStream(dbConfigFile.toPath()), DbConfig.class);
-        } catch (IOException e) {
+            if (dbConfigFile.exists()) {
+                DumperOptions dumperOptions = new DumperOptions();
+                Representer representer = new Representer(dumperOptions);
+                representer.getPropertyUtils().setSkipMissingProperties(true);
+                Yaml yaml = new Yaml(representer, dumperOptions);
+                ins = yaml.loadAs(Files.newInputStream(dbConfigFile.toPath()), DbConfig.class);
+            } else {
+                ins = new DbConfig();
+                ins.save();
+            }
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
-    /** 把指定类型转换成 yaml 文件 */
-    public void saveYaml() {
-        DumperOptions dumperOptions = new DumperOptions();
-        dumperOptions.setDefaultScalarStyle(DumperOptions.ScalarStyle.PLAIN);
-        Representer representer = new Representer(dumperOptions);
-        representer.getPropertyUtils().setSkipMissingProperties(true);
-        Yaml yaml = new Yaml(representer, dumperOptions);
-        String string = yaml.dumpAsMap(this);
-        GraalvmUtil.writeFile(dbConfigFile, string);
-    }
 
     private String serverTitle = "数据库引擎";
     private int port = 13306;
@@ -66,4 +60,14 @@ public class DbConfig {
         return getServerTitle();
     }
 
+    /** 把指定类型转换成 yaml 文件 */
+    public void save() {
+        DumperOptions dumperOptions = new DumperOptions();
+        dumperOptions.setDefaultScalarStyle(DumperOptions.ScalarStyle.PLAIN);
+        Representer representer = new Representer(dumperOptions);
+        representer.getPropertyUtils().setSkipMissingProperties(true);
+        Yaml yaml = new Yaml(representer, dumperOptions);
+        String string = yaml.dumpAsMap(this);
+        GraalvmUtil.writeFile(dbConfigFile, string);
+    }
 }

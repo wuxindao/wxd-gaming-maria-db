@@ -1,6 +1,6 @@
 autoBakSqlTimeM: 60
-autoWarp: false
-bgColor: body_light
+autoWarp: true
+bgColor: null
 dataBases: local_game
 fontSize: 13
 port: 13306
