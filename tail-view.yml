@@ -5,7 +5,14 @@ fontSize: 13
 lastN: 150
 menuConfigs:
 - name: 启动数据库
-  path: start-mysql.bat
+  path: G:\gitee\wxd-gaming-maria-db\bat\start-mysql.bat
+- name: ——
+- name: 备份
+  path: G:\gitee\wxd-gaming-maria-db\bat\bak-mysql.bat
+- name: ——
+- name: 清档
+  path: G:\gitee\wxd-gaming-maria-db\bat\clear-mysql.bat
+- name: ——
 - name: 关闭数据库
-  path: stop-mysql.bat
+  path: G:\gitee\wxd-gaming-maria-db\bat\stop-mysql.bat
 showMaxLine: 1500

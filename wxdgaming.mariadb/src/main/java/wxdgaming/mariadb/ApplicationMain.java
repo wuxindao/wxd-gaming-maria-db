@@ -58,6 +58,7 @@ public class ApplicationMain {
     public static void startDb(boolean checked) throws Exception {
         GraalvmUtil.write(1, "启动中");
         DbConfig.loadYaml();
+        WebService.getIns().start(DbConfig.ins.getWebPort());
         Thread.sleep(500);
         boolean initResult = DBFactory.getIns().init(
                 DbConfig.ins.getDataBases(),
@@ -67,8 +68,6 @@ public class ApplicationMain {
         );
 
         if (!initResult) return;
-
-        WebService.getIns().start(DbConfig.ins.getWebPort());
         DBFactory.getIns().print();
     }
 

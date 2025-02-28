@@ -18,7 +18,6 @@ public class RunAsync {
                 e.printStackTrace(System.out);
             }
         });
-        thread.setDaemon(true);
         thread.start();
     }
 
