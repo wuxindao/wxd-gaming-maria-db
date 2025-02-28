@@ -22,7 +22,6 @@ public class WebService {
 
     WebService() {}
 
-    @Setter Runnable showWindow;
     private HttpServer httpServer;
 
     HttpHandler httpHandler = exchange -> {
@@ -53,18 +52,10 @@ public class WebService {
         httpServer.start();
         log.info("http://localhost:{}/api/db/stop", port);
         log.info("http://localhost:{}/api/db/check", port);
-        log.info("http://localhost:{}/api/db/show", port);
     }
 
     public void stop() {
         httpServer.stop(0);
-    }
-
-    public void initShow() {
-        httpServer.createContext("/api/db/show", exchange -> {
-            httpHandler.handle(exchange);
-            showWindow.run();
-        });
     }
 
 }

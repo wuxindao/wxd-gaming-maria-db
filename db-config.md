@@ -4,6 +4,3 @@ pwd: root                       #数据库密码
 autoBakSqlTimeM: 60             #自动备份间隔时间，单位分钟
 dataBases: local_game           #自动创建的数据库名称
 webPort: 13301                  #用于特殊监听的web端口
-bgColor: null                   #背景颜色
-fontSize: 13                    #字体大小
-showMaxLine: 1500               #显示最大行数

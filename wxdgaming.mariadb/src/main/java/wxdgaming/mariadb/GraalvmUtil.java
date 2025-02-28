@@ -88,7 +88,13 @@ public class GraalvmUtil {
             pb.redirectOutput(ProcessBuilder.Redirect.appendTo(file));
         }
         // 执行命令进程
-        pb.start();
+        Process start = pb.start();
+        try {
+            start.waitFor();
+            start.destroy();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static String javaClassPath() {

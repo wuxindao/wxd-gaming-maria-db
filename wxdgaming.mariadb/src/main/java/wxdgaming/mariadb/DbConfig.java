@@ -48,10 +48,6 @@ public class DbConfig {
     private String pwd = "root";
     private String dataBases = "local_game";
     private int autoBakSqlTimeM = 60;
-    private int fontSize = 13;
-    private String bgColor = null;
-    private int showMaxLine = 1500;
-    private boolean autoWarp = true;
 
     public String serverName() {
         if (StringUtils.isBlank(getServerTitle())) {

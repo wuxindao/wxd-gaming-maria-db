@@ -6,11 +6,7 @@ import wxdgaming.mariadb.server.DBFactory;
 import wxdgaming.mariadb.server.LogbackResetTimeFilter;
 import wxdgaming.mariadb.server.WebService;
 
-import java.net.URI;
 import java.net.URL;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.List;
 
 @Slf4j
@@ -62,22 +58,6 @@ public class ApplicationMain {
         RunAsync.async(() -> {
             try {
                 Thread.sleep(500);
-                if (checked) {
-
-                    try (HttpClient client = HttpClient.newHttpClient()) {
-
-                        HttpRequest build = HttpRequest.newBuilder().GET().uri(URI.create("http://localhost:" + DbConfig.ins.getWebPort() + "/api/db/show")).build();
-                        HttpResponse<byte[]> send = client.send(build, HttpResponse.BodyHandlers.ofByteArray());
-                        /*正常访问说明已经打开过，退出当前程序，*/
-                        System.exit(0);
-                        return;
-                    } catch (Exception ignore) {
-                        /*如果访问报错说没有启动过；*/
-                    }
-                    System.out.println("可以正常开启");
-
-                }
-
                 boolean initResult = DBFactory.getIns().init(
                         DbConfig.ins.getDataBases(),
                         DbConfig.ins.getPort(),
@@ -88,17 +68,11 @@ public class ApplicationMain {
                 if (!initResult) return;
 
                 WebService.getIns().start(DbConfig.ins.getWebPort());
-                WebService.getIns().initShow();
                 DBFactory.getIns().print();
 
             } catch (Throwable e) {
                 log.error("start failed ", e);
-                System.out.println("启动异常了！");
                 GraalvmUtil.write(99, "启动异常：" + e.toString());
-                try {
-                    /*如果异常弹出界面*/
-                    WebService.getIns().getShowWindow().run();
-                } catch (Exception ignore) {}
             }
         });
     }
